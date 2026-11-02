@@ -17,6 +17,8 @@ public class GameDatabase : MonoBehaviour
     }
     #endregion
 
+    // total amount of gigs the player will play in a run
+    public int TotalAmountGigs = 7;
     // base money the player starts with
     public int MoneyBase = 100;
     // starting orchestra

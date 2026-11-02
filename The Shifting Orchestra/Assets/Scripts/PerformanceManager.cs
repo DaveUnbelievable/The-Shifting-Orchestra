@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class PerformanceManager : MonoBehaviour
+public class PerformanceManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int EvaluatePerformance(OrchestraManager orchestraManager, GigOffer gigOffer)
     {
-        
+        return 0; // TODO: implement performance evaluation logic -> return performance score 0 - 100
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateReputationAndMoney(int performanceScore)
     {
-        
+        // TODO: update reputation and money based on performance score
     }
 }

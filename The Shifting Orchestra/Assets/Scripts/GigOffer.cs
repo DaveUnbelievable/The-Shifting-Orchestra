@@ -4,10 +4,10 @@ using UnityEngine;
 public class GigOffer
 {
     public List<GigRequirement> Requirements { get; private set; }
+    public int MinimumOrchestraSize { get; private set; }
     public int MoneyReward { get; private set; }
     public int ReputationReward { get; private set; }
-    public int MinimumOrchestraSize { get; private set; }
-
+    
     public GigOffer()
     {
         // create list of requirements for the gig offer
@@ -53,10 +53,10 @@ public class GigOffer
         // create money reward, reputation reward, and minimum orchestra size for the gig offer according to current reputation of the player
         int currentReputation = RunManager.Instance.CurrentReputation;
         // TODO: adjust values to be balanced
-        MoneyReward = Random.Range(10 * currentReputation, 20 * currentReputation + 1);
-        ReputationReward = Random.Range(1 * currentReputation,  5 * currentReputation + 1);
         int minOrchestraSize = Mathf.Max(1, Random.Range(currentReputation - 5, currentReputation + 5));
         MinimumOrchestraSize = Random.Range(minOrchestraSize, minOrchestraSize + Random.Range(0, 20));
+        MoneyReward = Random.Range(10 * currentReputation, 20 * currentReputation + 1);
+        ReputationReward = Random.Range(1 * currentReputation,  5 * currentReputation + 1);
     }
 
     private int GetRandomWeight()

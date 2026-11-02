@@ -15,4 +15,15 @@ public class GigManager
         return gigOffers;
     }
 
+    public void StartGig(GigOffer gigOffer)
+    {
+        // TODO: start gig
+        // TODO: show animations for playing gig
+        // TODO: play music for gig
+        // TODO: after music is finished, go to evaluation state
+
+        
+    }
+
+
 }

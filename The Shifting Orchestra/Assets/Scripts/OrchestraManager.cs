@@ -4,6 +4,8 @@ using UnityEngine;
 public class OrchestraManager
 {
     public List<InstrumentGroup> orchestra;
+    public int KeyChange;
+    public int Tempo;
 
     public void CreateStartingOrchestra()
     {
@@ -31,4 +33,25 @@ public class OrchestraManager
     {
         instrumentGroup.MusicalRole = role;
     }
+
+    public void ChangeKey(int addKey)
+    {
+        KeyChange += addKey;
+    }
+
+    public void SetTempo(int newTempo)
+    {
+        Tempo = newTempo;
+    }
+
+    public void SetVolume(InstrumentGroup instrumentGroup, int newVolume)
+    {
+        instrumentGroup.Volume = newVolume;
+    }
+
+    // TODO:
+    // recruit musician
+    // fire musician
+    // change position of instrument group in orchestra
+    
 }
