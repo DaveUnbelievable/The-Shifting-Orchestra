@@ -1,16 +1,34 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class OrchestraManager : MonoBehaviour
+public class OrchestraManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public List<InstrumentGroup> orchestra;
+
+    public void CreateStartingOrchestra()
     {
-        
+        orchestra = new List<InstrumentGroup>();
+        foreach (StartingInstrumentGroup startingGroup in GameDatabase.Instance.StartingInstrumentGroups)
+        {
+            // create instrument group
+            InstrumentGroup instrumentGroup = new InstrumentGroup
+            {
+                InstrumentType = startingGroup.InstrumentType,
+                MusicalRole = startingGroup.MusicalRole,
+                Volume = startingGroup.Volume,
+            };
+            // create musicians for the instrument group
+            for (int i = 0; i < startingGroup.Amount; i++)
+            {
+                instrumentGroup.Musicians.Add(MusicianGenerator.GenerateRandomMusician(startingGroup.InstrumentType));
+            }
+            // add to orchestra
+            orchestra.Add(instrumentGroup);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeMusicalRoleAssignment(Enums.MusicalRoles role, InstrumentGroup instrumentGroup)
     {
-        
+        instrumentGroup.MusicalRole = role;
     }
 }

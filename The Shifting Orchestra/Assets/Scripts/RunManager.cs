@@ -18,6 +18,7 @@ public class RunManager : MonoBehaviour
     #endregion
 
     private GigManager _gigManager;
+    private OrchestraManager _orchestraManager;
 
     private Enums.RunState _currentRunState;
     public Enums.RunState CurrentRunState {
@@ -41,9 +42,11 @@ public class RunManager : MonoBehaviour
     public void StartRun() {
         // initialize
         _gigManager = new GigManager();
+        _orchestraManager = new OrchestraManager();
         // set base values
         CurrentMoney = GameDatabase.Instance.MoneyBase;
         CurrentReputation = GameDatabase.Instance.ReputationBase;
+        _orchestraManager.CreateStartingOrchestra();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
     }
@@ -96,7 +99,5 @@ public class RunManager : MonoBehaviour
                 break;
         }
     }
-
-
 
 }

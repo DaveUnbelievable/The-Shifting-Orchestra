@@ -1,5 +1,9 @@
+using System;
+
+[Serializable]
 public class Musician
 {
+    public string Name; // TODO: create random name generator
     public Enums.InstrumentType InstrumentType;
-    // TODO: Body Parts
+    // TODO: random Body Parts -> Generator
 }
