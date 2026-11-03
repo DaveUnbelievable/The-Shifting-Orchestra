@@ -1,24 +1,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrchestraManager
+public class OrchestraManager : MonoBehaviour
 {
+    #region Singleton
+    public static OrchestraManager Instance { get; private set; }
+    void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion
+
+    // are there active/inactive instrument groups? currently all would be active
     public List<InstrumentGroup> orchestra;
     public int KeyChange;
-    public int Tempo;
+    public float Tempo;
+
+    public Dictionary<Enums.InstrumentType, GameObject> InstrumentGroupObjects;
 
     public void CreateStartingOrchestra()
     {
         orchestra = new List<InstrumentGroup>();
+        InstrumentGroupObjects = new Dictionary<Enums.InstrumentType, GameObject>();
         foreach (StartingInstrumentGroup startingGroup in GameDatabase.Instance.StartingInstrumentGroups)
         {
-            // create instrument group
-            InstrumentGroup instrumentGroup = new InstrumentGroup
+            // create gameobject for instrument group
+            GameObject instrumentGroupObject = new GameObject
             {
-                InstrumentType = startingGroup.InstrumentType,
-                MusicalRole = startingGroup.MusicalRole,
-                Volume = startingGroup.Volume,
+                name = startingGroup.InstrumentType.ToString()
             };
+            instrumentGroupObject.transform.parent = transform;
+            // add gameobject to list
+            InstrumentGroupObjects.Add(startingGroup.InstrumentType, instrumentGroupObject);
+            // create instrument group
+            InstrumentGroup instrumentGroup = instrumentGroupObject.AddComponent<InstrumentGroup>();
+            instrumentGroup.InstrumentType = startingGroup.InstrumentType;
+            instrumentGroup.MusicalRole = startingGroup.MusicalRole;
+            instrumentGroup.Volume = startingGroup.Volume;
             // create musicians for the instrument group
             for (int i = 0; i < startingGroup.Amount; i++)
             {
@@ -29,7 +53,7 @@ public class OrchestraManager
         }
     }
 
-    public void ChangeMusicalRoleAssignment(Enums.MusicalRoles role, InstrumentGroup instrumentGroup)
+    public void ChangeMusicalRoleAssignment(Enums.MusicalRole role, InstrumentGroup instrumentGroup)
     {
         instrumentGroup.MusicalRole = role;
     }

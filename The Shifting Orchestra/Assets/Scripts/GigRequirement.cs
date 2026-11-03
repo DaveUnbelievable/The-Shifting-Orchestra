@@ -2,7 +2,7 @@ using System;
 
 public class GigRequirement
 {
-    public Tuple<Enums.InstrumentType, Enums.MusicalRoles> RequiredInstruments { get; private set; }
+    public Tuple<Enums.InstrumentType, Enums.MusicalRole> RequiredInstruments { get; private set; }
     public int? PreferredTempo { get; private set; }
     public int? PreferredVolume { get; private set; }
     public int Weight;
@@ -14,9 +14,9 @@ public class GigRequirement
             case Enums.GigRequirementType.INSTRUMENTS:
                 // get random instrument type and musical role
                 Enums.InstrumentType instrumentType = (Enums.InstrumentType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Enums.InstrumentType)).Length);
-                Enums.MusicalRoles musicalRole = (Enums.MusicalRoles)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Enums.MusicalRoles)).Length);
+                Enums.MusicalRole musicalRole = (Enums.MusicalRole)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Enums.MusicalRole)).Length);
                 // create a tuple of the instrument type and musical role as requirement
-                RequiredInstruments = new Tuple<Enums.InstrumentType, Enums.MusicalRoles>(instrumentType, musicalRole);
+                RequiredInstruments = new Tuple<Enums.InstrumentType, Enums.MusicalRole>(instrumentType, musicalRole);
                 break;
             case Enums.GigRequirementType.TEMPO:
                 // Random between 70 and 130

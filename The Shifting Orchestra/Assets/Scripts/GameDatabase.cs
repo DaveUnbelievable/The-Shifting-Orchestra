@@ -23,11 +23,11 @@ public class GameDatabase : MonoBehaviour
     public int MoneyBase = 100;
     // starting orchestra
     public List<StartingInstrumentGroup> StartingInstrumentGroups = new List<StartingInstrumentGroup>() {
-        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.STRINGS, MusicalRole = Enums.MusicalRoles.MELODY, Amount = 2, Volume = 70 },
-        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.BRASS, MusicalRole = Enums.MusicalRoles.HARMONY, Amount = 1, Volume = 70 },
-        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.PIANO, MusicalRole = Enums.MusicalRoles.BASS, Amount = 1, Volume = 70 },
-        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.PERCUSSION, MusicalRole = Enums.MusicalRoles.RHYTHM, Amount = 1, Volume = 70 },
-        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.CHOIR, MusicalRole = Enums.MusicalRoles.ACCENTS_FILLS, Amount = 2, Volume = 70 },
+        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.STRINGS, MusicalRole = Enums.MusicalRole.MELODY, Amount = 2, Volume = 70 },
+        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.BRASS, MusicalRole = Enums.MusicalRole.HARMONY, Amount = 1, Volume = 70 },
+        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.PIANO, MusicalRole = Enums.MusicalRole.BASS, Amount = 1, Volume = 70 },
+        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.PERCUSSION, MusicalRole = Enums.MusicalRole.RHYTHM, Amount = 1, Volume = 70 },
+        new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.CHOIR, MusicalRole = Enums.MusicalRole.ACCENTS_FILLS, Amount = 2, Volume = 70 },
     };
     // base and max reputation
     public int ReputationBase = 10;
@@ -45,6 +45,9 @@ public class GameDatabase : MonoBehaviour
     public int GigPreferredVolumeMax = 100;
     // base volume
     public int VolumeBase = 70;
+    // max and min volume
+    public int VolumeMin = 0;
+    public int VolumeMax = 100;
     // skin colors
     public List<Color> SkinColors = new List<Color>() {
         new Color(1f, 0.8f, 0.6f), // light

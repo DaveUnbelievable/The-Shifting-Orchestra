@@ -1,16 +1,75 @@
+using System.Collections.Generic;
+using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MusicManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Composition composition;
+
+    private List<AudioSource> audioSources;
+
+    [Button("Play Music")]
+    public void PlayComposition( )
     {
+        // get the orchestra arrangement; which instrument plays which musical role
+        // set volume per audio clip
+        // set tempo and key of the composition
+        // play audio clips according to the arrangement
+
+        audioSources = new List<AudioSource>();
+
+        foreach (InstrumentGroup instrumentGroup in OrchestraManager.Instance.orchestra)
+        {
+            if (OrchestraManager.Instance.InstrumentGroupObjects.ContainsKey(instrumentGroup.InstrumentType))
+            {
+                AudioSource audioSource = OrchestraManager.Instance.InstrumentGroupObjects[instrumentGroup.InstrumentType].AddComponent<AudioSource>();
+                // set correct audio clip
+                audioSource.clip = GetCorrectAudioClip(instrumentGroup.InstrumentType, instrumentGroup.MusicalRole);
+                audioSource.volume = (float)instrumentGroup.Volume / (float)GameDatabase.Instance.VolumeMax;
+                audioSource.pitch = OrchestraManager.Instance.Tempo;
+                audioSources.Add(audioSource);
+            }
+        }
+
+
+        // get position of instruments in the orchestra
+        // place audio sources on the scene on the instruments
+        // audio listener on the conductor
+        // play all audio at the same time
+
+
+        double startTime = AudioSettings.dspTime + 0.1;
+        for (int i = 0; i < audioSources.Count; i++)
+        {
+            audioSources[i].PlayScheduled(startTime);
+        }
         
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private AudioClip GetCorrectAudioClip(Enums.InstrumentType instrumentType, Enums.MusicalRole musicalRole)
     {
-        
+        AudioClip clip = null;
+        foreach (AudioClipData audioClipData in composition.AudioClips)
+        {
+            if (audioClipData.instrument == instrumentType && audioClipData.musicalRole == musicalRole)
+            {
+                // TODO: get clip with the right key and speed
+                // clip = audioClipData.audioClip;
+            }
+        }
+        if (clip == null)
+        {
+            Debug.LogWarning($"AudioClip für {instrumentType} - {musicalRole} fehlt!");
+        }
+        return clip;
     }
+
+    private void RemoveAllAudioSources()
+    {
+        // TODO
+    }
+
 }

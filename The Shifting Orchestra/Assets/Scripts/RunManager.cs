@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class RunManager : MonoBehaviour
@@ -18,8 +19,9 @@ public class RunManager : MonoBehaviour
     #endregion
 
     private GigManager _gigManager;
-    private OrchestraManager _orchestraManager;
     private PerformanceManager _performanceManager;
+
+    //  OrchestraManager OrchestraManager;
 
     private Enums.RunState _currentRunState;
     public Enums.RunState CurrentRunState {
@@ -38,23 +40,19 @@ public class RunManager : MonoBehaviour
     private GigOffer _chosenGigOffer;
     private bool _runFinished;
 
-    // TEMP
-    public void Start() {
-        StartRun();
-    }
-    // TEMP
-
+    [Button("Start Run")]
     public void StartRun() {
         // initialize
         _gigManager = new GigManager();
-        _orchestraManager = new OrchestraManager();
+        // _orchestraManager = new OrchestraManager();
         _performanceManager = new PerformanceManager();
         // set base values
         _currentGigIndex = 0;
         _runFinished = false;
         CurrentMoney = GameDatabase.Instance.MoneyBase;
         CurrentReputation = GameDatabase.Instance.ReputationBase;
-        _orchestraManager.CreateStartingOrchestra();
+        // _orchestraManager.CreateStartingOrchestra();
+        OrchestraManager.Instance.CreateStartingOrchestra();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
     }
@@ -76,7 +74,8 @@ public class RunManager : MonoBehaviour
                 _gigManager.StartGig(_chosenGigOffer);
                 break;
             case Enums.RunState.EVALUATION:
-                _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
+                _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
+                // _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
                 // TODO: get performance score
                 // TODO: get money and reputation reward based on performance score
                 break;
