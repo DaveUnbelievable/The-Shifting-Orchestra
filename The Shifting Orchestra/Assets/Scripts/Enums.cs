@@ -53,4 +53,16 @@ public static class Enums
         TEMPO,
         VOLUME,
     }
+
+    public enum OrchestraPositionType
+    {
+        FRONT_CENTER,
+        FRONT_LEFT,
+        FRONT_RIGHT,
+        BACK_CENTER,
+        BACK_LEFT,
+        BACK_RIGHT,
+        BACK_FULL,
+        SOLO,
+    }
 }

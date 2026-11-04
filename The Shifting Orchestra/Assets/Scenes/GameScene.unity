@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 40826974}
   - component: {fileID: 40826975}
   m_Layer: 0
-  m_Name: Conductor
+  m_Name: conductor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 40826972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,6 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1311056228}
   - component: {fileID: 1311056229}
+  - component: {fileID: 1311056230}
   m_Layer: 0
   m_Name: Orchestra
   m_TagString: Untagged
@@ -520,9 +521,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b89b2e72a66524d959955286a4aa5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrchestraManager
-  orchestra: []
+  Orchestra: []
   KeyChange: 0
   Tempo: 0
+--- !u!114 &1311056230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311056227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d25cb2885619434cb3e37974753904c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrchestraLayout
+  PositionsSeats: 5
+  SeatDistance: 1
+  SeatPrefab: {fileID: 1670069806650063671, guid: 18ffba2553a4dce4c90cefae1fe4ed3f, type: 3}
+  Conductor: {fileID: 40826972}
+  PositionDefinitions:
+  - PositionType: 0
+    Offset: {x: 0, y: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 0
+  - PositionType: 1
+    Offset: {x: -3, y: -0.75}
+    Rotation: {x: 0, y: 0, z: 0.25881904, w: 0.9659258}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 0
+  - PositionType: 2
+    Offset: {x: 3, y: -0.75}
+    Rotation: {x: 0, y: 0, z: -0.25881904, w: 0.9659258}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 1
+  - PositionType: 3
+    Offset: {x: 0, y: 2.5}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 2
+  - PositionType: 4
+    Offset: {x: -3, y: 1.75}
+    Rotation: {x: 0, y: 0, z: 0.25881904, w: 0.9659258}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 3
+  - PositionType: 5
+    Offset: {x: 3, y: 1.75}
+    Rotation: {x: 0, y: 0, z: -0.25881904, w: 0.9659258}
+    Rows: 2
+    Columns: 3
+    MusicalRole: 4
+  - PositionType: 6
+    Offset: {x: 0, y: 5}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Rows: 1
+    Columns: 9
+    MusicalRole: 5
 --- !u!1 &1701653130
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,46 +13,54 @@ MonoBehaviour:
   m_Name: Test_Composition
   m_EditorClassIdentifier: Assembly-CSharp::Composition
   Name: Test Composition
-  Key: 0
+  Key: 3
   Tempo: 90
   AudioClips:
   - DisplayName: BRASS - HARMONY
     instrument: 2
     musicalRole: 2
-    audioClip: {fileID: 8300000, guid: b5c2afafe007b0c44805cb25f3194af2, type: 3}
+    audioClips:
+    - DisplayName: C_MAJOR - NORMAL
+      audioClip: {fileID: 8300000, guid: b5c2afafe007b0c44805cb25f3194af2, type: 3}
+      audioClipKey: 3
+      audioClipSpeed: 2
+    - DisplayName: C_MAJOR - NORMAL
+      audioClip: {fileID: 8300000, guid: b5c2afafe007b0c44805cb25f3194af2, type: 3}
+      audioClipKey: 3
+      audioClipSpeed: 2
   - DisplayName: BRASS - MELODY
     instrument: 2
     musicalRole: 0
-    audioClip: {fileID: 8300000, guid: 83f268a89c0bb3a48b00246aac830f29, type: 3}
+    audioClips: []
   - DisplayName: MALLET_PERCUSSION - HARMONY
     instrument: 6
     musicalRole: 2
-    audioClip: {fileID: 8300000, guid: 235030f1bfe394f4281b3c0259712674, type: 3}
+    audioClips: []
   - DisplayName: MALLET_PERCUSSION - MELODY
     instrument: 6
     musicalRole: 0
-    audioClip: {fileID: 8300000, guid: 1611745abaab1244b89eeed98c26dcbd, type: 3}
+    audioClips: []
   - DisplayName: PIANO - MELODY
     instrument: 4
     musicalRole: 0
-    audioClip: {fileID: 8300000, guid: f2ec20c340e2eb84ba9fd2cfe20dfa61, type: 3}
+    audioClips: []
   - DisplayName: PIANO - HARMONY
     instrument: 4
     musicalRole: 2
-    audioClip: {fileID: 8300000, guid: ecf0e1d91f0878a4e99acaa0903c2af9, type: 3}
+    audioClips: []
   - DisplayName: STRINGS - MELODY
     instrument: 0
     musicalRole: 0
-    audioClip: {fileID: 8300000, guid: a41ecf2ed915d6e4a88a4c8f1848720a, type: 3}
+    audioClips: []
   - DisplayName: STRINGS - HARMONY
     instrument: 0
     musicalRole: 2
-    audioClip: {fileID: 8300000, guid: 90018b698142d0743b141c78059d20a2, type: 3}
+    audioClips: []
   - DisplayName: WOODWINDS - MELODY
     instrument: 1
     musicalRole: 0
-    audioClip: {fileID: 8300000, guid: ee4f97e655e6340488920e905512167e, type: 3}
+    audioClips: []
   - DisplayName: WOODWINDS - HARMONY
     instrument: 1
     musicalRole: 2
-    audioClip: {fileID: 8300000, guid: b221a3b19f9187c4a9cf5dcd775306df, type: 3}
+    audioClips: []

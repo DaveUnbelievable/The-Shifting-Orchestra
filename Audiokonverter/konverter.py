@@ -2,6 +2,8 @@ import os
 import librosa
 import soundfile as sf
 
+# created from google chat AI
+
 # ERMITTELT DEN AKTUELLEN ORDNER DES SKRIPTS (Egal wo er liegt)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 

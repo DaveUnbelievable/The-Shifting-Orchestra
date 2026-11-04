@@ -18,7 +18,7 @@ public class OrchestraManager : MonoBehaviour
     #endregion
 
     // are there active/inactive instrument groups? currently all would be active
-    public List<InstrumentGroup> orchestra;
+    public List<InstrumentGroup> Orchestra;
     public int KeyChange;
     public float Tempo;
 
@@ -26,7 +26,7 @@ public class OrchestraManager : MonoBehaviour
 
     public void CreateStartingOrchestra()
     {
-        orchestra = new List<InstrumentGroup>();
+        Orchestra = new List<InstrumentGroup>();
         InstrumentGroupObjects = new Dictionary<Enums.InstrumentType, GameObject>();
         foreach (StartingInstrumentGroup startingGroup in GameDatabase.Instance.StartingInstrumentGroups)
         {
@@ -49,8 +49,10 @@ public class OrchestraManager : MonoBehaviour
                 instrumentGroup.Musicians.Add(MusicianGenerator.GenerateRandomMusician(startingGroup.InstrumentType));
             }
             // add to orchestra
-            orchestra.Add(instrumentGroup);
+            Orchestra.Add(instrumentGroup);
         }
+        // show orchestra in layout
+        OrchestraLayout.Instance.ShowOrchestra();
     }
 
     public void ChangeMusicalRoleAssignment(Enums.MusicalRole role, InstrumentGroup instrumentGroup)

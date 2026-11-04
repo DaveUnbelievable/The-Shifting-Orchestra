@@ -20,7 +20,7 @@ public class MusicManager : MonoBehaviour
 
         audioSources = new List<AudioSource>();
 
-        foreach (InstrumentGroup instrumentGroup in OrchestraManager.Instance.orchestra)
+        foreach (InstrumentGroup instrumentGroup in OrchestraManager.Instance.Orchestra)
         {
             if (OrchestraManager.Instance.InstrumentGroupObjects.ContainsKey(instrumentGroup.InstrumentType))
             {
