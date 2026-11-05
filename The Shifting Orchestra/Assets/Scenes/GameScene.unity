@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrchestraManager
   Orchestra: []
-  KeyChange: 0
-  Tempo: 0
+  Key: 3
+  Tempo: 2
 --- !u!114 &1311056230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
     MusicalRole: 5
     Amount: 1
     Volume: 70
-  - InstrumentType: 5
+  - InstrumentType: 6
     MusicalRole: 4
     Amount: 2
     Volume: 70

@@ -6,7 +6,7 @@ public class AudioClipVariant
 {
     [HideInInspector]
     public string DisplayName;
-    public AudioClip audioClip;
-    public Enums.AudioClipKey audioClipKey;
-    public Enums.AudioClipSpeed audioClipSpeed;
+    public AudioClip Clip;
+    public Enums.AudioClipKey ClipKey;
+    public Enums.AudioClipSpeed ClipSpeed;
 }

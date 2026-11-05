@@ -19,9 +19,31 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 # rate  = Geschwindigkeit (1.2 = 20% schneller, 0.8 = 20% langsamer)
 # steps = Tonhöhe in Halbtönen (+2 = zwei Töne höher, -2 = zwei Töne tiefer)
 varianten = {
-    "schnell_gleicher_pitch": {"rate": 1.2, "steps": 0.0},
-    "normal_hoeherer_pitch":  {"rate": 1.0, "steps": 2.0},
-    "langsam_tieferer_pitch": {"rate": 0.8, "steps": -2.0}
+    "A_MAJOR-SLOWEST": {"rate": 0.6, "steps": -4.0}, # passt theoretisch nicht ganz weils hier nur 3 Halbtonschritte wären.. aber das ist egal
+    "A_MAJOR-SLOWER": {"rate": 0.8, "steps": -4.0}, # passt theoretisch nicht ganz weils hier nur 3 Halbtonschritte wären.. aber das ist egal
+    "A_MAJOR-NORMAL": {"rate": 1.0, "steps": -4.0}, # passt theoretisch nicht ganz weils hier nur 3 Halbtonschritte wären.. aber das ist egal
+    "A_MAJOR-FASTER": {"rate": 1.2, "steps": -4.0}, # passt theoretisch nicht ganz weils hier nur 3 Halbtonschritte wären.. aber das ist egal
+    "A_MAJOR-FASTEST": {"rate": 1.4, "steps": -4.0}, # passt theoretisch nicht ganz weils hier nur 3 Halbtonschritte wären.. aber das ist egal
+    "B_MAJOR-SLOWEST": {"rate": 0.6, "steps": -2.0}, # passt theoretisch nicht ganz weils hier nur 1 Halbtonschritt wäre.. aber das ist egal
+    "B_MAJOR-SLOWER": {"rate": 0.8, "steps": -2.0}, # passt theoretisch nicht ganz weils hier nur 1 Halbtonschritt wäre.. aber das ist egal
+    "B_MAJOR-NORMAL": {"rate": 1.0, "steps": -2.0}, # passt theoretisch nicht ganz weils hier nur 1 Halbtonschritt wäre.. aber das ist egal
+    "B_MAJOR-FASTER": {"rate": 1.2, "steps": -2.0}, # passt theoretisch nicht ganz weils hier nur 1 Halbtonschritt wäre.. aber das ist egal
+    "B_MAJOR-FASTEST": {"rate": 1.4, "steps": -2.0}, # passt theoretisch nicht ganz weils hier nur 1 Halbtonschritt wäre.. aber das ist egal
+    "C_MAJOR-SLOWEST": {"rate": 0.6, "steps": 0.0},
+    "C_MAJOR-SLOWER": {"rate": 0.8, "steps": 0.0},
+    "C_MAJOR-NORMAL": {"rate": 1.0, "steps": 0.0},
+    "C_MAJOR-FASTER": {"rate": 1.2, "steps": 0.0},
+    "C_MAJOR-FASTEST": {"rate": 1.4, "steps": 0.0},
+    "D_MAJOR-SLOWEST": {"rate": 0.6, "steps": 2.0},
+    "D_MAJOR-SLOWER": {"rate": 0.8, "steps": 2.0},
+    "D_MAJOR-NORMAL": {"rate": 1.0, "steps": 2.0},
+    "D_MAJOR-FASTER": {"rate": 1.2, "steps": 2.0},
+    "D_MAJOR-FASTEST": {"rate": 1.4, "steps": 2.0},
+    "E_MAJOR-SLOWEST": {"rate": 0.6, "steps": 4.0},
+    "E_MAJOR-SLOWER": {"rate": 0.8, "steps": 4.0},
+    "E_MAJOR-NORMAL": {"rate": 1.0, "steps": 4.0},
+    "E_MAJOR-FASTER": {"rate": 1.2, "steps": 4.0},
+    "E_MAJOR-FASTEST": {"rate": 1.4, "steps": 4.0},
 }
 
 # Alle Audiodateien im Eingabe-Ordner verarbeiten
@@ -54,7 +76,7 @@ for filename in files:
                 y_modified = librosa.effects.pitch_shift(y_modified, sr=sr, n_steps=settings["steps"])
             
             # Zielname bauen (z.B. songname_schnell_gleicher_pitch.wav)
-            output_name = f"{base_name}_{name}.wav"
+            output_name = f"{base_name}-{name}.wav"
             output_path = os.path.join(OUTPUT_FOLDER, output_name)
             
             # Speichern

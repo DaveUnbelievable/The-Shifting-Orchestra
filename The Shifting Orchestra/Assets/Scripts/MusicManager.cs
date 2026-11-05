@@ -13,6 +13,9 @@ public class MusicManager : MonoBehaviour
     [Button("Play Music")]
     public void PlayComposition( )
     {
+        // remove previous audio sources
+        RemoveAllAudioSources();
+
         // get the orchestra arrangement; which instrument plays which musical role
         // set volume per audio clip
         // set tempo and key of the composition
@@ -26,9 +29,8 @@ public class MusicManager : MonoBehaviour
             {
                 AudioSource audioSource = OrchestraManager.Instance.InstrumentGroupObjects[instrumentGroup.InstrumentType].AddComponent<AudioSource>();
                 // set correct audio clip
-                audioSource.clip = GetCorrectAudioClip(instrumentGroup.InstrumentType, instrumentGroup.MusicalRole);
+                audioSource.clip = GetCorrectAudioClip(instrumentGroup.InstrumentType, instrumentGroup.MusicalRole, OrchestraManager.Instance.Key, OrchestraManager.Instance.Tempo);
                 audioSource.volume = (float)instrumentGroup.Volume / (float)GameDatabase.Instance.VolumeMax;
-                audioSource.pitch = OrchestraManager.Instance.Tempo;
                 audioSources.Add(audioSource);
             }
         }
@@ -49,27 +51,40 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    private AudioClip GetCorrectAudioClip(Enums.InstrumentType instrumentType, Enums.MusicalRole musicalRole)
+    private AudioClip GetCorrectAudioClip(Enums.InstrumentType instrumentType, Enums.MusicalRole musicalRole, Enums.AudioClipKey key, Enums.AudioClipSpeed speed)
     {
         AudioClip clip = null;
+        // get audipclipdata with right instrument type and musical role
         foreach (AudioClipData audioClipData in composition.AudioClips)
         {
             if (audioClipData.instrument == instrumentType && audioClipData.musicalRole == musicalRole)
             {
-                // TODO: get clip with the right key and speed
-                // clip = audioClipData.audioClip;
+                // get clip with the right key and speed
+                foreach (AudioClipVariant variant in audioClipData.audioClips)
+                {
+                    if (variant.ClipKey == key && variant.ClipSpeed == speed)
+                    {
+                        clip = variant.Clip;
+                    }
+                }
             }
         }
         if (clip == null)
         {
-            Debug.LogWarning($"AudioClip für {instrumentType} - {musicalRole} fehlt!");
+            Debug.LogWarning($"AudioClip für {instrumentType} - {musicalRole} - {key} - {speed} fehlt!");
         }
         return clip;
     }
 
     private void RemoveAllAudioSources()
     {
-        // TODO
+        if (audioSources != null)
+        {
+            foreach (AudioSource audioSource in audioSources)
+            {
+                Destroy(audioSource);
+            }
+        }
     }
 
 }

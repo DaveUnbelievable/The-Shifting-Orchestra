@@ -19,8 +19,8 @@ public class OrchestraManager : MonoBehaviour
 
     // are there active/inactive instrument groups? currently all would be active
     public List<InstrumentGroup> Orchestra;
-    public int KeyChange;
-    public float Tempo;
+    public Enums.AudioClipKey Key;
+    public Enums.AudioClipSpeed Tempo;
 
     public Dictionary<Enums.InstrumentType, GameObject> InstrumentGroupObjects;
 
@@ -58,16 +58,6 @@ public class OrchestraManager : MonoBehaviour
     public void ChangeMusicalRoleAssignment(Enums.MusicalRole role, InstrumentGroup instrumentGroup)
     {
         instrumentGroup.MusicalRole = role;
-    }
-
-    public void ChangeKey(int addKey)
-    {
-        KeyChange += addKey;
-    }
-
-    public void SetTempo(int newTempo)
-    {
-        Tempo = newTempo;
     }
 
     public void SetVolume(InstrumentGroup instrumentGroup, int newVolume)
