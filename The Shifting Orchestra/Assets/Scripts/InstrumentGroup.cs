@@ -9,7 +9,7 @@ public class InstrumentGroup : MonoBehaviour
     public Enums.InstrumentType InstrumentType;
     public Enums.MusicalRole MusicalRole;
     public List<Musician> Musicians;
-    public int Volume;
+    public float Volume;
 
     public InstrumentGroup()
     {

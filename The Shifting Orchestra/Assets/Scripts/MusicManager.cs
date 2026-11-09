@@ -30,7 +30,7 @@ public class MusicManager : MonoBehaviour
                 AudioSource audioSource = OrchestraManager.Instance.InstrumentGroupObjects[instrumentGroup.InstrumentType].AddComponent<AudioSource>();
                 // set correct audio clip
                 audioSource.clip = GetCorrectAudioClip(instrumentGroup.InstrumentType, instrumentGroup.MusicalRole, OrchestraManager.Instance.Key, OrchestraManager.Instance.Tempo);
-                audioSource.volume = (float)instrumentGroup.Volume / (float)GameDatabase.Instance.VolumeMax;
+                audioSource.volume = instrumentGroup.Volume / GameDatabase.Instance.VolumeMax;
                 audioSources.Add(audioSource);
             }
         }

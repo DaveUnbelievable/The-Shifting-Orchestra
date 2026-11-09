@@ -41,13 +41,13 @@ public class GameDatabase : MonoBehaviour
     public int GigPreferredTempoMin = 70;
     public int GigPreferredTempoMax = 130;
     // minimum and maximum preferred volume for a gig requirement
-    public int GigPreferredVolumeMin = 50;
-    public int GigPreferredVolumeMax = 100;
+    public float GigPreferredVolumeMin = 50;
+    public float GigPreferredVolumeMax = 100;
     // base volume
-    public int VolumeBase = 70;
+    public float VolumeBase = 70;
     // max and min volume
-    public int VolumeMin = 0;
-    public int VolumeMax = 100;
+    public float VolumeMin = 20;
+    public float VolumeMax = 100;
     // skin colors
     public List<Color> SkinColors = new List<Color>() {
         new Color(1f, 0.8f, 0.6f), // light

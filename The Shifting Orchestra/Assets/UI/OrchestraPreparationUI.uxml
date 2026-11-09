@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_orchestra_prep" style="flex-grow: 1;">
+        <ui:VisualElement name="vel_full_orchestra_change" style="flex-grow: 1;">
+            <ui:DropdownField label="key" name="drp_key_change"/>
+            <ui:DropdownField label="tempo" name="drp_tempo_change"/>
+            <ui:DropdownField label="instrument group" name="drp_instrument_group"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="vel_instrument_group_changes" style="flex-grow: 1;">
+            <ui:Slider label="Volume" value="70" high-value="100" name="sld_volume_change" low-value="20"/>
+            <ui:DropdownField label="musical role" name="drp_musical_role"/>
+            <ui:ListView name="liv_musicians"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -4,7 +4,7 @@ public class GigRequirement
 {
     public Tuple<Enums.InstrumentType, Enums.MusicalRole> RequiredInstruments { get; private set; }
     public int? PreferredTempo { get; private set; }
-    public int? PreferredVolume { get; private set; }
+    public float? PreferredVolume { get; private set; }
     public int Weight;
 
     public GigRequirement(Enums.GigRequirementType requirementType, int weight)
