@@ -1,0 +1,11 @@
+Orchestral-Choir-Chamber Choir
+Orchestral-Woodwinds-Oboe
+Orchestral-Strings-String Ensemble
+Orchestral-Brass-Full Brass
+Piano-Steinway Grand Piano
+Mallet-Vibraphone
+Orchestral-Percussion-Orchestra Kit
+
+
+manual changes:
+mallet_percussion-bass --> distorted

@@ -6,6 +6,20 @@ using UnityEngine.UIElements;
 
 public class MusicManager : MonoBehaviour
 {
+    #region Singleton
+    public static MusicManager Instance { get; private set; }
+    void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion
+
     public Composition composition;
 
     private List<AudioSource> audioSources;

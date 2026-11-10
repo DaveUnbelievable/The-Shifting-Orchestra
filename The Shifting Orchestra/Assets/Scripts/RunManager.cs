@@ -52,6 +52,7 @@ public class RunManager : MonoBehaviour
         CurrentMoney = GameDatabase.Instance.MoneyBase;
         CurrentReputation = GameDatabase.Instance.ReputationBase;
         // _orchestraManager.CreateStartingOrchestra();
+        OrchestraLayout.Instance.GenerateLayout();
         OrchestraManager.Instance.CreateStartingOrchestra();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
@@ -130,6 +131,7 @@ public class RunManager : MonoBehaviour
             case Enums.RunState.GIG_OFFERS:
                 break;
             case Enums.RunState.PREPARATION:
+                // TODO: hide ui
                 break;
         }
     }

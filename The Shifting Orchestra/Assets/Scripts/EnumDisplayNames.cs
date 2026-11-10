@@ -27,7 +27,6 @@ public static class EnumDisplayNames
         {Enums.InstrumentType.MALLET_PERCUSSION, "mallet percussion"},
         {Enums.InstrumentType.PERCUSSION, "percussion"},
         {Enums.InstrumentType.PIANO, "piano"},
-        {Enums.InstrumentType.PLUCKED_STRINGS, "plucked strings"},
         {Enums.InstrumentType.STRINGS, "strings"},
         {Enums.InstrumentType.WOODWINDS, "woodwinds"},
     };

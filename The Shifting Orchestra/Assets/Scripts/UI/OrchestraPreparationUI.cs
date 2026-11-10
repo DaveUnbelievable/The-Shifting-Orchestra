@@ -12,6 +12,7 @@ public class OrchestraPreparationUI : MonoBehaviour
     private Slider sld_volume_change;
     private DropdownField drp_musical_role;
     private ListView liv_musicians;
+    private Button btn_perform_gig;
 
     private InstrumentGroup currentSelectedInstrumentGroup;
 
@@ -54,6 +55,9 @@ public class OrchestraPreparationUI : MonoBehaviour
         );
         // musicians
         liv_musicians = root.Q<ListView>("liv_musicians");
+        // perform gig button
+        btn_perform_gig = root.Q<Button>("btn_perform_gig");
+        btn_perform_gig.RegisterCallback<ClickEvent>(PerformGig);
     }
     
     private void KeyChanged(Enums.AudioClipKey key)
@@ -86,12 +90,12 @@ public class OrchestraPreparationUI : MonoBehaviour
 
     private void MusicalRoleChanged(Enums.MusicalRole role)
     {
-        currentSelectedInstrumentGroup.MusicalRole = role;
+        OrchestraManager.Instance.ChangeMusicalRoleAssignment(currentSelectedInstrumentGroup, role);
     }
 
     private void VolumeChanged(float volume)
     {
-        currentSelectedInstrumentGroup.Volume = volume;
+        OrchestraManager.Instance.SetVolume(currentSelectedInstrumentGroup, volume);
     }
 
     private void SetupEnumDropdown<T>(DropdownField dropdown, Action<T> onSelected, Func<T, string> getDisplayName = null) where T : Enum
@@ -110,5 +114,11 @@ public class OrchestraPreparationUI : MonoBehaviour
                 onSelected(values[index]);
             }
         });
+    }
+
+    private void PerformGig(ClickEvent evt)
+    {
+        // set gig as current run state
+        RunManager.Instance.CurrentRunState = Enums.RunState.GIG;
     }
 }

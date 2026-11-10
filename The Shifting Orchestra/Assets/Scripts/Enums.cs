@@ -4,7 +4,6 @@ public static class Enums
         STRINGS,
         WOODWINDS,
         BRASS,
-        PLUCKED_STRINGS,
         PIANO,
         CHOIR,
         MALLET_PERCUSSION,

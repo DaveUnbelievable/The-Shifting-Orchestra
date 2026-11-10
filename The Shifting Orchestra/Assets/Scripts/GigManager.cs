@@ -22,7 +22,7 @@ public class GigManager
         // TODO: play music for gig
         // TODO: after music is finished, go to evaluation state
 
-        
+        MusicManager.Instance.PlayComposition();
     }
 
 

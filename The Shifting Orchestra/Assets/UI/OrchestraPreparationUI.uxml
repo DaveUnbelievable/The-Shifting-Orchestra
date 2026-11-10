@@ -10,5 +10,6 @@
             <ui:DropdownField label="musical role" name="drp_musical_role"/>
             <ui:ListView name="liv_musicians"/>
         </ui:VisualElement>
+        <ui:Button text="perform gig" name="btn_perform_gig"/>
     </ui:VisualElement>
 </ui:UXML>

@@ -55,12 +55,14 @@ public class OrchestraManager : MonoBehaviour
         OrchestraLayout.Instance.ShowOrchestra();
     }
 
-    public void ChangeMusicalRoleAssignment(Enums.MusicalRole role, InstrumentGroup instrumentGroup)
+    public void ChangeMusicalRoleAssignment(InstrumentGroup instrumentGroup, Enums.MusicalRole role)
     {
+        // TODO: check if there are enough seats for the instrument group in the musical role
         instrumentGroup.MusicalRole = role;
+        OrchestraLayout.Instance.ShowOrchestra();
     }
 
-    public void SetVolume(InstrumentGroup instrumentGroup, int newVolume)
+    public void SetVolume(InstrumentGroup instrumentGroup, float newVolume)
     {
         instrumentGroup.Volume = newVolume;
     }
@@ -68,6 +70,5 @@ public class OrchestraManager : MonoBehaviour
     // TODO:
     // recruit musician
     // fire musician
-    // change position of instrument group in orchestra
     
 }

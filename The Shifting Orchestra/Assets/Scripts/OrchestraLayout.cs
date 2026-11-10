@@ -26,7 +26,6 @@ public class OrchestraLayout : MonoBehaviour
 
     private List<GameObject> orchestraPositionObjects;
 
-    [Button("GenerateLayout")]
     public void GenerateLayout()
     {
         // delete current positions
