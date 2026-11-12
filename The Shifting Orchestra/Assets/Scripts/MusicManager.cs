@@ -62,6 +62,8 @@ public class MusicManager : MonoBehaviour
             audioSources[i].PlayScheduled(startTime);
         }
         
+        // TODO: wait until audio is finished and then change state
+        RunManager.Instance.CurrentRunState = Enums.RunState.EVALUATION;
 
     }
 

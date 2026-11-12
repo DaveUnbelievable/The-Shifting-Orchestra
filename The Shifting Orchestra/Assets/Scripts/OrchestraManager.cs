@@ -23,6 +23,8 @@ public class OrchestraManager : MonoBehaviour
     public Enums.AudioClipSpeed Tempo;
 
     public Dictionary<Enums.InstrumentType, GameObject> InstrumentGroupObjects;
+    
+    // TODO: save musicians better
 
     public void CreateStartingOrchestra()
     {

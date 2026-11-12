@@ -71,22 +71,13 @@ public class RunManager : MonoBehaviour
         }
         // actions to perform when beginning a run state
         switch (newRunState) {
-            case Enums.RunState.GIG:
-                _gigManager.StartGig(_chosenGigOffer);
-                break;
-            case Enums.RunState.EVALUATION:
-                _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
-                // _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
-                // TODO: get performance score
-                // TODO: get money and reputation reward based on performance score
-                break;
             case Enums.RunState.GIG_OFFERS:
                 List<GigOffer> gigOffers = _gigManager.GetGigOffers();
                 foreach (GigOffer gigOffer in gigOffers) {
                     Debug.Log("Gig Offer: " + gigOffer.MoneyReward + " money, " + gigOffer.ReputationReward + " reputation, " + gigOffer.MinimumOrchestraSize + " minimum orchestra size");
                     foreach (GigRequirement requirement in gigOffer.Requirements) {
-                        if (requirement.RequiredInstruments != null) {
-                            Debug.Log("Requirement: " + requirement.RequiredInstruments.Item1 + " " + requirement.RequiredInstruments.Item2 + ", weight: " + requirement.Weight);
+                        if (requirement.PreferredInstrumentProminence != null) {
+                            Debug.Log("Requirement: " + requirement.PreferredInstrumentProminence.Item1 + " " + requirement.PreferredInstrumentProminence.Item2 + ", weight: " + requirement.Weight);
                         } else if (requirement.PreferredTempo != null) {
                             Debug.Log("Requirement: preferred tempo: " + requirement.PreferredTempo + ", weight: " + requirement.Weight);
                         } else if (requirement.PreferredVolume != null) {
@@ -94,8 +85,22 @@ public class RunManager : MonoBehaviour
                         }
                     }
                 }
+                // choose gig (temporarily just use the first)
+                _chosenGigOffer = gigOffers[0];
+                // change to preparation
+                CurrentRunState = Enums.RunState.PREPARATION;
                 break;
             case Enums.RunState.PREPARATION:
+                break;
+            case Enums.RunState.GIG:
+                _gigManager.StartGig(_chosenGigOffer);
+                break;
+            case Enums.RunState.EVALUATION:
+                Percentage performance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
+                Debug.Log($"performance: {performance.PercentageValue}% ({performance.RealValue}%)");
+                // _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
+                // TODO: get performance score
+                // TODO: get money and reputation reward based on performance score
                 break;
         }
     }
@@ -113,6 +118,11 @@ public class RunManager : MonoBehaviour
         }
         // actions to perform when finishing a run state
         switch (finishedRunState) {
+            case Enums.RunState.GIG_OFFERS:
+                break;
+            case Enums.RunState.PREPARATION:
+                // TODO: hide ui
+                break;
             case Enums.RunState.GIG:
                 _currentGigIndex++;
                 break;
@@ -127,11 +137,6 @@ public class RunManager : MonoBehaviour
                 {
                     EndRun(true);
                 }
-                break;
-            case Enums.RunState.GIG_OFFERS:
-                break;
-            case Enums.RunState.PREPARATION:
-                // TODO: hide ui
                 break;
         }
     }

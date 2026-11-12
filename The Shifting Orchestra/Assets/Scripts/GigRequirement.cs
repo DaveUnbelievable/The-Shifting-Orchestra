@@ -1,22 +1,25 @@
 using System;
+using UnityEngine.InputSystem.Android;
 
 public class GigRequirement
 {
-    public Tuple<Enums.InstrumentType, Enums.MusicalRole> RequiredInstruments { get; private set; }
+    public Enums.GigRequirementType RequirementType;
+    public Tuple<Enums.InstrumentType, int> PreferredInstrumentProminence { get; private set; }
     public int? PreferredTempo { get; private set; }
     public float? PreferredVolume { get; private set; }
     public int Weight;
 
     public GigRequirement(Enums.GigRequirementType requirementType, int weight)
     {
+        RequirementType = requirementType;
         Weight = weight;
         switch (requirementType) {
             case Enums.GigRequirementType.INSTRUMENTS:
                 // get random instrument type and musical role
                 Enums.InstrumentType instrumentType = (Enums.InstrumentType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Enums.InstrumentType)).Length);
-                Enums.MusicalRole musicalRole = (Enums.MusicalRole)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Enums.MusicalRole)).Length);
+                int preferredProminence = UnityEngine.Random.Range(0, 101);
                 // create a tuple of the instrument type and musical role as requirement
-                RequiredInstruments = new Tuple<Enums.InstrumentType, Enums.MusicalRole>(instrumentType, musicalRole);
+                PreferredInstrumentProminence = new Tuple<Enums.InstrumentType, int>(instrumentType, preferredProminence);
                 break;
             case Enums.GigRequirementType.TEMPO:
                 // Random between 70 and 130

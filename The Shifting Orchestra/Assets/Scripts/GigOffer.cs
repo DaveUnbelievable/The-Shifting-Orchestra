@@ -30,6 +30,7 @@ public class GigOffer
         }
         // amount of instrument requirements
         int instrumentRequirementAmount = Random.Range(GameDatabase.Instance.GigMinInstrumentRequirementAmount, GameDatabase.Instance.GigMaxInstrumentRequirementAmount + 1);
+        List<Enums.InstrumentType> usedInstrumentTypes = new List<Enums.InstrumentType>();
         for (int i = 0; i < instrumentRequirementAmount; i++)
         {
             int weight = GetRandomWeight();
@@ -37,7 +38,7 @@ public class GigOffer
             GigRequirement requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, weight);
             // check if the requirement already exists in the list of requirements and if so, generate a new requirement until a unique one is found
             int maxRetries = 0;
-            while (RequirementAlreadyExists(Requirements, requirement) && maxRetries < 15)
+            while (usedInstrumentTypes.Contains(requirement.PreferredInstrumentProminence.Item1))
             {
                 requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, weight);
                 maxRetries++;
@@ -49,6 +50,8 @@ public class GigOffer
             }
             // add the unique requirement to the list of requirements
             Requirements.Add(requirement);
+            // add instrument to used instrument types
+            usedInstrumentTypes.Add(requirement.PreferredInstrumentProminence.Item1);
         }
         // create money reward, reputation reward, and minimum orchestra size for the gig offer according to current reputation of the player
         int currentReputation = RunManager.Instance.CurrentReputation;
@@ -62,28 +65,5 @@ public class GigOffer
     private int GetRandomWeight()
     {
         return Random.Range(1, 11);
-    }
-
-    /// <summary>
-    /// check if a gig requirement already exists in the list of requirements to avoid duplicates
-    /// </summary>
-    /// <param name="existingRequirements">existing requirements</param>
-    /// <param name="newRequirement">new requirement</param>
-    /// <returns>boolean indicating if the requirement already exists</returns>
-    private bool RequirementAlreadyExists(List<GigRequirement> existingRequirements, GigRequirement newRequirement)
-    {
-        foreach (GigRequirement existingRequirement in existingRequirements)
-        {
-            // no double instrument or musical role
-            if (existingRequirement.RequiredInstruments != null && newRequirement.RequiredInstruments != null)
-            {
-                if (existingRequirement.RequiredInstruments.Item1 == newRequirement.RequiredInstruments.Item1 ||
-                    existingRequirement.RequiredInstruments.Item2 == newRequirement.RequiredInstruments.Item2)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }
