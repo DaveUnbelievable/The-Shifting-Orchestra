@@ -17,7 +17,7 @@ public static class EnumValues
         {Enums.MusicalRole.ACCENTS_FILLS, 80},
         {Enums.MusicalRole.HARMONY, 60},
         {Enums.MusicalRole.BASS, 60},
-        {Enums.MusicalRole.SOLO, 100},
+        // {Enums.MusicalRole.SOLO, 100},
         {Enums.MusicalRole.RHYTHM, 70},
     };
 }

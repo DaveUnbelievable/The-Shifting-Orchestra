@@ -7,6 +7,7 @@ using UnityEngine;
 public class Composition : ScriptableObject
 {
     public string Name;
+    public Enums.MusicPiece MusicPiece;
     public Enums.AudioClipKey Key;
     public float Tempo;
     public List<AudioClipData> AudioClips;
@@ -68,55 +69,59 @@ public class Composition : ScriptableObject
         {
             // get parts of name
             string[] nameParts = audioClip.name.Split('-');
+            bool nameParsed = Enum.TryParse(nameParts[0], out Enums.MusicPiece musicPiece);
             // first part is instrument group
-            bool instrumentTypeParsed = Enum.TryParse(nameParts[0], out Enums.InstrumentType instrumentType);
+            bool instrumentTypeParsed = Enum.TryParse(nameParts[1], out Enums.InstrumentType instrumentType);
             // second part is musical role
-            bool musicalRoleParsed = Enum.TryParse(nameParts[1], out Enums.MusicalRole musicalRole);
+            bool musicalRoleParsed = Enum.TryParse(nameParts[2], out Enums.MusicalRole musicalRole);
             // third part is key
-            bool audioClipKeyParsed = Enum.TryParse(nameParts[2], out Enums.AudioClipKey audioClipKey);
+            bool audioClipKeyParsed = Enum.TryParse(nameParts[3], out Enums.AudioClipKey audioClipKey);
             // fourth part is tempo
-            bool audioClipSpeedParsed = Enum.TryParse(nameParts[3], out Enums.AudioClipSpeed audioClipSpeed);
+            bool audioClipSpeedParsed = Enum.TryParse(nameParts[4], out Enums.AudioClipSpeed audioClipSpeed);
             // if all got parsed right save in audioclipdata
-            if (instrumentTypeParsed && musicalRoleParsed && audioClipKeyParsed && audioClipSpeedParsed)
+            if (nameParsed && instrumentTypeParsed && musicalRoleParsed && audioClipKeyParsed && audioClipSpeedParsed)
             {
-                bool clipDataFound = false;
-                foreach (AudioClipData audioClipData in AudioClips)
+                if (musicPiece == MusicPiece)
                 {
-                    // check if there already is an audioclipdata
-                    if (audioClipData.instrument == instrumentType && audioClipData.musicalRole == musicalRole)
+                    bool clipDataFound = false;
+                    foreach (AudioClipData audioClipData in AudioClips)
                     {
-                        // if found, save audioclip in audioclipdata under the right key and speed
+                        // check if there already is an audioclipdata
+                        if (audioClipData.instrument == instrumentType && audioClipData.musicalRole == musicalRole)
+                        {
+                            // if found, save audioclip in audioclipdata under the right key and speed
+                            AudioClipVariant variant = new AudioClipVariant
+                            {
+                                Clip = audioClip,
+                                ClipKey = audioClipKey,
+                                ClipSpeed = audioClipSpeed
+                            };
+                            audioClipData.audioClips.Add(variant);
+                            // clip data was found -> break out of loop
+                            clipDataFound = true;
+                            break;
+                        }
+                    }
+                    // if not found create new audioclipdata and save audioclip inside
+                    if (!clipDataFound)
+                    {
+                        // create audioclipvariant
                         AudioClipVariant variant = new AudioClipVariant
                         {
                             Clip = audioClip,
                             ClipKey = audioClipKey,
                             ClipSpeed = audioClipSpeed
                         };
-                        audioClipData.audioClips.Add(variant);
-                        // clip data was found -> break out of loop
-                        clipDataFound = true;
-                        break;
+                        // create new audioClipData
+                        AudioClipData audioClipData = new AudioClipData
+                        {
+                            instrument = instrumentType,
+                            musicalRole = musicalRole,
+                            audioClips = new List<AudioClipVariant>{variant},
+                        };
+                        // save audioClipData in list
+                        AudioClips.Add(audioClipData);
                     }
-                }
-                // if not found create new audioclipdata and save audioclip inside
-                if (!clipDataFound)
-                {
-                    // create audioclipvariant
-                    AudioClipVariant variant = new AudioClipVariant
-                    {
-                        Clip = audioClip,
-                        ClipKey = audioClipKey,
-                        ClipSpeed = audioClipSpeed
-                    };
-                    // create new audioClipData
-                    AudioClipData audioClipData = new AudioClipData
-                    {
-                        instrument = instrumentType,
-                        musicalRole = musicalRole,
-                        audioClips = new List<AudioClipVariant>{variant},
-                    };
-                    // save audioClipData in list
-                    AudioClips.Add(audioClipData);
                 }
             }
         }

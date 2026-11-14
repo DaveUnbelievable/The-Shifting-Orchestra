@@ -53,10 +53,10 @@ public class OrchestraLayout : MonoBehaviour
             OrchestraPosition orchestraPosition = orchestraPositionObject.AddComponent<OrchestraPosition>();
             // generate seats
             int seats = PositionsSeats;
-            if (positionDefinition.MusicalRole == Enums.MusicalRole.SOLO)
-            {
-                seats = 1;
-            }
+            // if (positionDefinition.MusicalRole == Enums.MusicalRole.SOLO)
+            // {
+            //     seats = 1;
+            // }
             orchestraPosition.GenerateSeats(positionDefinition, seats, SeatDistance, SeatPrefab);
             // add to list
             orchestraPositionObjects.Add(orchestraPositionObject);

@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class OrchestraPreparationUI : MonoBehaviour
+public class PreparationUI : MonoBehaviour
 {
 
     private DropdownField drp_key_change;
@@ -21,25 +21,10 @@ public class OrchestraPreparationUI : MonoBehaviour
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         // key
         drp_key_change = root.Q<DropdownField>("drp_key_change");
-        SetupEnumDropdown<Enums.AudioClipKey>(
-            drp_key_change,
-            key => KeyChanged(key),
-            key => EnumDisplayNames.AudioClipKeyDisplayNames[key]
-        );
         // tempo
         drp_tempo_change = root.Q<DropdownField>("drp_tempo_change");
-        SetupEnumDropdown<Enums.AudioClipSpeed>(
-            drp_tempo_change,
-            tempo => TempoChanged(tempo),
-            tempo => EnumDisplayNames.AudioClipSpeedDisplayNames[tempo]
-        );
         // instrument group
         drp_instrument_group = root.Q<DropdownField>("drp_instrument_group");
-        SetupEnumDropdown<Enums.InstrumentType>(
-            drp_instrument_group,
-            instrument => InstrumentGroupChanged(instrument),
-            instrument => EnumDisplayNames.InstrumentTypeDisplayNames[instrument]
-        );
         // volume
         sld_volume_change = root.Q<Slider>("sld_volume_change");
         sld_volume_change.RegisterValueChangedCallback(evt =>
@@ -48,18 +33,43 @@ public class OrchestraPreparationUI : MonoBehaviour
         });
         // musical role
         drp_musical_role = root.Q<DropdownField>("drp_musical_role");
-        SetupEnumDropdown<Enums.MusicalRole>(
-            drp_musical_role,
-            role => MusicalRoleChanged(role),
-            role => EnumDisplayNames.MusicalRoleDisplayNames[role]
-        );
         // musicians
         liv_musicians = root.Q<ListView>("liv_musicians");
         // perform gig button
         btn_perform_gig = root.Q<Button>("btn_perform_gig");
         btn_perform_gig.RegisterCallback<ClickEvent>(PerformGig);
+        // fill all dropdown fields
+        FillDropdownFields();
     }
     
+    private void FillDropdownFields()
+    {
+        // key
+        SetupEnumDropdown<Enums.AudioClipKey>(
+            drp_key_change,
+            key => KeyChanged(key),
+            key => EnumDisplayNames.AudioClipKeyDisplayNames[key]
+        );
+        // tempo
+        SetupEnumDropdown<Enums.AudioClipSpeed>(
+            drp_tempo_change,
+            tempo => TempoChanged(tempo),
+            tempo => EnumDisplayNames.AudioClipSpeedDisplayNames[tempo]
+        );
+        // instrument group
+        SetupEnumDropdown<Enums.InstrumentType>(
+            drp_instrument_group,
+            instrument => InstrumentGroupChanged(instrument),
+            instrument => EnumDisplayNames.InstrumentTypeDisplayNames[instrument]
+        );
+        // musical role
+        SetupEnumDropdown<Enums.MusicalRole>(
+            drp_musical_role,
+            role => MusicalRoleChanged(role),
+            role => EnumDisplayNames.MusicalRoleDisplayNames[role]
+        );
+    }
+
     private void KeyChanged(Enums.AudioClipKey key)
     {
         OrchestraManager.Instance.Key = key;

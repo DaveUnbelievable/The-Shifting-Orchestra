@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
@@ -21,8 +22,6 @@ public class RunManager : MonoBehaviour
     private GigManager _gigManager;
     private PerformanceManager _performanceManager;
 
-    //  OrchestraManager OrchestraManager;
-
     private Enums.RunState _currentRunState;
     public Enums.RunState CurrentRunState {
         get { return _currentRunState; }
@@ -30,6 +29,8 @@ public class RunManager : MonoBehaviour
             FinishRunState(_currentRunState);
             _currentRunState = value;
             BeginRunState(_currentRunState);
+            // call event that the state has changed
+            StateChanged?.Invoke(_currentRunState);
         }
     }
     
@@ -38,7 +39,12 @@ public class RunManager : MonoBehaviour
 
     private int _currentGigIndex;
     private GigOffer _chosenGigOffer;
+    private Performance _performance;
     private bool _runFinished;
+
+
+    public Action<Enums.RunState> StateChanged;
+
 
     [Button("Start Run")]
     public void StartRun() {
@@ -72,17 +78,18 @@ public class RunManager : MonoBehaviour
         // actions to perform when beginning a run state
         switch (newRunState) {
             case Enums.RunState.GIG_OFFERS:
+
+                UIManager.Instance.ShowUI(Enums.UserInterface.GIG_OFFERS);
+
                 List<GigOffer> gigOffers = _gigManager.GetGigOffers();
-                foreach (GigOffer gigOffer in gigOffers) {
-                    Debug.Log("Gig Offer: " + gigOffer.MoneyReward + " money, " + gigOffer.ReputationReward + " reputation, " + gigOffer.MinimumOrchestraSize + " minimum orchestra size");
-                    foreach (GigRequirement requirement in gigOffer.Requirements) {
-                        if (requirement.PreferredInstrumentProminence != null) {
-                            Debug.Log("Requirement: " + requirement.PreferredInstrumentProminence.Item1 + " " + requirement.PreferredInstrumentProminence.Item2 + ", weight: " + requirement.Weight);
-                        } else if (requirement.PreferredTempo != null) {
-                            Debug.Log("Requirement: preferred tempo: " + requirement.PreferredTempo + ", weight: " + requirement.Weight);
-                        } else if (requirement.PreferredVolume != null) {
-                            Debug.Log("Requirement: preferred volume: " + requirement.PreferredVolume + ", weight: " + requirement.Weight);
-                        }
+                Debug.Log("Gig Offer: " + gigOffers[0].MoneyReward + " money, " + gigOffers[0].ReputationReward + " reputation, " + gigOffers[0].MinimumOrchestraSize + " minimum orchestra size");
+                foreach (GigRequirement requirement in gigOffers[0].Requirements) {
+                    if (requirement.PreferredInstrumentProminence != null) {
+                        Debug.Log("Requirement: " + requirement.PreferredInstrumentProminence.Item1 + " " + requirement.PreferredInstrumentProminence.Item2 + ", weight: " + requirement.Weight);
+                    } else if (requirement.PreferredTempo != null) {
+                        Debug.Log("Requirement: preferred tempo: " + requirement.PreferredTempo + ", weight: " + requirement.Weight);
+                    } else if (requirement.PreferredVolume != null) {
+                        Debug.Log("Requirement: preferred volume: " + requirement.PreferredVolume + ", weight: " + requirement.Weight);
                     }
                 }
                 // choose gig (temporarily just use the first)
@@ -91,13 +98,23 @@ public class RunManager : MonoBehaviour
                 CurrentRunState = Enums.RunState.PREPARATION;
                 break;
             case Enums.RunState.PREPARATION:
+
+                UIManager.Instance.ShowUI(Enums.UserInterface.PREPARATION);
+
                 break;
             case Enums.RunState.GIG:
+
+                UIManager.Instance.ShowUI(Enums.UserInterface.GIG);
+
                 _gigManager.StartGig(_chosenGigOffer);
                 break;
             case Enums.RunState.EVALUATION:
-                Percentage performance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
-                Debug.Log($"performance: {performance.PercentageValue}% ({performance.RealValue}%)");
+
+                _performance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
+                _performanceManager.UpdateReputationAndMoney(_performance, _chosenGigOffer);
+                
+                UIManager.Instance.ShowUI(Enums.UserInterface.EVALUATION);
+
                 // _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
                 // TODO: get performance score
                 // TODO: get money and reputation reward based on performance score
@@ -145,6 +162,23 @@ public class RunManager : MonoBehaviour
     {
         _runFinished = true;
         Debug.Log("Run finished! Final money: " + CurrentMoney + ", final reputation: " + CurrentReputation + ", won: " + won);
+    }
+
+
+    public void AddMoney(int addValue)
+    {
+        CurrentMoney = Math.Clamp(CurrentMoney + addValue, 0, int.MaxValue);
+    }
+
+    public void AddReputation(int addValue)
+    {
+        CurrentReputation = Math.Clamp(CurrentReputation + addValue, 0, int.MaxValue);
+    }
+
+
+    public Performance GetPerformance()
+    {
+        return _performance;
     }
 
 }

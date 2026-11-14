@@ -17,7 +17,7 @@ public static class Enums
         BASS,
         ACCENTS_FILLS,
         RHYTHM,
-        SOLO,
+        // SOLO,
     }
 
     public enum AudioClipSpeed
@@ -31,13 +31,18 @@ public static class Enums
 
     public enum AudioClipKey
     {
-        G_MAJOR,
+        // G_MAJOR,
         A_MAJOR,
         B_MAJOR,
         C_MAJOR,
         D_MAJOR,
         E_MAJOR,
-        F_MAJOR,
+        // F_MAJOR,
+    }
+
+    public enum MusicPiece
+    {
+        A_MAJOR_DISASTER,
     }
 
     public enum RunState {
@@ -62,6 +67,14 @@ public static class Enums
         BACK_LEFT,
         BACK_RIGHT,
         BACK_FULL,
-        SOLO,
+        // SOLO,
+    }
+
+    public enum UserInterface
+    {
+        GIG,
+        EVALUATION,
+        GIG_OFFERS,
+        PREPARATION,
     }
 }

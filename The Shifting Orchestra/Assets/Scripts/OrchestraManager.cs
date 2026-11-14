@@ -72,5 +72,17 @@ public class OrchestraManager : MonoBehaviour
     // TODO:
     // recruit musician
     // fire musician
+
+    public InstrumentGroup GetInstrumentGroup(Enums.InstrumentType instrumentType)
+    {
+        foreach (InstrumentGroup instrumentGroup in Orchestra)
+        {
+            if (instrumentGroup.InstrumentType == instrumentType)
+            {
+                return instrumentGroup;
+            }
+        }
+        return null;
+    }
     
 }

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_evaluation" style="flex-grow: 1;">
+        <ui:Label text="performance" name="lbl_performance"/>
+        <ui:ListView name="lvi_requirement_performance"/>
+        <ui:Label text="gained money" name="lbl_gained_money"/>
+        <ui:Label text="gained reputation" name="lbl_gained_reputation"/>
+        <ui:Button text="next gig" name="btn_next_gig"/>
+        <ui:Button text="finish" name="btn_finish"/>
+    </ui:VisualElement>
+</ui:UXML>

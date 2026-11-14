@@ -9,8 +9,8 @@ public static class EnumDisplayNames
         {Enums.AudioClipKey.C_MAJOR, "C Major"},
         {Enums.AudioClipKey.D_MAJOR, "D Major"},
         {Enums.AudioClipKey.E_MAJOR, "E Major"},
-        {Enums.AudioClipKey.F_MAJOR, "F Major"},
-        {Enums.AudioClipKey.G_MAJOR, "G Major"},
+        // {Enums.AudioClipKey.F_MAJOR, "F Major"},
+        // {Enums.AudioClipKey.G_MAJOR, "G Major"},
     };
 
     public static Dictionary<Enums.AudioClipSpeed, string> AudioClipSpeedDisplayNames = new Dictionary<Enums.AudioClipSpeed, string> {
@@ -38,6 +38,6 @@ public static class EnumDisplayNames
         {Enums.MusicalRole.HARMONY, "harmony"},
         {Enums.MusicalRole.MELODY, "melody"},
         {Enums.MusicalRole.RHYTHM, "rhythm"},
-        {Enums.MusicalRole.SOLO, "solo"},
+        // {Enums.MusicalRole.SOLO, "solo"},
     };
 }
