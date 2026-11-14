@@ -1,0 +1,4388 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871c01b336efbd044848ff9dc424148c, type: 3}
+  m_Name: A_Major_Disaster
+  m_EditorClassIdentifier: Assembly-CSharp::Composition
+  Name: A Major Disaster
+  MusicPiece: 0
+  Key: 3
+  Tempo: 90
+  AudioClips:
+  - DisplayName: BRASS - ACCENTS_FILLS
+    instrument: 2
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9a84d53844083bc428e9e2fee9468627, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d5eeaa669ba86fe4b8d26f9091e09cea, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0b3c1714951e3ed438937e180e131797, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ce9e45d61a571d14e8321848cd6f1507, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: abe71afa685ce6c48b5a6661173858be, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f19ddf332fe5f894ea9da98bbf1defe6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0dbf10906b8b8014dab141909e14bb68, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 70332ecb621a05c419bf808aa388922f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6eaa3b64a7385ec4bb8914b2a236c06d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 64ba3c12990c0e84b9e11bc1e01626bc, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: eb9536bd384a27146a3ed709b4bd58f8, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2b0b5fe99475bff469a1a4ad449684d8, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: da9a4522f05afa84ca70cf6323abde3e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0a85d189d6f29d44c8df26a7cb3d9525, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b6c0cef99788a4d46a275df01c155713, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 93d1c9a8ec0f59a4fa92263b7a4ebe68, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: dff37369b3d7b47478821672a464629c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 1f77d99e39a449a4191d26896c6339d0, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 2572cf29bf6b61b44ba77a94e5ba3663, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7063a8ec2ea1369479cd6ab2b509756f, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d1d632c4e59097c45a814524f1f1bcbe, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f7db925a0a24ec4438daa3606be975c7, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: cdfad584085e612429043862d96f5c56, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ae6503a96988c4247b8b3dd2cc815243, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: cc20acc480017414caea8eb1f5719520, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: BRASS - BASS
+    instrument: 2
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d598d41d6e38e714bbc9d4176eb063b3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7238e320714e8a846903dfd91b685fe5, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e92c8c872a9f2dc40a042511f2f25482, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f9601406f6b60ef4b8ab807e479ddcf6, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 510adfb5522b8b343b5b52de6484196f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 35d67aadb8aaecb43a3d89150651bfb8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 44ea85e1e0b67c04499f6eee126a3f7a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d3cf4bbefc9fc014e9dc0c8278096043, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ab7605adf09ec3e4d813820a4c8cb773, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6555f308d532fc242b306902b751e932, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: caa6a6368c987e246bbd859cf225daed, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 53f634e1026d2ab44aa94be8b3b4186b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b28f8035000502a4981910dffd84bb50, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b034566bdb9b3e24484dae9440da71a9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 12f8829020843674ab0b18ce61a0425c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cdad86a0043ffef448460d0f883faac1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 38e59ad10a923e04ea492302c4d7a50e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9bd75dc354c35654293d8ef7af632490, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f5a88d7f03c164943a46028c61cb2b08, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 2afb9a8c7ab1a0140a4950afd891eb41, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3356b72a9f43ef946ab2d6cf8ea1a04c, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a24fc5e15d06f2e468975cf067c68a34, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 71dbc6d8650056544a66703d98dd4366, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1c548187f6221f64da150fa0819d8025, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 9bc8d7b74020b4245824aa69b958c338, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: BRASS - COUNTER_MELODY
+    instrument: 2
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3d1efeb0e7a061b4aaf8ea5d991c5fae, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a8532d4cd9c0d7d4ca64666feea7ed2d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d0f84eb2d3b6c8446b278b56a9dc4e28, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 5e3bac783adc9bf49935e59cf580da56, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a50976e7bd99dd54ca64e9a7215e92c4, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 547f194600a24e74899885617b43b8ab, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: dca8233e68ead0846a80fe2276545173, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 980d34f2588aa5e43a2bcfeeac90032b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3728ca0ddd9aba14e8229f8a63241cd5, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 51ec36522c2a10e4886d2256f682a561, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: e4c6a06d657d93a48bdc3401d4b68e84, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: c780b50527e53a94185e952e28bd4ecb, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9d3df2d9be01f1744ac2e3f6a9dcb699, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7860a5d806273dc49b207e37a3e192ac, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: bc6585ec91f81024f88ea64d4b0bcc1d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1ef6189931721544596b0aec7b53f7a5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 756a137e45afdf7498f4f7a1543b0dd4, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 7a292c3ffe878e0448a8908d79db3bee, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: eaa536328f201e14b9c88118a8ec89df, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6bd3fa4a3a4db6d42ae443e3de454bec, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 78586d1daa8a77643a240571d430077d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: df0fbabffdc4b8a448bc29f802b40646, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e0fa4f3bf266d264cb3fd0ed822292e9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 825eaeeef3ea2384ba12f485f56bd982, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 539867bd5c14b1f428445921cd44b936, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: BRASS - HARMONY
+    instrument: 2
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0964810ad32ade74eb1b1b93b84d8bad, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 562dde180b98e2846b98cfa84ab23859, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 1928e0fb9140f9049b407d68b1322064, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 737f2ff12b6c7e74c87e2427890678d2, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7889a243e0450e94090c7a1675e757de, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 03b843400f0087247acf60bc8a2dca96, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ae0fedba14c930642bdf0212182eb0e4, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 21f53402bafb24e4eab2dbbf0bd2e9c2, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7ffa68ee234b7224984fb30fbcd2ce2c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b3c5109a5726f3646822f0da2ac44f91, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9a9296fdc8947a54a9a73b5855c83f92, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f24056b842f0ebf4ea0dd145f2ab822d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 59af9e8245f87804d86071bb79d60eb2, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0a7adbcff7e9d7f48acaa31933bbd2ba, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: aaf79b80a553c01498fd0a7c3b96c524, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: a01b3e7350d6f1c4c9ac2eab1e00d415, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d39ce94274941074c863e37b0c1400a3, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: af488c55da38ffc4b9937772e665f387, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f0348112097c4764e80c408bbda1c71b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 04376526ff1773a48a73cb6ebd9dba61, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 29ead63e343df87458ab6bf6f82cfc2c, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 84e644409ce6ed3439f4185772dd33b3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 62e4ebbc98fa7224caf4a607863dec4e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9f8d246c9ab898a488a9f53ca81541e9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6371b74d240c14b4594a8fe1c967b11f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: BRASS - MELODY
+    instrument: 2
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 623a6cf42a7276446a94022bf22fb43a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7ba94dec88da6d341bae0acb58f8b1ff, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: bc3da41b5799e0c4aa72eee139c0009c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 39a253507faa82e4f8e97770d703c066, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b8bfc293b45e279499fb388adcb2b670, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: badbfde24d1e0d444b4d4910d905da9a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 68aca9ded59c4bd4fad9f33abe7e793d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 632ee47e216284e479d1ba65bc835ae6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c9b07ca4d7d7c0d44949c9d6536cde7a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 351084f52bacd2248aae43ae1c12dee9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0206c1bcd6539954c876ebe5b3418b34, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b4f72ee4a6c8a894c9c46485e4914bae, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: bb263ec98a9eab0499bdbbdb7ef79c99, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7382e59b7e5ee5c49859fa5fdd45f152, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 0b0872324936f5347a4f39b1ab4f7db4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 796f20df0ce8b624f943a2ef542f9459, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 82301afeb64a44a46abbbd902714355a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: cdfbe846f8474834e80a30a17aa36a7b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7ab8b2560cbcaf448bf65bcd19962406, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 646daf2bdf375be429f2e4a279cc7a1a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 95510f989f98a2f44ad9361c99ff8e5e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 6a7964cdbd2b4584987242bbf50259d0, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 50d2ad0dcd7d0754ab3de7c8659a3521, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9e66dddb721a2bd4db8cc60ddbc2fdb9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f27ca50f2f91ae24da1fe1fc3eda66d5, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: BRASS - RHYTHM
+    instrument: 2
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c71c27904006a77419e1f8e82d6108fe, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e279717f79048b64399da127da831dec, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: afff694bb83a03841b03afe601b5e51b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 63ff34a5f14a60a46b45e2e31aef1953, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a61599928193fdf4985edd0dfb6af062, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: bb1d3514fe1d30140978bfd3bd1419c1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e114a89efd5d54a4fa6c13c3c3c8218c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b9f4878abdf6adf41b219b3d66ac2e34, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: cdc61cea43d0db14991b35c73d64988a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a3ba7be775105e04a91508fd8e835d80, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2ce28d77af4abea4aaae72da4fcc6fd8, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1d4243f1e25b43940a9d9b208c374489, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: dd2c71b90144aa14685e1f59611c0b5a, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ae9afee3e499780419528a5d471e7a7e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b8a07ab49ae0a394084a21f8d63ccfda, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5c260350f91e8ef4db8dcf787f715a11, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 5eb52a6bffd381f4fa4ff97b60bb793d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 5959af427cb53564a8b06b2957d81c83, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: bb2ba1d092bed104a9c528c2e59831cc, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 69ce6fc7bbc27ef459e743977106b00d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 6815181d0dfa50e459fa2cd20cc58640, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cfcff974f338fd9409828ae8ada6c535, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b81ae785861aec64593389267c67f791, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 4cae5b8a0870b154499458a7396f9ca4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7fcb3ab11a550cd468f44986fee7e3e4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - ACCENTS_FILLS
+    instrument: 4
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d4b691255e7b98949803ea1ca75b2f04, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2bb95f42563ef7540bbda49e776f84cb, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 56f0512be9246fd45969d28f20511e7b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 775d85ba5b2ecca4ea375124d690a2d6, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 3b0fa5fbbce96c042b8add75f7dc78b0, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1f0713b6b6931674aa2618ef83651930, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a0055c09861b6a24ab0e1929a00b11a1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ad0e5d0a80705cf408f182b686f80751, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 2066d5e64f27b5842a479de259d62779, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7deb1f532e9beb2499938dc0e39035b0, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 686076ffda2d0cd469b4614b2e672d52, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 79c51e42916cba046ae2796dedd7dfaf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0547378da42306849956aea4f43c7c7e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6e421457db4075d4f9ae8289a419de07, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 79f81eb7b75935b4b98f9daaa361f8b6, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 407d0432f7db3254897c9477d82d8627, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f3982b5b099630c44a1cd63cae072e0a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: aba822c84b4b1704c9cb74d0b3c5013c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: faa151f5a5b1635468d937f1dcd36220, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b9d845f6128c4484f8ccdce1939e6423, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: adffee1b991369242aa47077da7214c2, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 568618dde88af10458c95aff38c4b120, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 7e6ebfe3ed1aa184f9e0fb46121702f4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: fe6b8dde1a7227140a92e1ae26ef11c9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1dcd82e7cbd8b7545ab04ed22a3e991e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - BASS
+    instrument: 4
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 194a94b4756463645a2142e2b1d5f0f9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d455416924870c846ae77997a8304638, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c79acd788225da14eba0611fae3fb4be, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 361d632c1002fb44fb6f5dae28cfd207, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6c270cb033c114c48bd17d3fcd85de08, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ed84f1a53b50d6e43a98b4fdaae7d7d3, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b77b854116c840b40b77d06b9b95958a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ab3f5c4bc87d5e141b88e0eb369d7c3e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: e6347a128c94e694e8a5f82c7d4bedf9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f71dd6ca90045af439e46842c8a476fa, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9923ed0dcfc6416428ea4f76089d9741, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0012153d2c4fca347ad3d2386d2a8685, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 21158785955002143b49d491033cba68, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9ef1c0c66f4823e4795df8192d97eb65, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e4e5713f5fc00fe429da4b8fc758a249, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 52325c8a07e0c0149b6ad2f0941d59e5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: caaac16f322d09048a8c2c4749d3ced1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a7aa53be2450ac54c976a0e0bfbed40e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0fc092f1a9bd95547b69741b6d67c4e1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 82ece4a182846074fa242500c35c80b8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c5db4faf7061b08459afc5296be25539, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cbba2dc2a05f18243b07ac269c00cb99, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3c2aeedcc8e078b4e8d4a1a404a7b1ad, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: dce420aa7012bc2478da76304941c12e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c9ca079a1db97ff41b68827a4611944b, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - COUNTER_MELODY
+    instrument: 4
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 03af121cbd07faf49aa0c188e7397451, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a4374eaf566aada469e155e1b3f894ed, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3d47701397ebd9d47973a886e3d73e0e, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: cd274c234ace22040b3ccb5d858af4d2, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: fe57b74473694f84191f1a1c63434bbd, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 752b0e4d822c090439a19129add27867, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a07b721c107a57f4792343dd874b6bc5, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 1073ccbe605219b47810412e103bfb3d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c424f160d3721234bbd915f01123ea28, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8ce384850253be04e9320a3ba8d3d4ce, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ff017596b843c8e439fb074d1281932e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 41ed67ecf3566ad4690afa6e0f860660, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b2f7bd225a04ca24b8fcde8730c5dfa0, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 8a271bd44a08ff34e9b3d80ff013e40f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b072f4d9d17eec246ac4a8f3fe1298a0, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 153df32d960280645abbf1e5839c6548, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 92d7a194810daeb46985a2ac3a673725, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f854963cd498c584d8b73af34e094413, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c7550a188a92c17409d9668a4cf6201e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 275a1915a9d6da1478b64adb0d66cb82, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 17108faf1f1ce8140a22d781d9bde5cd, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f2203d8080d6a6141b705c028dc8cb69, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2501a6e6a2c702e42bf3d0901cabad3f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3008203856f55c74595d621c0ab46250, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 126c733279171db429df29709946eb38, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - HARMONY
+    instrument: 4
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c32d315ca5f63a74d9237d752f213783, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: befc1f0a8e28c2d44947e30fd12c59e1, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 90e3c5133fd628b47a3ba046a85a21ac, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 34baa48b27ff3bf41aa0880fb7ddbc26, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ebd46734cd020cd41a3c58ee8654ca1d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cb21957fae9f1f84aa7398281a049fab, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: daf3b396269bb8541a9363a7725d1cc9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e4e6373893e56914db95d0020adc4f22, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b710d1284e58efa4bb82292a1316c9c0, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 00a15d02d12a94f4dae84576ba511f27, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3eccca145ec48064b8343fc210d02159, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0bdd118033b69a841a8ce1d049aa50f4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: acdb6311f9051d547a2069b0b2baf044, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 30c8c9a2125184e4faf05270c862b0dc, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c5988368e15cde441b7539ce1f4c25ab, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 980d909537abba04291fe40760fc77f0, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cb323c8372e2bf94bb3e8697aea8ff0a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 5a8c27e08a1620a4b85a223442ef8c19, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 597871d1f5f44014cb4b790cd016c318, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8af80e4f7c64fbb42aaedd2d56c44e66, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4b1b9e6d4d4c4594496992acf25428e4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 363104bb9aff9da45a435dc9fabba3a1, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 6dcfbfdda09a21648bbc2806b997e588, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 12c161d7000a25c47bb164bb01d22244, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d8545951d1a7a34429b9bdce9c28a461, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - MELODY
+    instrument: 4
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 8cac5902016f08e4ea25f969e2c18e70, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 5a1d0d13d8ca5154293746c0032500d1, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 170d4748472afd14c83f8aa127cef971, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 4f1dac87ce0f26141ac96d8eeece72e3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c6057fb9332900e4aa95ff4eca4b1708, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 36fb963c43ec03e448a14374b5b697be, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 22e5c82d8e4bd084aae1460a931ca9be, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: dc620e24c4905d24090df9eff46d92fd, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3e73a49bfa3a77345a4f571fd9cedaf2, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7508ead2776f8b5429a21ade4afa76ec, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 574b192b52c6ac345a9e38b4bfe812fc, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: aa4c040a1ec15fe4b9842067f7b2e00e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c933e197b1da0ae47b984072db7e24ed, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c3901b1ff9c6e1140b3e8eade255843c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7dcdb9cfe38efc34fb536f995418ff9b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4f5e6697230260442b894b2ae8e65e91, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f17f15bb5c9c3ae4c8508c3e0e324421, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 27f940bc03c03904cb9374a3b8095543, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a487c66cf94f9b547a46d2dc2c3bf3c9, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 44ab7117a282daf4684febd2d6bf98f4, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 6e8b7fb59712fc04a9baac67419a2f20, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f0b6d15c5136b9c479f029a829864721, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9673d6c1744c2554996e8695c2822cd7, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 968651c22e54df94b8b3738fde2aeaad, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d9d53c85790475a43aec22a4b6783344, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: CHOIR - RHYTHM
+    instrument: 4
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4e7bcb262e5f55b4fa31ba2fb52b56f4, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0df860115d7d1fe4e856e1ea25fddfd9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 361d6db1d4cd1ea4eb1d5060a1c25180, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 077a7eff0a519c34a8c00a172f9ad7ef, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4316941c4e6035b4f997aff113d771ef, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: a092ee63e229f4545a79f768c22afec1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2d2bb951ba5e1994c88b4c4169e4a198, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 499145ea91766f84f8e2b60cebc614e8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b3d58f4e7fa0dd44fb35a9048db1d425, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 92f02d13eaa831d4785a582b7cabab8c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 59ba4830c632b5743baee1e76dc703b9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 760f0e4da222147449011ab15f6ab9a2, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d63b853b71600a6408d20c61b12ef1da, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6216d6a7f14b4f742bf1eb566f48d877, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b23fb11e82d2e174695e0951a0601056, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f2433dbb7e7e2ed41ad9720d7b19750e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 65e1d378dae9d98499cd891ff062cab6, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 4302e41e923f2b84db42b90bfaffbc58, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ea0b92878c73886428c11d08655e9d64, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a03fcc988f21017448eed4bb0c9189cc, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 21b6fdfcd49e8eb4c9ad00a352def359, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 13d269efead96334e8db6aa6ef3f0474, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e93309411fcd3a74fb4e63a2089fe24d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: d72b1dd34de80d841818b95b1b4ff67a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e3ea471e34b95d746ab88de0f0bca35d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - ACCENTS_FILLS
+    instrument: 5
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5a41c241cf032ec4bbe53a0d17138c08, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d0080b45a2e9b484a98e0efd23a99003, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e9624956f5e0c3d4c86e473f0581dabc, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: baa987ba12ed78a41a7f308b5583888a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b4393e0547da82f4e9045bfebcaf256b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3e92f4b03cf7ca449b0db9c93dacb71b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 76a753d4a51f44e4889114a66c2b5174, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f047996c0f469394eaaee6c5721ac657, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1a1c5d98919a7f34d99ffb1694ea4c91, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b32ce9ed3cbf18a4192af30b47e8dbcd, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ce835559a1528fa418ecaf7d786eefaf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1cf5046732394bc4c96c77c45ffeac38, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8694334dfc4a11b47a322707105b281a, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3b6a15b517181604d8c2784c7fbf98a5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 0f4f54ea5adeca54584d31ae2f56cfc4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: daa5dcadf71016949ba21ba935361284, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 55e3052317bb26143be82ba7d5df43fb, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f47bb1d1e8335ca41a331a9cb8ff0fa4, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: bb723f931bec1214d8d83a35e5543dba, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4188b85cb8714c943a3f165c4b1d71ee, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 8f69e83572bdb1a4297b48fb19d01b5f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: bb19d59d78504504fbe54db96677bb48, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: dedabecb4a1abc24d98f77a57a49e663, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: af4210d937d292144a37fbb29bb3dbc1, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 36437364f74e6b34dbdab958d180be67, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - BASS
+    instrument: 5
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: fc30951616f4b294d8564c3d91bf7ab3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b14d2c7058a112541b52d7978d5c00d7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 003b22dff7904944b9a3f4a079deb44e, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 10ae58603244020469dc119d6716be8b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6fec429feded4304d823625a51f46b83, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5319e35faecaccf4e8b8f6f215d2bccb, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 6331812d76a4ce94a9506ac9787ebe83, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 4f24710a2266af04e9d4df4b92660183, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: fb866fd0f88561d4288f352b97b9f81b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 38da1867af64e0649aedf10b185f688c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 38f6829f2e0fa6b479bc0d534f57ed5b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 74572d44bc625ad47a1edb38fc22eba3, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 423e0fcdd97221a40850e2ee9ec42e00, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1bfa68b36b2132b489cfc9feabd6f104, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8c1fc14fb4162ad408cf23b1535d9501, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 883e0448592659f4197bedee9d1dac93, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 28166d7c146b4984a8773bc75eff653b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f453d302b91d5e043b29d0c29b6cb940, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 08ce6d802aa7f094d9e0191d58ac1e82, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c1a165baaad54974cb621f0dbeeffa0d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d12153c211d57f648844f7a2d643e24a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ab4d8f9b770512849987a61784192b44, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: cfad31450b222244c8fe57a026faef76, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c3afebc97f5b10b4183bf5abaf9f75a3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: fdfdd47bdd4664642ba1a746d306f367, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - COUNTER_MELODY
+    instrument: 5
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2d54d6845fd09d34a8cfaee2af96a2ad, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: dc468826aa8843d45a7053cabd4eb7b8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 5a107d31acc14e7499116478bb677a6c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 5a677c570aa276647b196ba5f3c0b7a0, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e4d218dc2b8ff1d499d5bfaac9b2e14e, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 78bafd132c6b2fb47b6384ac088f0622, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 79c02b7e81be19d41a6ef1d1857064ba, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 1dae80b202d8d1344b3e070911abe2f6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c5b3a3e3bdae7f6448e670912d51e335, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7e48125d56be7504fa789c2a67eec55d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 30360815ffd6222488d4bb1f67b6fcc0, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a23ec04ea44708c408bc9d75e86b1ea9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b752854c40ce68444b7872e21deb26b0, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f5fff371294c7cc42adcc44bcc32ee12, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b0661bc9d370d2046811954d99876f1b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c08803639c7228c4e82701181dcfdc7b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: afdabea295872e041b6e7ae85bde02fd, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2b1f40114c05720439b3241169ec3975, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 91def7f4f7e1725489bc3ab1734da9c3, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c5aa5a1baa3d38048ae08c29ec694e84, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 191fbec758804864d8b82a897759e022, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9eeb4638727d3314d9bae5fea7543043, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2c63716edbbf17d458bc60edd684d937, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b7243f0366ed9294facaf9885922d783, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 62567873e9471f348a2547a61173ca0a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - HARMONY
+    instrument: 5
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 35c06148de96cf0488789433f9e17d59, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 844da95ae7ba05a4d8e7bc027d940592, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 58d8dbc1bd780a446a5ade0f59f75d15, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 744a0562c566d514787299759b2a5ed9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 65722545db7b0b54fbb498b7ed71dbfc, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 307f2475bfa4fad45badbfa284411272, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cb20ac914b47b1b4a930786bc376b40f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ff44e7c37b2b4f6418d6aa41e9364a2e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 09dabe29b9cde0d4c87644d4797681ed, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 558193ed189b3f54aaed10880cc937f7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: b2caf5c77b6174b44ad988c4cf8409c1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 104c913144cc3aa48bdedb1305a715d6, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b53025b4cfcbe884ebaceacc2b5e29bf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 882c8611949abee4c882eaf5caf1a191, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f9ff1dd1a223f75488bedbe7dc37f331, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 24919eea0502f9b44be45353d8a4b304, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 23e92c8db6bd0a148b1664674cac253d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0ee71054e0d8e134894abbeb67b10fa7, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 4e9408651e53db04ea0c85837b161f30, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 32be2f6fd63e43246bd55a36a4ce1f9d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0d7ac4226d682714bb6b8893b266d29a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1f3fbd2051176f24a9b339c7f10cf4b6, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 6d581a2794239544895a6293ffe8a861, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7e5a8fc66aac4864bb797d3d38dcac95, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 93cf10171fd602a45a08375688a62592, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - MELODY
+    instrument: 5
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0dafee7961f93dc4aa02c8af49968608, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b6548de69794d04439d717c4a1cf55a3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c683d16c9cf0132498d01b4af2b27f99, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: dc1c2054deaae4745a6b41e1912c5fc0, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: edcb63997d5fabc4e9a864b47a34258c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 401718a909ded42409115ba2ad969056, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a08dfea2d7af60b43a881d72c1fb712b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: da1b2303af0b94f478e84d528da55b49, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: dd7065af27c597c4888c7ad7b981ddea, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d7378912ddb95ab4d8f61598a5bd0b66, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9a2c70b24e06e974d84ced2af26d5cbf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4a5d570ec53ce01469596b259e3424a9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 4d0316bf172dfaa43af24f5bc7271d6b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1085a423b9084234a948bb22a75736f2, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a27112aaf93284641b5070b7f3d0f54f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c19e282a15a42bc4c8cf3febc72ad94d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4a7eca3982f304e46adb68bad8341ed8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9d74ef39d697a4c4fa4395bb34fe48f8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c2df5e6e5f47ec041bbc17d8763e47a9, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 2cbba959f7d52df4f90e11daadcee7f8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: e54cab6deeed8ad4580d0a7f9ce44669, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: bdbfea28e0d94314e825296316ae6f74, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: abffffcb6892e384da5a321dedf1df87, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 524b7cafe92762341803d7ee83d002a6, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1023360db7b6d7148b1235358997e11a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: MALLET_PERCUSSION - RHYTHM
+    instrument: 5
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0c953606914a03d40b73a431141d4fd4, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1517bcb365e87354e8fe781576a19996, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: fc857504b1d283d4c93a8eafd518cf52, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b39ff15abbf3021449fb276e81ed6b3a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c545ddbd15a23c54f8cbc5d9864cce22, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 454f5d608c59c9e419e05c8bdb05d3e8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f3805bd72f87f8c49a4433c2dfbf3dd1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0e82b3b69e67e4548a33787fed822b48, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a5332baf52ebe104aa8a6cada6b92c71, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7752ab81401b30f45aaabaae270b565d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c16bfc339cdec7544ab3ac792869756d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2f42c4f0ecd039445a93877ec131e8f1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b5c378cec7ecb664c8b1a3a90c73474e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 597c4cabeca38c04d86756d89d25e4f9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a8f8efe311a283040884781d6eb8f321, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 83878cb2259578f4bbdbd489661a8000, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 11d4b849d35b4814bbd38c18ece69c7b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8286626bab76f314f8b5f2bbfb37f5ba, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 8f9726fc9f916284c89c836d0bfe29ff, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 298886cb5759598448818e664b47e907, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9520e954301147443a5a6a434d821989, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 470c5d3b5805f38419006a540a988667, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ecfae68ad0b35d149b5ff68e98a69944, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f260fa396894d3242b0959e3a3f28952, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b2d8e1cb6d60c9f49adc3cd93c1dddab, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - ACCENTS_FILLS
+    instrument: 6
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cd9c380add8fed846bd17e83f01f6a30, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1f846f50185d1654b882d791572c9480, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b686ff163fa037944bf04f6c3769f601, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 452391de1bf40ab44a1ee6012ae9d35f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ee937e5616797824d928c1feba04bde3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3e79cd37910549441b74ec42d3fc39d2, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f63d1f2b792489546bcf031d74594eea, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9b801287776c0074f8e700ae0b0642b8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7e2b95bba45bb444daaba0d545ecd8d8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a67a695dfa0af3540851d82c36aaab1d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f06a167030cfbae46bb04434e77ced56, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 768c3b1147f6bd445a6b70921e16315b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9657b03673737a8479aedde68c1dc615, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ba9c22d4e8e0a7743ad1aff69b2f1f8f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 2167ba5f51624864892178cd6508aa0a, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9203aa4f686889d4aa8993e8067951df, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 42df51ae232a8ad48bb76218d066acd0, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c8fa42fceae62b6428d6d4a6b704f3a2, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: d793b333a34b6894a9502bee11932916, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: cc8f8a8d57a1b9c478f2c62a828af90a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9ddb32e4f890c314f890d052314b6a55, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4278829a0b69e63499d6670e8dc9cf0a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: bbb7de7797c38b04e938a5814c7efbbd, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 901fa3371aee00c4f8bda4b4bdcbaa4a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 836daa9f46ed8d642ab2de8924f80616, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - BASS
+    instrument: 6
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1ab942b9681b11f45a42ed80dc9726f0, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f72805e267a34784ab9d49de17c09e8f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 05cc044933df0cb41842022a29accbba, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a25207c58ff1d664a8528fb75d1e1850, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 62dfe788137db8e44a28bf927f79019d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4cc47c180dcfe5642853ce001fd270ca, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 5f563f1ebfdcdde4db6d99b87cf2799a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8a9cc02470a8a5f48aa1907491de80b7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 52207edd3f67e1a48aadc53ba65c7ca1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 809553a69a2d6f1448648ed1c13ef87f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9cbe0e8b6de5bac44a48a2de8b2ed1fa, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b67796e8eef5d9f42a920b571d1d1fa5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8812b8da258622444b11d30833c56241, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 700624fedf877e2469dcbe55f0e9ce6f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 68ca89cbae0ff9f42b18ab085e4ce730, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 53de31a52a9052f429a6c748a3c98a3a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ff33e485a873097459da41eb8e1d258f, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 85efb4796913f75499965cd8f79ee276, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 946fcf522efadd6499ff36b41e6b6da6, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 606dfb4a313771c4daf2f8f92770866b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0a60bbd0c88839d408ffa2d076059c5e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 75083bcc8ecd48f40b869fe600df2a83, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 399fe2affaf05de4bbb86e742b40ff55, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 686c3acb8b0e9cd45a61659148fde898, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 0e16ebf4dd4d0264fbdead2cb6246eb4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - COUNTER_MELODY
+    instrument: 6
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 20a490a36495cd24a87d027031e0b4f7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: da2f67aa93d5de1458bdb207ae15cce8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e2234944060164c448ccd54365c718db, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3ae146e43da0f514db59ada0410e109d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: fea3f6de925ab7e4e8ada157fa59ef40, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 497bdaea2dd05ae40ae7cd8d14695dc6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 378db85556ad4cd48ad063e25d9d196f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 7cf6fad3b49e33441be3d4fb96a3417b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 55302610935d8944cb8040560d363171, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f2087546bba541b42adda00f97b10d34, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ad5e16ca71b57c4458095a18691878e1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7c1ad008cfbc6884eb81af3967923bcf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2581ee04910e4ec4da82bf0bc1a479b5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a772f3f81cdbf9a4097d8d36a30a014d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8c15648836f73234aa0f5073748bbe5b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: df118fd5bbe41bd41abda496a9bac342, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 03fe5298fae73964286bb6993549b903, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3b9fc494722491442a9f39eab333c3bd, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ce8c5cf682ce64546ad7945c3dcec88f, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ccfc1041c7e632040b190923dbf3ff96, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 08c32695b6e16e14d8bab631666741d3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 41df6f6d929ef314db031bb5857dda4f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e9be61f06559f224c8b658bb114a0e12, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ba8327e2969909f438e38b656bf15bd2, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: daa9ec5619b6bd44285038d419ed5629, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - HARMONY
+    instrument: 6
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 200553460c3503d4db073ac98103ec56, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0b5efb2c3ba83ab48b177b9643c3582b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2fbde8d5fce49a541968bdee65ff0879, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: db9e55eda5be85e479ae98ea71e84a21, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 738553158d017f44d8bf27334b28c7f0, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: a9c07d85554bc514abaacf93cbae2081, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 59f5ada5b6413bf4380317e9a96b4676, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3b6e212f50ccb7f44ad5b203a7ef7cb4, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b646afeb6fad4fa4bb0963432aeb88d6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b5fa757c270166a4c99dc5b8aaa27eb4, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0bbafcece0d5e054aa1090f732357325, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 42014aa63e2c9a647b0ae3aefa654775, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 4d06b60cf9241fa40928c136c341dded, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 09f1eb86930b5cc4c96570a005e5d021, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8b880bb792ec01b46b2530edbf47706c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 198f4aea24a102f49add42fb105bcbfe, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e3a2e4c25cf730f4693a26e59580fe3e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d52a19184d495a44885d403042938796, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9da219323b60da245921fd1312b5488d, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ef936869863b16143b172ea2048351e1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: abc13cdbab6b9de4184a119ad0445883, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 80e8a2efff2faaf46b29545d48093983, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 784b82da2544e6d4ca3831c679d32998, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a5223c49c02402241b8cef4bcf388922, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 76cb8e3ffc5a4434db0b4ebcd699cbf8, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - MELODY
+    instrument: 6
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 651190769c357cf47a3060289f43adbf, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b8baabea0e4a3194985a4aeb1eddc7ec, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e9029c8a99b1baf4db71d83aab64e473, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c329a497b0eb0a048ba48335beb71026, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6126802f10276eb47868058d99be9c50, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 318427f5988833d48855660c089c9b2f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a8987197492790e4c8297dea09c72204, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: af4f5b19a4ea41c44964a185705a25a6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 8223f8b5ac8b56b44a341155e5db54b0, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 78b4b32efeeda2b4b817d4e972e9b45a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: fdeb03eaf502b8a41869c3f2c5cf4b55, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7e0c6084585cf48459a0912a3f37f9aa, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: aefdd69acbd3d73478d8df6178c74ffb, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0f32c9061bd5c7142a9809c0b13e7cbf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 39d871c31f21b67488649497639c56c2, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f1ce3b2a75599e64fa0292714aeac59c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: dd44f0dd6a8396f44999f68bdd4450ca, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e58bdc096236b3a49a50c862cce14fbd, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9cd5578692f925446ad5b884906cd085, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f271b62b8b6d5d649a778eca2c2d2291, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c7aa9ce53ad15404fbc440d673e80c57, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 555bca7725a424e479c007f7114b6760, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ff4718fae5b64e84d8a3177f2858e278, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c7bc6c64431e07545b50a8b44ebde09e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6853e8790e109a642af9b3af5ae3f4ab, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PERCUSSION - RHYTHM
+    instrument: 6
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 7b5a3621361a15a439321c5d5296e528, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 58c7e8fa3d210834f83cc70783e2ae7b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e7d3954be6eb4444b91b5af641ec99af, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 4df009b05a1d7e74cb83178a22a0eec1, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f764082254c212a4f853d017adf0a1b6, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 083f7dca62cdf654f9f9cce411871cc7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 5d976cb448e6fe34282eede9c13d9b06, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b27cb90446891c140b4e00324c6137a2, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: e263bc13a144e66409a0a563335bbf95, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 036c425eca16c474c873d0a3da90319e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 86b6833491b44f44e976745336b3efe5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9b767b996553d1840b087d3ba9a55fdc, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2e9ff2cc84dea6b40bc58aede4564375, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9fa7c9438480bbe4c8ac10d75e4c4040, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4e82745cb5be8994ea4bd0dbb63413c0, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 35775873ee08c9e4bb1058fc0287bb3b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 89edcc3d4170bec48a0db3afab02f11a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: fa94983be3ad9014badeb492049d8f11, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 87cbf4490742f464e9ffde9913817836, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: bcfceb59473c5034297571371e2f2d64, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 782005d66b01b0643bfece35892ff42e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 25a5e2f86fcb2a446aef6e04ca91fdf4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: fa8a7cdf17d884e43acc2af74b891489, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: aa98e918ebaeba44cab18ebd38d26009, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 04468aa216f6487468e00fd0fcc53294, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - ACCENTS_FILLS
+    instrument: 3
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: e99263eeafc17fe4d846dc8c8b6fe0cd, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f559b79752262c9478a595b545e3659f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0454f1225af7c6448ae84ec9083210ed, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6fc6cf8957a4ea94a95eacf98c8a7ab9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8f3bed6cceeae2b4a8d26771dcc53afe, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 818b59dc1d5d36143bc915f4c9c8d137, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 81a937783b41348489d072a393bece90, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 623a81fba4691354a927f60154172570, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1db0cf0d234dcf847afe0143e7d1f305, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: fdb3d68780a2f5c4aace335d3213287f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5ad19b861bc6fa646a064b3d53b18509, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 06cbed51621866e4cbe90c8fca172bc7, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e822cd60b3607564e89a8e7a4c16683b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: d347c73165cebd942810d406bdf223de, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: db8889e778e9131418159607af8af8ba, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 07a2d9e5bb57694469651265da3139fe, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 662d6d34656e8414586a352354099e75, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e8888c933654d5f4c8e7788e348ccea5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b225acfc7b2227545bb27f2f076f9eff, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c2cd3d10b46b1764f8f4a734c1f8bce7, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f96b8abd67bb2ba4383b10fb3410f7dc, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: fbe4ee1358a6e3f4c8ccd4d32fe81ba8, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 7e2ecd8a68c7b2d4990f947b6e46c7af, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: eeb630ce899c86747bef7e9e064d9813, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: df44026206f79a44096290debc38ba65, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - BASS
+    instrument: 3
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: aba1334adec59444799a3a9ba91d328b, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a98069688fe3d8b428f84d0ea63f9c57, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2592de16250cf1f4c9c7df8e1feb8497, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 2f1e161767c2e5f47846a75906615a51, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 90327d9e72c5e56468ffcb408a9179c8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 281862a13479e634b8c44e1dfee7c45e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 6d67363cde3df1f4783c9e7248f72b12, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 4699ba735c344db41b5ed90f4b11a967, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: bd661fcccabf59743b9619f0e086e842, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1487e794f408cae4a8f103be118659d5, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2f8b001e7ae703346813e5af959afe16, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4e1033960a6478d46ae42c2533ce0db5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 5588cd065c8d2f44cafbdbab149f3990, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3f8e33bd97c3e9d458ad064351bd45e3, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d6c518a5c999d334481e9d3b95c035c3, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cc1d93ef7dbf1b8478dc7389e719f7d7, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 82c8219a52efdec4dbf2f2c310868b6c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 6e32b773ce5dfc44bb1e6b9a5bde1a30, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f73f69db41d0e7141861d1c1fac5f6ec, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: de737283607e45941a1e2be5df9a9a7b, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ca5b3ae2d2773fe4f83d372f89983150, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7dfced36a8a26b94c999b22f653fc90f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f5969634d0ad2bd4ba8f9eecad17c939, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ea108a546b27588408b4f109169d8cce, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1efbaa153dda9884fbb83794641b1285, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - COUNTER_MELODY
+    instrument: 3
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3cd5e3b4d54b66544ba26d40a70a7d01, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e10e94ce6f4f40a48b8f484bf53a5df9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 35699b216472ee64aadf24cb4ca88722, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 98b1679db01cca84c8be86b810d610e5, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 840d1c67196725445907d5561ed6c5b7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 6727730bbcb70a247b7cff42d2092aa2, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4852e5d77dade6b4e8989d4aa35890ed, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 474b53f668dea294ca0b451e2092b59a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a8bcf63c1cd9c1c44a18fdf7a25284b3, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6742e8d2bf2b2364cb6089ab74af5a05, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c16e3b200aeb9ac4c9b2495050fd8fc2, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 3f5e582d2df7cb1489858365770a877c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 63ed8d34c27e53c47a79fe92f0ff3abf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 246125fbb9c44c24db615fdecee007d1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4a215d40a8ba846409266e049a1f98ec, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9bf3223cc4068074c822c111742b72a1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 48e6a5c521c60594c8123f0a42f1ff35, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f6601533eacc2cb4fa80fbbe5c11a131, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7e629b8c1e6c91944abc1f118bbfe2ff, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b0cb680b988fb9242800a30d7b36e7bd, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 40107d30f9269f3429e63f033696a90e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f17be81dc669b274b82fffa9999a4829, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 61bb08b4096a7d148a44e77c32737089, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 5a6be67bca68fc242abc1a131e642e3f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4f5af902565501340aaeceaa44ba1d09, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - HARMONY
+    instrument: 3
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: e76ddde30618c294b84d7756774ebe40, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: fae2a3693a4ac464d9eb0c285ab75eb7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c5edd75096f6ebb42b7139bbd9a8ff40, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f69d875e7ee5f954c8ab2113912c5ed6, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e06f1595c45cec64097ac3d236e5c855, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 6faa497743bd4f7449ddd932abd989d7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f17bc845642685a498d6a11acccba1c6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 0659f8b086bb87d4ebff3a39ca6e87f8, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 428d3faf06fff3b46b0f2d5d55ff96f7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 69d619fed79b5ea46a0971e2c186e6c9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 01b66d9747e005242acab62db3a44d46, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 00eb3e132c02267498666b01de9ca231, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f82e8e2f03ec8164eba9557a70000e63, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 8a17b96c56784e8489417acca47f4f93, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8ddc09596b1ecf5448924c86984ddfea, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 902715cdc7886c247bfde3f3a832f201, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2c55d72e78f0fa440b0b4b590e4dd851, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8673150a193b9ae41a491b30e80a9b43, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 915241e64041a5449b0d5e738cc7b674, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d9c6ef77ff88fc842a34078dcd6fde47, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 6cf7b2488a6bb514f80ba5f117d08b1b, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f50ed3fca6021524090ecfc566934ce4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d1e52d22a58b8ce4bae7c50f680ecbb7, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b48b7db7a1f7acc49858efae63478626, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c515d301f483d9e49ae5cab63855023d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - MELODY
+    instrument: 3
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0544ee6610d674c4398c53229c60a233, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: f1ef5c5ff1c6a3f44b30ec2d2d0d0fd8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b1c4061769b96fb478997d8481e9666f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ca4ffd2bdd216a54e8f85b1cec79a156, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c042f4d348d57f648916cd218dad3403, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2c1f0d39493ae1c429ab26f838815402, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cf2b555e1525c074d9d9c8439cd51d9f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e146fa0a8b254f9429b5fc32a149442f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 82013956ab0203d4ea375048885db1a3, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c4a22ffecfff42b4db1f3fb95a0628cb, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5059449a6a279a64f8e7256756e3100c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ac0c8ada729bba541abe298f976a6a4a, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b8796a144f5d3804db6bf74dc85d3018, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c58d0031e25f42646bd4979d8aca182e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d143a405786887849b552fd2e43fe9af, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5dccf956d06277a4abb3fb03b0f502eb, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 52512e1ff1867cd41bdf4a2804cd5a67, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: df353faccb307ee489dd78537100d803, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: dacd8332dc1694c4784fa10e71b3e2b0, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 84bbc9f7e27556245aaf9bad77d3b86e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: dd71b83b4ca8aaa4894c669d54f754de, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e799a560d9bf1a849802e4131a4fa30f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b2bacd225ca80de49a5836d16aac6c44, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 2f896ef8ed945314c9677f31fb016ace, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 9879a324e7ac5fa4384e2e6f1d01fa4a, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: PIANO - RHYTHM
+    instrument: 3
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: bbbed460d8b35424ca07b65f0c115783, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 72ca866566410d24c89ffe20864cd16d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 15c227695e8193540b0d53ad97eeccb3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 88feca10efa68a04e9e2b10f9287a90c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 202e6a45596d19b4282b7db9a78a8368, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9bae561cabc140348b5a13a394408f75, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 05f98654df5221945a5823a1de7c0c80, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2462195be646e9945ba968427e62401e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ff3f7f88cc33794479d8c542cb45a814, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c040352c221db3a4297cd8a2616e24ec, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 93f7c2f0aae992c45b37cb94aa2e4481, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 60e1f4f5d1a9a8540ae79b85f9f8579b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a9aa7f9b09ebb6d4ca0181e0b2508cc5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0a82b3085ebb8a344bb0c9a54e6e97f1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: fdeea5e668fc04c4e9c30808f1184c6c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: dacfbed0e5a86f74995aa42464df4c38, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 6cab426dcfd1f374d9ada76ebfa7bea8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: fa0656df0689ca54d91e79dbb10cff69, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 2b18cff104aef4c4faa14ba9ae2bcd60, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8b3047f97fefd054592205a69e02e987, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 57a85e4c1d9b030488a8e651bb462ee4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9f72733a9390d704287ed22e9bb2af1d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f9e09230c0804814dbc879b6a562dcb1, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 494f0e92455ee2c42b0a728cd80035fa, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1864229fb90241c4da041c331d60bfa3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - ACCENTS_FILLS
+    instrument: 0
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c78d0b35ead22fa41b13c2a2d73e661d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 410db2612d9d67b449915d47ad3da785, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: d24c1dc06e955614d8dba192d3fde403, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 18d10acfbfccfae48bf01f68d8e32824, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c8db46cd06a30ac499c9378730167453, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 7572cbd8b1c3a75428fc49306abef75d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 994112160563ffd408615dc6d7ead62d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 27e5ac4b48780e84495dd7926a624626, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: db2076a0efa5fe04185a8b65594b93db, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 71518da6a45d4e9408a7b5183bab79ff, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 75bc4f5d7c06350498c79738b2662c54, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d28a6b7f5beccb84ba75efae797a983d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 04bfa8ff102b3f94cbbd852c639de7d4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3305d085d5ef93742a6ea6c0e8febb66, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e8ef75d0d8ccd4b40b499b42b8bd5523, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 89623604efcade048927961a499c68eb, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 67827832c09e024469b651324ce753db, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 1c7093dfbab3e4346a4e47526b9026f1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7f5160892769b1c418c9eef78e59bef6, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d3c8a21daa13d8f4482993ece4c64646, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9da765a7fee749442b3dbe5f29b9d8a8, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ab67625ae38eb014687b3b260e376f32, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 24ce0dae6fd11f249a5de0ac0c329696, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ebb102fc4d4474347aad074bbb4816c9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6a32fd00cf4fbb44ba8b149732f1b71c, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - BASS
+    instrument: 0
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: b4b33c5741423b9498688d7becaf90ca, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ca6bafbbb3b11324b821a766db890495, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 7d754f867bcc0f04db22058d0ef77ea6, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: d189c5a7024557c4da6b7236353b390c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7e2f86351a273d6419314606703afb29, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: deb5b78c24daac2498ac3975b46062e9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d6ec253cd071401428319263457a335f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a15abf341c6e97e45994f599abccf44a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7a683e4139fb4df4a838714095ede470, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1601d0856d7db4c40aa4ae2db035bcf1, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: dc28334761363bd4cb3b98076064861b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 3f9da51db861a1b4aa63cee33e6b2ff4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: afd4857b969ec794d82de526f8281d68, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 22abf6a627480334db09065097be632e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: dd8075ac62eb993438689983bc95114c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 7ed9eddbbefa13c4191adb91e4cc97f3, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 5f7678d5e3fbf0e49989212e1dc5c5a0, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a67d885bf42ced7488b9fafe5e87e909, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 30c68dc92db26bc4e94e749b65b1f8ec, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 77b6ebddbe70cbb4883e3d58f749a944, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 992f06887a4f725499bd9e30cb7be423, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0ffa2c5c12a20f34aa649d8e2554827f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: eebcc5022b3af2f47a32a62ada13ae32, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 551eaf18a51259d43a576c91c61dab8c, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 35afb714e69ea464bb0c7e44cbb79e20, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - COUNTER_MELODY
+    instrument: 0
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: b7ced4c641cf331428182022a7deee98, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7dc47b027fc4c5f429c94b4fa7bca307, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 311c8ce9594a8164e982f5a30976d63a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 192be92bdbafd2545902dc1d8d6d3d92, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 9b3b666f00274f14cac743277b706366, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: b5c5e6f42cce1354aa85853abced0b06, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 3395e4ef3b3b72f43983c736d678520d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ef5c9fab9ee58ef41bfb58e51db6a21a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 86f59260d1a7b14438f29b73ad980426, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4060d643199f6f144b4c89b7021fd097, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 632ff0e107481bf46a59d4420ba327af, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: c1db4874e57d3c344b33c9f1cccaf21c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b2e438b323d24e642959772685458dca, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 4caf2a7b4ce5ccc49b40b3dc332bcf5e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 63b3c99f09342ca47bc3c0894c130547, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1c92dc0b2601d49458cd93de03a99856, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ed9bb0d6988bae34fab939e515b7a134, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 16dadff6fecf76c4fb340565a2e1d242, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 66554116390189a4b9d6c4dc9498f716, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 03ff04a8a3c497a45be535feccd31396, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2389fd4899e771546994b17d234357da, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0e1279bd64dbc22408aac24cdde52bc5, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 93b7c68750684894983b73ca6f18afca, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 45082c0e8a2363c4a9e699de85a7bfc3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 3e2f5a961515a6c4eb84fa858ed8100b, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - HARMONY
+    instrument: 0
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: a6cc8445f68b37e418a16d720d957185, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7056be09cc5979d44b9f82bc442f5867, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 06d0e8ead4c170b489a9d75fe3dfbbcc, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1f6329e2c37088641a4814441f11edbf, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 3272dc677a4d0c54297f8be77c5fc4a7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1236290e588fe5b4e98ba13573e317c6, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 105b7999e7caa994a951047f336d9fac, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c66548a8ea4fdb44e9d82b4ce33598ff, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a8ca0b336e14bd144aee0e9238adf014, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: dd80f82e10040bd4bbd573be41be596f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cf13d9fc4e985e747b1c1b5e49250d08, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2fb6b164ae6a4b04394c0e8eb5dc6f01, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f5cdf3c5283ded243bf0feab2f9b2559, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a8e3b58608e6f0342a919df9ef4e8da1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: bd2a45b460b634c41895853368c2196c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 8abdcf4e58884c642b164efdec884160, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cbdee2abdf89c2c468ad46b07b302799, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: cd347603999a0de44b2e0c93949cf05c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: d662a6f96f8ccaa4b823e9b6b25aae83, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: f657a76c97c495f47b7dda5d906b85c5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: f9f923b035cb4e949ad8bfe0efa59f02, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a4963392a2617a54b8d545224018cec9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ff9ca0697bbf32d499cb3031d5cad0a1, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 996cf6ab964b9764db08be86e9607aa2, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4ea3efd917ae9e548ad3243ff4d32a8f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - MELODY
+    instrument: 0
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2d373e44a8316734c94f2d8d01de33b9, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 8f7666c32d0c16c45ad42f46b3e69d0c, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: e0baa8bb49dc4de419cb6ad823f0fbc2, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 5fc80a2e12699bf4fa5ba7effb5372c8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ac03b56e074eb4d48bc88b74081a4ca3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 26a0747121873f34ea77a9aaa8215c1b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: cbb8a7d7b1d15704da916a32385b8746, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f603fadce96e9054fb6f57050304c96b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ba390e9f24aa759468bb1f5fe410ffd9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: eec3788462e64f24393ccdf9736e67d0, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 079a008378b512045b6eb26e1e089fcf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 262c7a74eb47b494ebb7b59641fd222f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c7d33f27fd59fc24e863dbac001101fe, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 05ff84e44235357419ce1c69982ba56c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 8ec586a5b33bf26438228e7eb3e35977, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d05070b9df2eaea459f654dcb934b2db, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 4442f23e34b263f4a923b645d2e5a917, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8604628b5b3e186419b553a9601f2b53, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 25bdad08c640cdb47bf96da93eb05438, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c11b6476183eb584c92a42f4c65e0834, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 472d3e9013c4da3428ef11099d84318f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a640536997b0bb8428322f2e2d8868f9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 79063ba205dec5d4782447dc9b865ef4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f8c67febdfc2743408229611a8030807, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c760982194669bd4a934b2538b8f9b5f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: STRINGS - RHYTHM
+    instrument: 0
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 3ff239cccf571bb4183d98de6a9bfab3, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9abbf8fc86bef4845ace49face81a754, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 902fcb9f0307cbc429f549c6cae03a7e, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: edb12c4ec1c324c49a1cc3c4db6c6668, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 869b9daf052c8254780e290f8d725401, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0532ca2bea91aa24fb130a9b0169cad7, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 765ac93fbd999bd4b84ac9e0734ec766, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2a6c497fd9f9f6e46ab1a441f4a4c722, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 911dfd3c1d7422f4db55226b302fa63c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 7a8384c036fda9245852e7806540718b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 807a6f2d78a791a45beb7559ea9c5dea, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2f44a8bb47c1e7f4984558bb2de69485, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: acb98bd56d87cf84eb5b00d23d0186c6, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: ee1c167f52096ed4094cf752ff542ed4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 0927a30b25231744cb9c46bd7f8c78bf, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 40408f6c48bac2e4cb4156b3e335ffc8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: d767b8ff562454f49bc5dacaba72e039, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 597786ccf009cbd4e993ce3724241582, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: cd66e5b06d4f9c745acfb16b4da3c7df, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: db76f5dab0cf0f947a0bffa56cdf50cc, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ab4db47aa47829b479925e08316a4752, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: df473c2c2f90a4f43a7315574cb65aa5, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 163ba1142e190b049acfc02dd568fce4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 8c1979aad476e1044be6b349d52d4c59, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: a6b662e9e8133b94cadb76bc0024293e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - ACCENTS_FILLS
+    instrument: 1
+    musicalRole: 4
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4a6937a86a6ce344ab55f0107dd476d8, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: a24b4956813eee34db6de11168141535, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 9de6bb57d5bae994eb09f8acaeaee995, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 9c1b085e913743247974275043c53ec7, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 96cc14b5bb9e27446b15ff7ccd9c64f2, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 60f7bf7b1518c6a49a2fd715bc306d64, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: da213f35f669f5f4ea09041debee6c57, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 63c57848df797ce40b0a9b2b911d4894, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7a47df18b96887041a8c553c0adb8386, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b7fba38cd8b298a48955bdbf157ee94e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: edad63ab648e29c4cbcd0ead8c9cba53, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ce7bb20671dfaf946ab9b8d8be6575e6, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f3ec009685d491a4d9d66f334e1cf344, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 3406d5615dff8c943a6a2315e00acc1f, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 53f8e2aaed81f5744a0e71bab6666b3a, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1b181d742f03ea645ae11a618f086205, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7e5e34b86e5e0124d9c6cbdc9179f949, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a34d3e707111825478466c418f97be1f, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 704b177f867e2eb499a8a30d1d691aee, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 1b00ff7cee4e2fb4da17ac40e38ca309, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c8cdf173c19a60844abeb84edcff547d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 3ff55fa54202c9440866fb54ca8ced66, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: c0753f0a0d20e7d4ebeed021703b2af3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b9e5f2fbd27ae7b4691fb43e4a747d28, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 85ce87c8780c2824d8424bee491f6496, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - BASS
+    instrument: 1
+    musicalRole: 3
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 70cd24fd67601d9498fd19bace8f623f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 61b0dbfe9f6c3594ca934f54fbdebbb2, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 176bf3a6f670ff64091d07a9a68b420f, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 5901facbe89833440bc5484896843e17, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 58fa2314023f9a649bb02d0a50c8cbf5, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 2e0ddb13f02c4ed4480097d48f2cf878, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 530760bbf91d8a0499eb0fec83609933, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 171433c56ecb7a44d823207e6076f0dd, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 0e34e6a1fc4f9cb40a97dd76519397b4, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c28dc2c12f511c945a13706e1a93254c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: d89faa63a67adce4b994dc15a96792f8, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 02a647a5302483044955f86db7b2d601, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: b273f701184712b4293c99d4eb1081ab, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: fed201252a844d5429e719ddb8d79e5e, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 719c2d4b168c8e744932b34d7b11bcd9, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 8b11b86e0b6385f4bb2484d850c7ea54, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 89ee29e04233c374ab063a8ef3ba23f5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ab25e197e9218ee419113fbb7d318383, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 1a3998a75b7e33e4b8508d3b1c57312a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 34f58941aafe2904fb1ec6061e429bb8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 4f060f314de89d84dbb8299184ac3ab4, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 7832149bb235ef847af2b2c2c219091d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a843249be93db8747a033ba01572ee5e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6d384e3db49a31e429f063a4cf9af7b9, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 692c3964e0f8f4d42a9b32e0061fc61d, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - COUNTER_MELODY
+    instrument: 1
+    musicalRole: 1
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: fb2c299c094b6724d8594d19f7ab2aaa, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ed0eca3de0ed4ac43a029c417942f462, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 71d3c18b200ca4a4fb7d59968f7badbd, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 50376c143a52a0e45bdbff560ed0db32, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 5ff3c47aedfb4ba40b186d10f5cb5c20, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 604fe470e6a9cd74e862f5847f1f4b2f, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: debf9016badb7254e8eef488f9394e9b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: fdf57013f1c2fcb479fac8a4bb55c202, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 19c5ecb5b8932b84fae2219e7bb7395d, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: ee9f7d2dc3cce7d40b377a1eef190226, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ba797c41527c522449e5225bd79222c6, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 09b1c5c2181048843b321e9afbb010f5, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ec538b1db6945a44db6fffa32f9b126b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a873176d26c6ce6449220099912bd95d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 3b6497565dcfb95429ed7b32259df5f1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ed510789239bbf248b2997ac9195892a, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e905406e45659e545ac0b506aba06812, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: a6c1dca745d97b046a5114be83351bc8, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c1204c953d44e874eaaf9a90a5619ea5, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: d7cab92ac9d262549b5c82e319cedea3, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: e1c1134f00b8a3047a905bad0691963f, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1933f23b710caa642a49a91a6a8a8284, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: dce22cf5895f7a641ae1f2ea608da769, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b8d57d7b1134b4f49b24b2d3a251de03, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c46d7a9648a37dd44ad6c93e3e2d2777, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - HARMONY
+    instrument: 1
+    musicalRole: 2
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 72a0a4774284e264ebab34d94f49feec, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 0db252b5c0ebc4441978e580c5967860, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3ac130d3b75dcfd4f9ba51ec4190d9ca, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: add40e3cb3deadb4fb4220f588c6a515, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 3eace2c82d41765459c95f9ebfcbd2ed, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 16583454413998f4998c255960cee4ac, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: e53022708c44d9643a7895bacfd3a41a, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: ff6e62bdaa9f2e04b81fb092a39e324e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 6965266ec1b94e94a9b6ea59daaf7422, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6bf249f694461004fa9b27f167290838, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 0d06b05c0b4ee374daa97511e7a41465, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: bf2adca6f7e2e404d938478b1c681463, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: dc30bbf133302ff48bd32b25197fa98b, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 7cacb789ffc37db4e83ba511245ac641, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e7ccd096c56e8644ab2e077a696d4eed, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: c83b6852da290db4399c7525e897e1df, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b7339d4d3284c7e499cca944d50812fb, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 034c5ff105dea1e46bb4924c9b285646, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: dae84ecc83db246409549f90fc9ac441, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: b54b5882874a29943b7d5c47e80ce391, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 9bc30d5ee39009e4fb62cb95ba7c3711, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 690c43d4a28336646b274ca2e9c7b4d5, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 47c367fcf0bc6654fb318a577be804ee, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: e504052448b5f1744b713864a0eeaee0, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 4f79c96711139e240b06dfd58b0aaa77, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - MELODY
+    instrument: 1
+    musicalRole: 0
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 97d7c7116b2e6834686de352514a6400, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ca565c82996ffd643b5718fc1f1d1f00, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 2df316cff1120b445b042d770c9faf9a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f75f91277cf31544693612a47a9c6904, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: e0af32eb3f65082408153e1833e4480d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1926f2cf65c3acb468b802e1ab93552b, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 2b00f9662fae5734c95f13d1064f0ab9, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 36b21f453b3003740abb5ccc2bc12589, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 85282db5fcd02c24daf5969492af2f7e, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 37ace9daa46787f4cab9d8e34f6b6793, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: ac958b6ec93336b469475f6e5275d629, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 985fb02814a797a41a0f40318b544e66, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 3352a0ccc614dd841abd2388a77d2307, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: c934bcd42032b6a45aefc8057ece5044, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: c4688861533b0b14bb07f6b12b66a2b4, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 74d8723b067e92847805ee7744802455, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: b8c27a7891bed324fa93d5da5bf032d1, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 65652e34503db124a9924ced2824f5f2, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: f7eafd0c33c5bb044991c32a65c7d99e, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 01dd5a79b77c0de419fd399f5a25eda7, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 1bd158f41c8ee2445b1027d4f2cd211e, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: c08c93654ead8fa4194bedaf5b9a5d1b, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: f1be5d5e8df296d44814d8df51361655, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: b7d9e3fcb25661445b890956f478afa3, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: dcb50986acb3e174ab4d6b1f95516009, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  - DisplayName: WOODWINDS - RHYTHM
+    instrument: 1
+    musicalRole: 5
+    audioClips:
+    - DisplayName: A_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: a60e30cc53581764486b856cf3185a2d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 3
+    - DisplayName: A_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 1d7d8dfab7bbf17468fb5b83f2145d80, type: 3}
+      ClipKey: 0
+      ClipSpeed: 4
+    - DisplayName: A_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 19750b0daf8f90d46af349cd7308c29d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 2
+    - DisplayName: A_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 57744c61298a61143b703d4efb22ff9a, type: 3}
+      ClipKey: 0
+      ClipSpeed: 1
+    - DisplayName: A_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: dd3119201267b4149b8388e0e2ee783d, type: 3}
+      ClipKey: 0
+      ClipSpeed: 0
+    - DisplayName: B_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 7c21005f7f78cde4fa44834cd2575473, type: 3}
+      ClipKey: 1
+      ClipSpeed: 3
+    - DisplayName: B_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9decec338e08104418a57c63b1b84c1c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 4
+    - DisplayName: B_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 8d4764da683d72b4e86ed83cac88323c, type: 3}
+      ClipKey: 1
+      ClipSpeed: 2
+    - DisplayName: B_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: e98be101f5fb2034ebb1376d7c3762bd, type: 3}
+      ClipKey: 1
+      ClipSpeed: 1
+    - DisplayName: B_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 6a9373881077c4347a7692d6a3a87752, type: 3}
+      ClipKey: 1
+      ClipSpeed: 0
+    - DisplayName: C_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 998cee33432843b4ea1999d2ec92ec19, type: 3}
+      ClipKey: 2
+      ClipSpeed: 3
+    - DisplayName: C_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: fa507f476a83f72479ee7d370030f76d, type: 3}
+      ClipKey: 2
+      ClipSpeed: 4
+    - DisplayName: C_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 6b0046d7aefd9b6478f476854a61cee1, type: 3}
+      ClipKey: 2
+      ClipSpeed: 2
+    - DisplayName: C_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: 401d031f7abc0e84d97d0b7bf1f1c4eb, type: 3}
+      ClipKey: 2
+      ClipSpeed: 1
+    - DisplayName: C_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 904c1e435aed02a438d1ff4595ec519c, type: 3}
+      ClipKey: 2
+      ClipSpeed: 0
+    - DisplayName: D_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: 5a711372083a38b43a2c115c7db6062c, type: 3}
+      ClipKey: 3
+      ClipSpeed: 3
+    - DisplayName: D_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: 9f281685083c81a43ba40e7a600d9053, type: 3}
+      ClipKey: 3
+      ClipSpeed: 4
+    - DisplayName: D_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 144eca9b374c11a498b1e2f4e67afedb, type: 3}
+      ClipKey: 3
+      ClipSpeed: 2
+    - DisplayName: D_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: a32a0daad9e9a284f80130eda9c69ae4, type: 3}
+      ClipKey: 3
+      ClipSpeed: 1
+    - DisplayName: D_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 82e1843b26960e249ae69dfda8fed217, type: 3}
+      ClipKey: 3
+      ClipSpeed: 0
+    - DisplayName: E_MAJOR - FASTER
+      Clip: {fileID: 8300000, guid: cbf3b7a7fbcfd0842b648eff7c7f664b, type: 3}
+      ClipKey: 4
+      ClipSpeed: 3
+    - DisplayName: E_MAJOR - FASTEST
+      Clip: {fileID: 8300000, guid: ba51d8b5833b4ca49bf309426e3953d0, type: 3}
+      ClipKey: 4
+      ClipSpeed: 4
+    - DisplayName: E_MAJOR - NORMAL
+      Clip: {fileID: 8300000, guid: 393a13fca1a7128409fc7eb91a078724, type: 3}
+      ClipKey: 4
+      ClipSpeed: 2
+    - DisplayName: E_MAJOR - SLOWER
+      Clip: {fileID: 8300000, guid: e966ca31367dcb144be1f766a6b7fcc2, type: 3}
+      ClipKey: 4
+      ClipSpeed: 1
+    - DisplayName: E_MAJOR - SLOWEST
+      Clip: {fileID: 8300000, guid: 0141d33139211c840a45218074876947, type: 3}
+      ClipKey: 4
+      ClipSpeed: 0
+  AudioClipsDirectory: Assets/Compositions/AudioClips/A_Major_Disaster
