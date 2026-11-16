@@ -48,7 +48,7 @@ public class OrchestraManager : MonoBehaviour
             // create musicians for the instrument group
             for (int i = 0; i < startingGroup.Amount; i++)
             {
-                instrumentGroup.Musicians.Add(MusicianGenerator.GenerateRandomMusician(startingGroup.InstrumentType));
+                instrumentGroup.Musicians.Add(MusicianGenerator.Instance.GenerateRandomMusician(startingGroup.InstrumentType));
             }
             // add to orchestra
             Orchestra.Add(instrumentGroup);

@@ -31,6 +31,7 @@ public class RunManager : MonoBehaviour
             BeginRunState(_currentRunState);
             // call event that the state has changed
             StateChanged?.Invoke(_currentRunState);
+            Debug.Log("Runstate changed to " + _currentRunState.ToString());
         }
     }
     
@@ -62,6 +63,8 @@ public class RunManager : MonoBehaviour
         OrchestraManager.Instance.CreateStartingOrchestra();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
+        // temporarily set directly to preparation
+        CurrentRunState = Enums.RunState.PREPARATION;
     }
 
     /// <summary>
@@ -94,8 +97,6 @@ public class RunManager : MonoBehaviour
                 }
                 // choose gig (temporarily just use the first)
                 _chosenGigOffer = gigOffers[0];
-                // change to preparation
-                CurrentRunState = Enums.RunState.PREPARATION;
                 break;
             case Enums.RunState.PREPARATION:
 

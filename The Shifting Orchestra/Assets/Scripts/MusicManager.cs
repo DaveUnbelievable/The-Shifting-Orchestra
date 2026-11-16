@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
@@ -62,9 +63,19 @@ public class MusicManager : MonoBehaviour
             audioSources[i].PlayScheduled(startTime);
         }
         
-        // TODO: wait until audio is finished and then change state
-        RunManager.Instance.CurrentRunState = Enums.RunState.EVALUATION;
+        
+        StartCoroutine(WaitForAudioToFinish());
 
+    }
+
+
+    private IEnumerator WaitForAudioToFinish()
+    {
+        // TODO: get real length, or look if the audio is finished every x ms
+        yield return new WaitForSeconds(5);
+
+        
+        RunManager.Instance.CurrentRunState = Enums.RunState.EVALUATION;
     }
 
     private AudioClip GetCorrectAudioClip(Enums.InstrumentType instrumentType, Enums.MusicalRole musicalRole, Enums.AudioClipKey key, Enums.AudioClipSpeed speed)
@@ -81,6 +92,7 @@ public class MusicManager : MonoBehaviour
                     if (variant.ClipKey == key && variant.ClipSpeed == speed)
                     {
                         clip = variant.Clip;
+                        break;
                     }
                 }
             }

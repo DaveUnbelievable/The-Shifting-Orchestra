@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PreparationUI : MonoBehaviour
 {
+    [SerializeField]
+    private VisualTreeAsset musicianOverviewAsset;
 
     private DropdownField drp_key_change;
     private DropdownField drp_tempo_change;
@@ -93,9 +96,24 @@ public class PreparationUI : MonoBehaviour
                 sld_volume_change.value = instrumentGroup.Volume;
                 // musical role
                 drp_musical_role.index = (int)instrumentGroup.MusicalRole;
-                // TODO: show musicians
+                // show musicians
+                SetupMusicianList(liv_musicians, instrumentGroup.Musicians);
             }
         }
+    }
+
+    private void SetupMusicianList(ListView listView, List<Musician> musicians)
+    {
+        listView.itemsSource = null;
+        listView.makeItem = () => {
+            return new MusicianOverview(musicianOverviewAsset);
+        };
+        listView.bindItem = (element, index) =>
+        {
+            ((MusicianOverview)element).SetMusician(musicians[index]);
+        };
+        listView.itemsSource = musicians;
+        listView.Rebuild();
     }
 
     private void MusicalRoleChanged(Enums.MusicalRole role)

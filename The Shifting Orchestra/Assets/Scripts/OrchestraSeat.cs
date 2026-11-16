@@ -14,7 +14,7 @@ public class OrchestraSeat : MonoBehaviour
     {
         // show musician
         this.musician = musician;
-        musicianObject = Instantiate(MusicianPrefab);
+        musicianObject = MusicianGenerator.Instance.GenerateMusicianVisuals(musician);
         musicianObject.transform.parent = transform;
         musicianObject.transform.localPosition = Vector3.zero;
         // TODO: show body parts of musician and instrument

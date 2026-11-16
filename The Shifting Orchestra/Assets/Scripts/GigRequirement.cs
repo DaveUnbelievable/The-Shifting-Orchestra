@@ -1,5 +1,4 @@
 using System;
-using UnityEngine.InputSystem.Android;
 
 public class GigRequirement
 {

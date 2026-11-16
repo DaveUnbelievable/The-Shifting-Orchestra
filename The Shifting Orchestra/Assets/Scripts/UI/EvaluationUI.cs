@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class EvaluationUI : MonoBehaviour
 {
+    [SerializeField]
+    private VisualTreeAsset performanceRequirementEvaluationAsset;
     private Label lbl_performance;
+    private ListView liv_requirement_performance;
     private Label lbl_gained_money;
     private Label lbl_gained_reputation;
     private Button btn_next_gig;
@@ -15,9 +19,11 @@ public class EvaluationUI : MonoBehaviour
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         // performance
         lbl_performance = root.Q<Label>("lbl_performance");
-        // performance
+        // list requirement performance
+        liv_requirement_performance = root.Q<ListView>("liv_requirement_performance");
+        // gained money
         lbl_gained_money = root.Q<Label>("lbl_gained_money");
-        // performance
+        // gained reputation
         lbl_gained_reputation = root.Q<Label>("lbl_gained_reputation");
         // next gig -> hide if run lost
         btn_next_gig = root.Q<Button>("btn_next_gig");
@@ -43,10 +49,30 @@ public class EvaluationUI : MonoBehaviour
     {
         // get performance
         Performance performance = RunManager.Instance.GetPerformance();
+        // show requirement scores
+        SetupRequirementList(liv_requirement_performance, performance.RequirementScores);
         // show performance
         lbl_performance.text = $"performance: {performance.OverallPerformance.PercentageValue}/100%";
         lbl_gained_money.text = $"gained money: {performance.PerformedGigOffer.MoneyReward * performance.OverallPerformance.PercentageValue / 100}/{performance.PerformedGigOffer.MoneyReward}€";
         lbl_gained_reputation.text = $"gained reputation: {performance.PerformedGigOffer.ReputationReward * performance.OverallPerformance.PercentageValue / 100}/{performance.PerformedGigOffer.ReputationReward}€";
+    }
+
+    private void SetupRequirementList(ListView listView, List<GigRequirementResult> requirementScores)
+    {
+        foreach (GigRequirementResult res in requirementScores)
+        {
+            Debug.Log($"{res.Requirement.RequirementType} -> {res.Score}");
+        }
+        listView.itemsSource = null;
+        listView.makeItem = () => {
+            return new PerformanceRequirementEvaluation(performanceRequirementEvaluationAsset);
+        };
+        listView.bindItem = (element, index) =>
+        {
+            ((PerformanceRequirementEvaluation)element).ShowEvaluation(requirementScores[index]);
+        };
+        listView.itemsSource = requirementScores;
+        listView.Rebuild();
     }
 
     private void NextGig(ClickEvent evt)

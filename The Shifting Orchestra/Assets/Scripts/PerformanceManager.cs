@@ -28,7 +28,8 @@ public class PerformanceManager
             performance.OverallPerformance.AddValue(-25);
         }
         // iterate through gig requirements
-        Dictionary<GigRequirement, int> requirementScores = new Dictionary<GigRequirement, int>();
+        List<GigRequirementResult> requirementScores = new List<GigRequirementResult>();
+        // Dictionary<GigRequirement, int> requirementScores = new Dictionary<GigRequirement, int>();
         foreach (GigRequirement requirement in gigOffer.Requirements)
         {
             // grace area 
@@ -110,7 +111,7 @@ public class PerformanceManager
                     }
                     break;
             }
-            requirementScores.Add(requirement, deduction);
+            requirementScores.Add(new GigRequirementResult(requirement, deduction));
         }
         performance.RequirementScores = requirementScores;
         // get total weight
@@ -125,14 +126,14 @@ public class PerformanceManager
             return performance;
         }
         // weigh scores and deduct performance points
-        foreach (KeyValuePair<GigRequirement, int> requirementScore in requirementScores)
+        foreach (GigRequirementResult requirementResult in requirementScores)
         {
             // get real requirement weight
-            float realRequirementWeight = (float)requirementScore.Key.Weight / (float)totalWeight;
+            float realRequirementWeight = (float)requirementResult.Requirement.Weight / (float)totalWeight;
             // get weighed deduction
-            int weighedDeduction = Mathf.FloorToInt((float)requirementScore.Value * realRequirementWeight);
+            int weighedDeduction = Mathf.FloorToInt((float)requirementResult.Score * realRequirementWeight);
 
-            Debug.Log($"{requirementScore.Key.RequirementType} {requirementScore.Key.Weight} -> {requirementScore.Value} -> {weighedDeduction}");
+            Debug.Log($"{requirementResult.Requirement.RequirementType} {requirementResult.Requirement.Weight} -> {requirementResult.Score} -> {weighedDeduction}");
 
             // deduct weighed deduction from performance
             performance.OverallPerformance.AddValue(-weighedDeduction);

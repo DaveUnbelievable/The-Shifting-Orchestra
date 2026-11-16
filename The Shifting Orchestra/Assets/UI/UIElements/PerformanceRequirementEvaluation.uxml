@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_evaluation" style="flex-grow: 1; flex-direction: row;">
+        <ui:Label text="requirement:" name="lbl_requirement"/>
+        <ui:Label text="-25" name="lbl_deduction" style="color: rgb(219, 20, 20);"/>
+        <ui:Image name="img_checkmark" style="width: 10px; height: 10px; background-color: rgb(76, 192, 28); margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;"/>
+    </ui:VisualElement>
+</ui:UXML>

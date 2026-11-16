@@ -8,7 +8,7 @@
         <ui:VisualElement name="vel_instrument_group_changes" style="flex-grow: 1;">
             <ui:Slider label="Volume" value="70" high-value="100" name="sld_volume_change" low-value="20"/>
             <ui:DropdownField label="musical role" name="drp_musical_role"/>
-            <ui:ListView name="liv_musicians"/>
+            <ui:ListView name="liv_musicians" style="flex-grow: 1;"/>
         </ui:VisualElement>
         <ui:Button text="perform gig" name="btn_perform_gig"/>
     </ui:VisualElement>
