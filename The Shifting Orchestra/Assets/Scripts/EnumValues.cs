@@ -20,4 +20,11 @@ public static class EnumValues
         // {Enums.MusicalRole.SOLO, 100},
         {Enums.MusicalRole.RHYTHM, 70},
     };
+
+    public static Dictionary<Enums.GigRequirementImportance, float> GigRequirementImportanceValues = new Dictionary<Enums.GigRequirementImportance, float> {
+        {Enums.GigRequirementImportance.NICE_TO_HAVE, 0.2f},
+        {Enums.GigRequirementImportance.NORMAL, 0.45f},
+        {Enums.GigRequirementImportance.IMPORTANT, 0.7f},
+        {Enums.GigRequirementImportance.VERY_IMPORTANT, 1f},
+    };
 }

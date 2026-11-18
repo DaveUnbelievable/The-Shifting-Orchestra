@@ -4,28 +4,30 @@ using UnityEngine;
 public class GigOffer
 {
     public List<GigRequirement> Requirements { get; private set; }
-    public int MinimumOrchestraSize { get; private set; }
     public int MoneyReward { get; private set; }
     public int ReputationReward { get; private set; }
-    
+
     public GigOffer()
     {
         // create list of requirements for the gig offer
         Requirements = new List<GigRequirement>();
 
+        // add orchestra size requirement
+        Requirements.Add(new GigRequirement(Enums.GigRequirementType.ORCHESTRA_SIZE, Enums.GigRequirementImportance.VERY_IMPORTANT));
+
         // 50% chance of even having a tempo/volume requirement -> only one of them can be requirement at a time, not both
         if (Random.value < 0.5f)
         {
-            int weight = GetRandomWeight();
+            Enums.GigRequirementImportance importance = GetRandomImportance();
             // add tempo requirement
             if (Random.value < 0.5f)
             {
-                Requirements.Add(new GigRequirement(Enums.GigRequirementType.TEMPO, weight));
+                Requirements.Add(new GigRequirement(Enums.GigRequirementType.TEMPO, importance));
             }
             // add volume requirement
             else
             {
-                Requirements.Add(new GigRequirement(Enums.GigRequirementType.VOLUME, weight));
+                Requirements.Add(new GigRequirement(Enums.GigRequirementType.VOLUME, importance));
             }
         }
         // amount of instrument requirements
@@ -33,14 +35,15 @@ public class GigOffer
         List<Enums.InstrumentType> usedInstrumentTypes = new List<Enums.InstrumentType>();
         for (int i = 0; i < instrumentRequirementAmount; i++)
         {
-            int weight = GetRandomWeight();
+            Enums.GigRequirementImportance importance = GetRandomImportance();
             // create a new gig requirement and add it to the list of requirements
-            GigRequirement requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, weight);
+            GigRequirement requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, importance);
+            Enums.InstrumentType instrumentType = (Enums.InstrumentType)requirement.PreferredInstrumentProminence?.Key;
             // check if the requirement already exists in the list of requirements and if so, generate a new requirement until a unique one is found
             int maxRetries = 0;
-            while (usedInstrumentTypes.Contains(requirement.PreferredInstrumentProminence.Item1))
+            while (usedInstrumentTypes.Contains(instrumentType))
             {
-                requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, weight);
+                requirement = new GigRequirement(Enums.GigRequirementType.INSTRUMENTS, importance);
                 maxRetries++;
                 if (maxRetries >= 15)
                 {
@@ -51,19 +54,28 @@ public class GigOffer
             // add the unique requirement to the list of requirements
             Requirements.Add(requirement);
             // add instrument to used instrument types
-            usedInstrumentTypes.Add(requirement.PreferredInstrumentProminence.Item1);
+            usedInstrumentTypes.Add(instrumentType);
         }
+        // sort requirements by importane
+        Requirements.Sort((left, right) => EnumValues.GigRequirementImportanceValues[right.Importance].CompareTo(EnumValues.GigRequirementImportanceValues[left.Importance]));
         // create money reward, reputation reward, and minimum orchestra size for the gig offer according to current reputation of the player
         int currentReputation = RunManager.Instance.CurrentReputation;
         // TODO: adjust values to be balanced
-        int minOrchestraSize = Mathf.Max(1, Random.Range(currentReputation - 5, currentReputation + 5));
-        MinimumOrchestraSize = Random.Range(minOrchestraSize, minOrchestraSize + Random.Range(0, 20));
         MoneyReward = Random.Range(10 * currentReputation, 20 * currentReputation + 1);
         ReputationReward = Random.Range(1 * currentReputation,  5 * currentReputation + 1);
     }
 
-    private int GetRandomWeight()
+    private Enums.GigRequirementImportance GetRandomImportance()
     {
-        return Random.Range(1, 11);
+        float randomValue = Mathf.Round(Random.Range(0f, 1f) * 10) / 10; // -> should be only values with one digit after the comma
+        Enums.GigRequirementImportance importance = Enums.GigRequirementImportance.NICE_TO_HAVE;
+        foreach (KeyValuePair<Enums.GigRequirementImportance, float> gigRequirementImportanceValue in EnumValues.GigRequirementImportanceValues)
+        {
+            if (randomValue >= gigRequirementImportanceValue.Value)
+            {
+                importance = gigRequirementImportanceValue.Key;
+            }
+        }
+        return importance;
     }
 }

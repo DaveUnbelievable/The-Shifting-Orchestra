@@ -17,11 +17,13 @@ public class GigManager
 
     public void StartGig(GigOffer gigOffer)
     {
-        // TODO: start gig
-        // TODO: show animations for playing gig
-        // TODO: play music for gig
-        // TODO: after music is finished, go to evaluation state
-
+        /*
+        TODO:
+        - with DOTween do a little camera movement, that the orchestra is fully visible and in the middle
+        - show musician animations
+        - play music
+        - wait for music to finish, then got to evaluation
+        */
         MusicManager.Instance.PlayComposition();
     }
 

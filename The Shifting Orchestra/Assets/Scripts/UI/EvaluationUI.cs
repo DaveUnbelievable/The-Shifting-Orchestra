@@ -53,16 +53,15 @@ public class EvaluationUI : MonoBehaviour
         SetupRequirementList(liv_requirement_performance, performance.RequirementScores);
         // show performance
         lbl_performance.text = $"performance: {performance.OverallPerformance.PercentageValue}/100%";
-        lbl_gained_money.text = $"gained money: {performance.PerformedGigOffer.MoneyReward * performance.OverallPerformance.PercentageValue / 100}/{performance.PerformedGigOffer.MoneyReward}€";
-        lbl_gained_reputation.text = $"gained reputation: {performance.PerformedGigOffer.ReputationReward * performance.OverallPerformance.PercentageValue / 100}/{performance.PerformedGigOffer.ReputationReward}€";
+        lbl_gained_money.text = $"gained money: {performance.MoneyReward}/{performance.PerformedGigOffer.MoneyReward}€";
+        lbl_gained_reputation.text = $"gained reputation: {performance.RepuationReward}/{performance.PerformedGigOffer.ReputationReward}";
     }
 
     private void SetupRequirementList(ListView listView, List<GigRequirementResult> requirementScores)
     {
-        foreach (GigRequirementResult res in requirementScores)
-        {
-            Debug.Log($"{res.Requirement.RequirementType} -> {res.Score}");
-        }
+        // sort by importance
+        requirementScores.Sort((left, right) => EnumValues.GigRequirementImportanceValues[right.Requirement.Importance].CompareTo(EnumValues.GigRequirementImportanceValues[left.Requirement.Importance]));
+        // set list to itemsource for requirement list
         listView.itemsSource = null;
         listView.makeItem = () => {
             return new PerformanceRequirementEvaluation(performanceRequirementEvaluationAsset);

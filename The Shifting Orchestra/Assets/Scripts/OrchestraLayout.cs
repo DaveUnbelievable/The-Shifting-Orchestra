@@ -63,7 +63,6 @@ public class OrchestraLayout : MonoBehaviour
         }
     }
 
-    [Button("ShowOrchestra")]
     public void ShowOrchestra()
     {
         // clear all seats

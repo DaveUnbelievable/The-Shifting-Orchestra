@@ -5,21 +5,6 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    #region Singleton
-    public static UIManager Instance { get; private set; }
-    void Awake()
-    {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    #endregion
-
-
     public List<UserInterfaceAssignment> UserInterfaces;
 
     private Dictionary<Enums.UserInterface, UIDocument> userInterfaces;
@@ -38,13 +23,31 @@ public class UIManager : MonoBehaviour
                 Debug.LogWarning($"doppelte UI vom Typ {assignment.Type}!");
             }
         }
+
+        RunManager.Instance.StateChanged += ShowUI;
     }
 
-    public void ShowUI(Enums.UserInterface type)
+    // public void ShowUI(Enums.UserInterface type)
+    public void ShowUI(Enums.RunState runState)
     {
+        Enums.UserInterface uiType = Enums.UserInterface.PREPARATION;
+        switch (runState) {
+            case Enums.RunState.GIG_OFFERS:
+                uiType = Enums.UserInterface.GIG_OFFERS;
+                break;
+            case Enums.RunState.PREPARATION:
+                uiType = Enums.UserInterface.PREPARATION;
+                break;
+            case Enums.RunState.GIG:
+                uiType = Enums.UserInterface.GIG;
+                break;
+            case Enums.RunState.EVALUATION:
+                uiType = Enums.UserInterface.EVALUATION;
+                break;
+        }
         foreach (KeyValuePair<Enums.UserInterface, UIDocument> userInterface in userInterfaces)
         {
-            if (userInterface.Key == type)
+            if (userInterface.Key == uiType)
             {
                 userInterface.Value.rootVisualElement.style.display = DisplayStyle.Flex;
             }
@@ -54,9 +57,9 @@ public class UIManager : MonoBehaviour
             }
         }
         // warn if the ui doesnt exist
-        if (!userInterfaces.ContainsKey(type))
+        if (!userInterfaces.ContainsKey(uiType))
         {
-            Debug.LogWarning($"UI vom Typ {type} nicht gefunden!");
+            Debug.LogWarning($"UI vom Typ {uiType} nicht gefunden!");
         }
     }
 

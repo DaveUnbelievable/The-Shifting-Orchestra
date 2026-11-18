@@ -31,7 +31,6 @@ public class RunManager : MonoBehaviour
             BeginRunState(_currentRunState);
             // call event that the state has changed
             StateChanged?.Invoke(_currentRunState);
-            Debug.Log("Runstate changed to " + _currentRunState.ToString());
         }
     }
     
@@ -82,43 +81,28 @@ public class RunManager : MonoBehaviour
         switch (newRunState) {
             case Enums.RunState.GIG_OFFERS:
 
-                UIManager.Instance.ShowUI(Enums.UserInterface.GIG_OFFERS);
-
                 List<GigOffer> gigOffers = _gigManager.GetGigOffers();
-                Debug.Log("Gig Offer: " + gigOffers[0].MoneyReward + " money, " + gigOffers[0].ReputationReward + " reputation, " + gigOffers[0].MinimumOrchestraSize + " minimum orchestra size");
+                Debug.Log($"Gig Offer: {gigOffers[0].MoneyReward} money, {gigOffers[0].ReputationReward} reputation");
                 foreach (GigRequirement requirement in gigOffers[0].Requirements) {
-                    if (requirement.PreferredInstrumentProminence != null) {
-                        Debug.Log("Requirement: " + requirement.PreferredInstrumentProminence.Item1 + " " + requirement.PreferredInstrumentProminence.Item2 + ", weight: " + requirement.Weight);
-                    } else if (requirement.PreferredTempo != null) {
-                        Debug.Log("Requirement: preferred tempo: " + requirement.PreferredTempo + ", weight: " + requirement.Weight);
-                    } else if (requirement.PreferredVolume != null) {
-                        Debug.Log("Requirement: preferred volume: " + requirement.PreferredVolume + ", weight: " + requirement.Weight);
-                    }
+                    Debug.Log(requirement.GetRequirementText());
                 }
                 // choose gig (temporarily just use the first)
                 _chosenGigOffer = gigOffers[0];
+
                 break;
             case Enums.RunState.PREPARATION:
-
-                UIManager.Instance.ShowUI(Enums.UserInterface.PREPARATION);
 
                 break;
             case Enums.RunState.GIG:
 
-                UIManager.Instance.ShowUI(Enums.UserInterface.GIG);
-
                 _gigManager.StartGig(_chosenGigOffer);
+
                 break;
             case Enums.RunState.EVALUATION:
 
+                // evaluate performance
                 _performance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
-                _performanceManager.UpdateReputationAndMoney(_performance, _chosenGigOffer);
-                
-                UIManager.Instance.ShowUI(Enums.UserInterface.EVALUATION);
 
-                // _performanceManager.EvaluatePerformance(_orchestraManager, _chosenGigOffer);
-                // TODO: get performance score
-                // TODO: get money and reputation reward based on performance score
                 break;
         }
     }
@@ -137,14 +121,22 @@ public class RunManager : MonoBehaviour
         // actions to perform when finishing a run state
         switch (finishedRunState) {
             case Enums.RunState.GIG_OFFERS:
+
                 break;
             case Enums.RunState.PREPARATION:
-                // TODO: hide ui
+            
                 break;
             case Enums.RunState.GIG:
+
                 _currentGigIndex++;
+
                 break;
             case Enums.RunState.EVALUATION:
+
+                // add rewards to players money and reputation
+                AddMoney(_performance.MoneyReward);
+                AddReputation(_performance.RepuationReward);
+
                 // check if player lost
                 if (CurrentReputation <= 0)
                 {
@@ -155,6 +147,7 @@ public class RunManager : MonoBehaviour
                 {
                     EndRun(true);
                 }
+
                 break;
         }
     }
@@ -166,12 +159,12 @@ public class RunManager : MonoBehaviour
     }
 
 
-    public void AddMoney(int addValue)
+    private void AddMoney(int addValue)
     {
         CurrentMoney = Math.Clamp(CurrentMoney + addValue, 0, int.MaxValue);
     }
 
-    public void AddReputation(int addValue)
+    private void AddReputation(int addValue)
     {
         CurrentReputation = Math.Clamp(CurrentReputation + addValue, 0, int.MaxValue);
     }

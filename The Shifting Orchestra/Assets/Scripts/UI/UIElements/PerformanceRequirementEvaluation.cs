@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PerformanceRequirementEvaluation : VisualElement
@@ -21,18 +20,18 @@ public class PerformanceRequirementEvaluation : VisualElement
 
     public void ShowEvaluation(GigRequirementResult gigRequirementResult)
     {
-        lbl_requirement.text = gigRequirementResult.Requirement.RequirementType.ToString();
+        lbl_requirement.text = gigRequirementResult.Requirement.GetRequirementText();
 
         lbl_deduction.style.display = DisplayStyle.None;
         img_checkmark.style.display = DisplayStyle.None;
-        if (gigRequirementResult.Score == 0)
+        if (gigRequirementResult.WeighedDeduction == 0)
         {
             img_checkmark.style.display = DisplayStyle.Flex;
         }
         else
         {
             lbl_deduction.style.display = DisplayStyle.Flex;
-            lbl_deduction.text = $"-{gigRequirementResult.Score}";
+            lbl_deduction.text = $"-{gigRequirementResult.WeighedDeduction}";
         }
 
     }

@@ -56,6 +56,15 @@ public static class Enums
         INSTRUMENTS,
         TEMPO,
         VOLUME,
+        ORCHESTRA_SIZE,
+    }
+
+    public enum GigRequirementImportance
+    {
+        NICE_TO_HAVE,
+        NORMAL,
+        IMPORTANT,
+        VERY_IMPORTANT,
     }
 
     public enum OrchestraPositionType
