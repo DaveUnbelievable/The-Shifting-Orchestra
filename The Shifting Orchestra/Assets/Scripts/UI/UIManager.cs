@@ -24,11 +24,10 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        RunManager.Instance.StateChanged += ShowUI;
+        RunManager.Instance.StateChanged += ShowRunUI;
     }
 
-    // public void ShowUI(Enums.UserInterface type)
-    public void ShowUI(Enums.RunState runState)
+    public void ShowRunUI(Enums.RunState runState)
     {
         Enums.UserInterface uiType = Enums.UserInterface.PREPARATION;
         switch (runState) {

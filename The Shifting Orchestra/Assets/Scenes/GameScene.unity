@@ -539,6 +539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720924223}
   - component: {fileID: 720924224}
+  - component: {fileID: 720924225}
   m_Layer: 0
   m_Name: GigUI
   m_TagString: Untagged
@@ -584,6 +585,18 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &720924225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720924222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588a188682b44b141a43e449c7e866f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GigUI
 --- !u!1 &813406518
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333242737}
   - component: {fileID: 1333242738}
+  - component: {fileID: 1333242739}
   m_Layer: 0
   m_Name: GigOffersUI
   m_TagString: Untagged
@@ -898,6 +912,19 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &1333242739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333242736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8124b151718673148ac8f901ca4581b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GigOffersUI
+  gigOfferAsset: {fileID: 9197481963319205126, guid: 6310fb3f91465c440982c01dc9c70e50, type: 3}
 --- !u!1 &1364729425
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrchestraPreparationUI
   musicianOverviewAsset: {fileID: 9197481963319205126, guid: b12b34f3fdd1cb64c9c5dc60f509510c, type: 3}
+  musicianCardAsset: {fileID: 9197481963319205126, guid: 222d4a87256903a4f8f960b6ea76ceaf, type: 3}
 --- !u!1 &1528801499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,8 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cae3d46ee3ce8e4bb8e869b2c44d32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDatabase
-  TotalAmountGigs: 7
+  GigsPerRun: 7
   MoneyBase: 100
+  GigOfferRerollBaseCost: 5
   StartingInstrumentGroups:
   - InstrumentType: 0
     MusicalRole: 0

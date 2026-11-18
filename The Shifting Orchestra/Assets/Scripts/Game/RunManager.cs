@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 public class RunManager : MonoBehaviour
@@ -37,9 +38,16 @@ public class RunManager : MonoBehaviour
     public int CurrentMoney { get; private set; }
     public int CurrentReputation { get; private set; }
 
+    [HideInInspector]
+    public List<GigOffer> GigOffers {get; private set;}
+    [HideInInspector]
+    public GigOffer ChosenGigOffer {get; private set;}
+    [HideInInspector]
+    public Performance GigPerformance {get; private set;}
+    [HideInInspector]
+    public List<Musician> MusiciansForHire {get; private set;}
+
     private int _currentGigIndex;
-    private GigOffer _chosenGigOffer;
-    private Performance _performance;
     private bool _runFinished;
 
 
@@ -63,7 +71,7 @@ public class RunManager : MonoBehaviour
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
         // temporarily set directly to preparation
-        CurrentRunState = Enums.RunState.PREPARATION;
+        // CurrentRunState = Enums.RunState.PREPARATION;
     }
 
     /// <summary>
@@ -81,27 +89,24 @@ public class RunManager : MonoBehaviour
         switch (newRunState) {
             case Enums.RunState.GIG_OFFERS:
 
-                List<GigOffer> gigOffers = _gigManager.GetGigOffers();
-                Debug.Log($"Gig Offer: {gigOffers[0].MoneyReward} money, {gigOffers[0].ReputationReward} reputation");
-                foreach (GigRequirement requirement in gigOffers[0].Requirements) {
-                    Debug.Log(requirement.GetRequirementText());
-                }
-                // choose gig (temporarily just use the first)
-                _chosenGigOffer = gigOffers[0];
+                GetNewGigOffers();
 
                 break;
             case Enums.RunState.PREPARATION:
 
+                // generate random musician per instrument
+                GenerateMusiciansForHire();
+
                 break;
             case Enums.RunState.GIG:
 
-                _gigManager.StartGig(_chosenGigOffer);
+                _gigManager.StartGig(ChosenGigOffer);
 
                 break;
             case Enums.RunState.EVALUATION:
 
                 // evaluate performance
-                _performance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, _chosenGigOffer);
+                GigPerformance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, ChosenGigOffer);
 
                 break;
         }
@@ -134,8 +139,8 @@ public class RunManager : MonoBehaviour
             case Enums.RunState.EVALUATION:
 
                 // add rewards to players money and reputation
-                AddMoney(_performance.MoneyReward);
-                AddReputation(_performance.RepuationReward);
+                AddMoney(GigPerformance.MoneyReward);
+                AddReputation(GigPerformance.RepuationReward);
 
                 // check if player lost
                 if (CurrentReputation <= 0)
@@ -143,7 +148,7 @@ public class RunManager : MonoBehaviour
                     EndRun(false);
                 }
                 // check if the run is finished (if the player has played all gigs)
-                if (_currentGigIndex >= GameDatabase.Instance.TotalAmountGigs)
+                if (_currentGigIndex >= GameDatabase.Instance.GigsPerRun)
                 {
                     EndRun(true);
                 }
@@ -158,6 +163,46 @@ public class RunManager : MonoBehaviour
         Debug.Log("Run finished! Final money: " + CurrentMoney + ", final reputation: " + CurrentReputation + ", won: " + won);
     }
 
+    public void ChooseGigOffer(GigOffer gigOffer)
+    {
+        // save chosen gig offer
+        ChosenGigOffer = gigOffer;
+        // move to preparation
+        CurrentRunState = Enums.RunState.PREPARATION;
+    }
+
+    public bool GetNewGigOffers(bool reroll = false)
+    {
+        if (reroll)
+        {
+            if (CurrentMoney > GameDatabase.Instance.GigOfferRerollBaseCost)
+            {
+                AddMoney(-GameDatabase.Instance.GigOfferRerollBaseCost);
+            } else
+            {
+                return false;
+            }
+        }
+        GigOffers = _gigManager.GetGigOffers();
+        return true;
+    }
+
+    public void GenerateMusiciansForHire(Enums.InstrumentType? onlyThisInstrumentType = null)
+    {
+        // only generate a musician for this instrument type
+        if (onlyThisInstrumentType != null)
+        {
+            MusiciansForHire.Add(MusicianGenerator.Instance.GenerateRandomMusician((Enums.InstrumentType)onlyThisInstrumentType));
+        }
+        else // generate for each instrument type
+        {
+            MusiciansForHire = new List<Musician>();
+            foreach (Enums.InstrumentType instrumentType in Enum.GetValues(typeof(Enums.InstrumentType)))
+            {
+                MusiciansForHire.Add(MusicianGenerator.Instance.GenerateRandomMusician(instrumentType));
+            }
+        }
+    }
 
     private void AddMoney(int addValue)
     {
@@ -169,10 +214,19 @@ public class RunManager : MonoBehaviour
         CurrentReputation = Math.Clamp(CurrentReputation + addValue, 0, int.MaxValue);
     }
 
-
-    public Performance GetPerformance()
+    public void HireMusician(Musician musician)
     {
-        return _performance;
+        // TODO: add to orchestra
+
+        // remove from hire list
+        MusiciansForHire.Remove(musician);
+        // add new musician with the same instrument type
+        GenerateMusiciansForHire(musician.InstrumentType);
+    }
+
+    public void FireMusician(Musician musician)
+    {
+        
     }
 
 }

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_gig_offer" style="flex-grow: 1; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; background-color: rgb(135, 135, 135); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; margin-top: 30px; margin-right: 30px; margin-bottom: 30px; margin-left: 30px;">
+        <ui:Label text="Gig Offer" name="lbl_gig_offer" style="align-self: center;"/>
+        <ui:VisualElement name="vel_requirements" style="flex-grow: 1; background-color: rgb(195, 195, 195); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; margin-top: 10px; margin-right: 0; margin-bottom: 10px; margin-left: 0;">
+            <ui:Label text="requirements" name="lbl_requirements"/>
+            <ui:Label text="money" name="lbl_money_reward"/>
+            <ui:Label text="reputation" name="lbl_reputation_reward"/>
+        </ui:VisualElement>
+        <ui:Button text="accept gig" name="btn_accept"/>
+    </ui:VisualElement>
+</ui:UXML>

@@ -18,9 +18,11 @@ public class GameDatabase : MonoBehaviour
     #endregion
 
     // total amount of gigs the player will play in a run
-    public int TotalAmountGigs = 7;
+    public int GigsPerRun = 7;
     // base money the player starts with
     public int MoneyBase = 100;
+    // base cost of gig offer reroll
+    public int GigOfferRerollBaseCost = 5;
     // starting orchestra
     public List<StartingInstrumentGroup> StartingInstrumentGroups = new List<StartingInstrumentGroup>() {
         new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.STRINGS, MusicalRole = Enums.MusicalRole.MELODY, Amount = 2, Volume = 70 },

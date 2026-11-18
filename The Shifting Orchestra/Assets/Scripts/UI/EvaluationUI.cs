@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 public class EvaluationUI : MonoBehaviour
 {
     [SerializeField]
@@ -32,23 +33,20 @@ public class EvaluationUI : MonoBehaviour
         btn_finish = root.Q<Button>("btn_finish");
         btn_finish.RegisterCallback<ClickEvent>(Finish);
 
-        RunManager.Instance.StateChanged += RunStateChanged;
-
-    }
-
-    private void RunStateChanged(Enums.RunState state)
-    {
-        // show evaluation if run state is EVALUATION
-        if (state == Enums.RunState.EVALUATION)
+        RunManager.Instance.StateChanged += (state) =>
         {
-            ShowEvaluation();
-        }
+            // show evaluation if run state is EVALUATION
+            if (state == Enums.RunState.EVALUATION)
+            {
+                ShowEvaluation();
+            }
+        };
     }
 
     private void ShowEvaluation()
     {
         // get performance
-        Performance performance = RunManager.Instance.GetPerformance();
+        Performance performance = RunManager.Instance.GigPerformance;
         // show requirement scores
         SetupRequirementList(liv_requirement_performance, performance.RequirementScores);
         // show performance

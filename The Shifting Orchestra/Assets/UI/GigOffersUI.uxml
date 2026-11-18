@@ -1,5 +1,12 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="vel_gig_offers" style="flex-grow: 1;">
+    <ui:Template name="GigOfferCard" src="project://database/Assets/UI/UIElements/GigOfferCard.uxml?fileID=9197481963319205126&amp;guid=6310fb3f91465c440982c01dc9c70e50&amp;type=3#GigOfferCard"/>
+    <ui:VisualElement name="" style="flex-grow: 1; align-items: stretch; align-self: auto; align-content: auto; justify-content: center;">
         <ui:Label text="gig offers" name="lbl_gig_offers" enable-rich-text="true"/>
+        <ui:VisualElement name="vel_gig_offers" style="flex-grow: 0; flex-direction: row; align-content: flex-start; justify-content: center; align-items: center; align-self: center; display: flex;">
+            <ui:Instance template="GigOfferCard" name=""/>
+            <ui:Instance template="GigOfferCard" name=""/>
+            <ui:Instance template="GigOfferCard" name=""/>
+        </ui:VisualElement>
+        <ui:Button text="Reroll" name="btn_reroll_gig_offers"/>
     </ui:VisualElement>
 </ui:UXML>

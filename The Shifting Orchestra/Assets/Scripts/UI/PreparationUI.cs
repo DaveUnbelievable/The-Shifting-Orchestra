@@ -8,6 +8,8 @@ public class PreparationUI : MonoBehaviour
 {
     [SerializeField]
     private VisualTreeAsset musicianOverviewAsset;
+    [SerializeField]
+    private VisualTreeAsset musicianCardAsset;
 
     private DropdownField drp_key_change;
     private DropdownField drp_tempo_change;
@@ -16,6 +18,8 @@ public class PreparationUI : MonoBehaviour
     private DropdownField drp_musical_role;
     private ListView liv_musicians;
     private Button btn_perform_gig;
+    private VisualElement vel_musician_market;
+    private VisualElement vel_upgrades;
 
     private InstrumentGroup currentSelectedInstrumentGroup;
 
@@ -36,13 +40,25 @@ public class PreparationUI : MonoBehaviour
         });
         // musical role
         drp_musical_role = root.Q<DropdownField>("drp_musical_role");
+        // fill all dropdown fields
+        FillDropdownFields();
         // musicians
         liv_musicians = root.Q<ListView>("liv_musicians");
+        // musician market
+        vel_musician_market = root.Q<VisualElement>("vel_musician_market");
+        // upgrades
+        vel_upgrades = root.Q<VisualElement>("vel_upgrades");
         // perform gig button
         btn_perform_gig = root.Q<Button>("btn_perform_gig");
         btn_perform_gig.RegisterCallback<ClickEvent>(PerformGig);
-        // fill all dropdown fields
-        FillDropdownFields();
+        
+        RunManager.Instance.StateChanged += (state) =>
+        {
+            if (state == Enums.RunState.PREPARATION)
+            {
+                ShowMusiciansForHire();
+            }
+        };
     }
     
     private void FillDropdownFields()
@@ -142,6 +158,19 @@ public class PreparationUI : MonoBehaviour
                 onSelected(values[index]);
             }
         });
+    }
+
+    public void ShowMusiciansForHire()
+    {
+        // clear previous
+        vel_musician_market.Clear();
+        // show musicians for hire
+        foreach (Musician musician in RunManager.Instance.MusiciansForHire)
+        {
+            MusicianCard card = new MusicianCard(musicianCardAsset, this);
+            vel_musician_market.Add(card);
+            card.ShowMusician(musician);
+        }
     }
 
     private void PerformGig(ClickEvent evt)

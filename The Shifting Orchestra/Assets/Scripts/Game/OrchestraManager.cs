@@ -25,6 +25,7 @@ public class OrchestraManager : MonoBehaviour
     public Dictionary<Enums.InstrumentType, GameObject> InstrumentGroupObjects;
     
     // TODO: save musicians better
+    // TODO: hire/fire musician
 
     public void CreateStartingOrchestra()
     {
