@@ -1,4 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Currencies" src="project://database/Assets/UI/UIElements/Currencies.uxml?fileID=9197481963319205126&amp;guid=9207fb8d74263ac4cbe2c4ad18175cb3&amp;type=3#Currencies"/>
     <ui:VisualElement name="vel_evaluation" style="flex-grow: 1; width: auto;">
         <ui:Label text="performance: 100%" name="lbl_maximum"/>
         <ui:ListView name="liv_requirement_performance" virtualization-method="DynamicHeight"/>
@@ -7,5 +8,6 @@
         <ui:Label text="gained reputation" name="lbl_gained_reputation"/>
         <ui:Button text="next gig" name="btn_next_gig"/>
         <ui:Button text="finish" name="btn_finish"/>
+        <ui:Instance template="Currencies" name="cur_currencies"/>
     </ui:VisualElement>
 </ui:UXML>

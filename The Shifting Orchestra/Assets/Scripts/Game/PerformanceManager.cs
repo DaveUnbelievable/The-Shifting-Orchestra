@@ -14,9 +14,9 @@ public class PerformanceManager
         performance.OverallPerformance.AddValue(100);
         // met size requirement
         int orchestraSize = 0;
-        foreach (InstrumentGroup group in orchestraManager.Orchestra)
+        foreach (KeyValuePair<Enums.InstrumentType, InstrumentGroup> group in orchestraManager.InstrumentGroups)
         {
-            foreach (Musician musician in group.Musicians)
+            foreach (Musician musician in group.Value.Musicians)
             {
                 orchestraSize++;
             }
@@ -58,11 +58,11 @@ public class PerformanceManager
                         float preferredVolume = requirement.PreferredVolume.Value;
                         // calculate volume average
                         float volumeAverage = 0;
-                        foreach (InstrumentGroup group in orchestraManager.Orchestra)
+                        foreach (KeyValuePair<Enums.InstrumentType, InstrumentGroup> group in orchestraManager.InstrumentGroups)
                         {
-                            volumeAverage += group.Volume;
+                            volumeAverage += group.Value.Volume;
                         }
-                        volumeAverage /= orchestraManager.Orchestra.Count;
+                        volumeAverage /= orchestraManager.InstrumentGroups.Count;
                         // check if volume is below or above preferred tempo
                         bool volumeIsInGraceArea = (preferredVolume - graceArea) <= volumeAverage && volumeAverage <= (preferredVolume + graceArea);
                         if (!volumeIsInGraceArea)

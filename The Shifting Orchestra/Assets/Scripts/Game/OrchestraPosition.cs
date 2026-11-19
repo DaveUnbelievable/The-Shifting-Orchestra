@@ -90,7 +90,8 @@ public class OrchestraPosition : MonoBehaviour
                 }
                 else
                 {
-                    // TODO: Error?
+                    // no seat found
+                    return false;
                 }
             }
             // musicians seated

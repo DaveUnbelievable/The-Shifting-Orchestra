@@ -1,6 +1,12 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:currencies="TheShiftingOrchestra.UI" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Currencies" src="project://database/Assets/UI/UIElements/Currencies.uxml?fileID=9197481963319205126&amp;guid=9207fb8d74263ac4cbe2c4ad18175cb3&amp;type=3#Currencies"/>
     <ui:VisualElement name="vel_orchestra_prep" style="flex-grow: 1;">
         <ui:TabView>
+            <ui:Tab label="Gig" name="tab_chosen_gig">
+                <ui:Label text="requirements" name="lbl_gig_requirements"/>
+                <ui:Label text="money" name="lbl_gig_money_reward"/>
+                <ui:Label text="reputation" name="lbl_gig_reputation_reward"/>
+            </ui:Tab>
             <ui:Tab label="Orchestra" name="tab_orchestra">
                 <ui:VisualElement name="vel_full_orchestra_change" style="flex-grow: 1;">
                     <ui:DropdownField label="key" name="drp_key_change"/>
@@ -21,5 +27,6 @@
             </ui:Tab>
         </ui:TabView>
         <ui:Button text="perform gig" name="btn_perform_gig"/>
+        <ui:Instance template="Currencies" name="cur_currencies"/>
     </ui:VisualElement>
 </ui:UXML>

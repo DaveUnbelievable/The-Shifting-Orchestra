@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_currencies" data-source="project://database/Assets/Run/NormalRun.asset?fileID=11400000&amp;guid=cdba6fc350d7efb4d9f6142670149aca&amp;type=2#NormalRun" style="flex-grow: 1;">
+        <ui:Label name="lbl_money" text="money: 1€">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="CurrentMoneyText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="reputation: 1" name="lbl_reputation">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="CurrentReputationText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

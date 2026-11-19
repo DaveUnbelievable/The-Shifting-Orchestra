@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_end_result" style="flex-grow: 1;">
+        <ui:Label text="run ended" name="lbl_run_ended"/>
+        <ui:Label text="final money" name="lbl_final_money"/>
+        <ui:Label text="final reputation" name="lbl_final_reputation"/>
+        <ui:Button text="end run" name="btn_end_run"/>
+    </ui:VisualElement>
+</ui:UXML>

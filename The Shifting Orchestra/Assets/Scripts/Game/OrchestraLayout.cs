@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 
 public class OrchestraLayout : MonoBehaviour
@@ -72,16 +71,16 @@ public class OrchestraLayout : MonoBehaviour
             orchestraPosition.ClearSeats();
         }
         // seat all instrument groups
-        foreach (InstrumentGroup instrumentGroup in OrchestraManager.Instance.Orchestra)
+        foreach (KeyValuePair<Enums.InstrumentType, InstrumentGroup> instrumentGroup in OrchestraManager.Instance.InstrumentGroups)
         {
             // show in random position for now
             foreach (GameObject orchestraPositionObject in orchestraPositionObjects)
             {
                 // get a position with the right musical role
                 OrchestraPosition orchestraPosition = orchestraPositionObject.GetComponent<OrchestraPosition>();
-                if (orchestraPosition.OrchestraPositionDefinition.MusicalRole == instrumentGroup.MusicalRole)
+                if (orchestraPosition.OrchestraPositionDefinition.MusicalRole == instrumentGroup.Value.MusicalRole)
                 {
-                    bool seated = orchestraPosition.SeatInstrumentGroup(instrumentGroup, Conductor);
+                    bool seated = orchestraPosition.SeatInstrumentGroup(instrumentGroup.Value, Conductor);
                     // end foreach if instrument group is seated successfully (else continue to next position)
                     if (seated)
                     {

@@ -6,11 +6,13 @@ using UnityEngine.UIElements;
 public class UIManager : MonoBehaviour
 {
     public List<UserInterfaceAssignment> UserInterfaces;
+    public UIDocument MainMenuUI;
 
     private Dictionary<Enums.UserInterface, UIDocument> userInterfaces;
 
     void Start()
     {
+        // convert list with user interface assignments into dictionary for easier access
         userInterfaces = new Dictionary<Enums.UserInterface, UIDocument>();
         foreach (UserInterfaceAssignment assignment in UserInterfaces)
         {
@@ -24,7 +26,17 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        HideRunUI();
+
         RunManager.Instance.StateChanged += ShowRunUI;
+        RunManager.Instance.RunStarted += () =>
+        {
+            ShowMainMenu(false);
+        };
+        RunManager.Instance.RunEnded += () =>
+        {
+            ShowMainMenu(true);
+        };
     }
 
     public void ShowRunUI(Enums.RunState runState)
@@ -43,6 +55,9 @@ public class UIManager : MonoBehaviour
             case Enums.RunState.EVALUATION:
                 uiType = Enums.UserInterface.EVALUATION;
                 break;
+            case Enums.RunState.END:
+                uiType = Enums.UserInterface.END;
+                break;
         }
         foreach (KeyValuePair<Enums.UserInterface, UIDocument> userInterface in userInterfaces)
         {
@@ -59,6 +74,27 @@ public class UIManager : MonoBehaviour
         if (!userInterfaces.ContainsKey(uiType))
         {
             Debug.LogWarning($"UI vom Typ {uiType} nicht gefunden!");
+        }
+    }
+
+    private void HideRunUI()
+    {
+        foreach (KeyValuePair<Enums.UserInterface, UIDocument> runUI in userInterfaces)
+        {
+            runUI.Value.rootVisualElement.style.display = DisplayStyle.None;
+        }
+    }
+
+    public void ShowMainMenu(bool show)
+    {
+        if (show)
+        {
+            HideRunUI();
+            MainMenuUI.rootVisualElement.style.display = DisplayStyle.Flex;
+        }
+        else
+        {
+            MainMenuUI.rootVisualElement.style.display = DisplayStyle.None;
         }
     }
 

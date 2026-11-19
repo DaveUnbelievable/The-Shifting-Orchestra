@@ -7,6 +7,7 @@ public class MusicianOverview : VisualElement
     private Image img_musician;
     private Label lbl_name;
     private Label lbl_instrument;
+    private Button btn_fire;
     private Musician musician;
 
     public MusicianOverview(VisualTreeAsset template)
@@ -19,6 +20,9 @@ public class MusicianOverview : VisualElement
         lbl_name = this.Q<Label>("lbl_name");
         // instrument
         lbl_instrument = this.Q<Label>("lbl_instrument");
+        // fire button
+        btn_fire = this.Q<Button>("btn_fire");
+        btn_fire.RegisterCallback<ClickEvent>(FireMusician);
     }
 
     public void SetMusician(Musician musician)
@@ -30,5 +34,11 @@ public class MusicianOverview : VisualElement
         // set instrument
         lbl_instrument.text = musician.InstrumentType.ToString();
         // TODO: set image
+    }
+
+    public void FireMusician(ClickEvent evt)
+    {
+        RunManager.Instance.FireMusician(musician);
+        // TODO: update preparation ui (list of musicians in group)
     }
 }

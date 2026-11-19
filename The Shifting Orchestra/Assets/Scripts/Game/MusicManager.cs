@@ -38,16 +38,13 @@ public class MusicManager : MonoBehaviour
 
         audioSources = new List<AudioSource>();
 
-        foreach (InstrumentGroup instrumentGroup in OrchestraManager.Instance.Orchestra)
+        foreach (KeyValuePair<Enums.InstrumentType, InstrumentGroup> instrumentGroup in OrchestraManager.Instance.InstrumentGroups)
         {
-            if (OrchestraManager.Instance.InstrumentGroupObjects.ContainsKey(instrumentGroup.InstrumentType))
-            {
-                AudioSource audioSource = OrchestraManager.Instance.InstrumentGroupObjects[instrumentGroup.InstrumentType].AddComponent<AudioSource>();
-                // set correct audio clip
-                audioSource.clip = GetCorrectAudioClip(instrumentGroup.InstrumentType, instrumentGroup.MusicalRole, OrchestraManager.Instance.Key, OrchestraManager.Instance.Tempo);
-                audioSource.volume = instrumentGroup.Volume / GameDatabase.Instance.VolumeMax;
-                audioSources.Add(audioSource);
-            }
+            AudioSource audioSource = instrumentGroup.Value.gameObject.AddComponent<AudioSource>();
+            // set correct audio clip
+            audioSource.clip = GetCorrectAudioClip(instrumentGroup.Key, instrumentGroup.Value.MusicalRole, OrchestraManager.Instance.Key, OrchestraManager.Instance.Tempo);
+            audioSource.volume = instrumentGroup.Value.Volume / GameDatabase.Instance.VolumeMax;
+            audioSources.Add(audioSource);
         }
 
 

@@ -27,7 +27,7 @@ public class GigRequirement
             case Enums.GigRequirementType.ORCHESTRA_SIZE:
                 // Random between 
                 int reputationDifference = 5;
-                MinOrchestraSize = Mathf.Max(1, UnityEngine.Random.Range(RunManager.Instance.CurrentReputation - reputationDifference, RunManager.Instance.CurrentReputation + reputationDifference));
+                MinOrchestraSize = Mathf.Max(1, UnityEngine.Random.Range(RunManager.Instance.CurrentRunData.CurrentReputation - reputationDifference, RunManager.Instance.CurrentRunData.CurrentReputation + reputationDifference));
                 break;
         }
     }

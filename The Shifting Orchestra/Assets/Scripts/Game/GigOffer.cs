@@ -54,7 +54,7 @@ public class GigOffer
         // sort requirements by importane
         Requirements.Sort((left, right) => EnumValues.GigRequirementImportanceValues[right.Importance].CompareTo(EnumValues.GigRequirementImportanceValues[left.Importance]));
         // create money reward, reputation reward, and minimum orchestra size for the gig offer according to current reputation of the player
-        int currentReputation = RunManager.Instance.CurrentReputation;
+        int currentReputation = RunManager.Instance.CurrentRunData.CurrentReputation;
         // TODO: adjust values to be balanced
         MoneyReward = UnityEngine.Random.Range(10 * currentReputation, 20 * currentReputation + 1);
         ReputationReward = UnityEngine.Random.Range(1 * currentReputation,  5 * currentReputation + 1);

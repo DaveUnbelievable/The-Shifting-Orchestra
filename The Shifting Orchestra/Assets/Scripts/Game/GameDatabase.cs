@@ -17,6 +17,9 @@ public class GameDatabase : MonoBehaviour
     }
     #endregion
 
+    public string prefsMoneyHighscore = "money_highscore";
+    public string prefsReputationHighscore = "reputation_highscore";
+
     // total amount of gigs the player will play in a run
     public int GigsPerRun = 7;
     // base money the player starts with

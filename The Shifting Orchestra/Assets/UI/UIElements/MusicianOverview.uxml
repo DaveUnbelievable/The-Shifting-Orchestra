@@ -1,7 +1,10 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="vel_musician_overview" style="flex-grow: 1;">
-        <ui:Image name="img_musician"/>
-        <ui:Label text="Name" name="lbl_name"/>
-        <ui:Label text="Instrument" name="lbl_instrument"/>
+    <ui:VisualElement name="vel_musician_overview" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="vel_left" style="flex-grow: 1;">
+            <ui:Label text="Name" name="lbl_name"/>
+            <ui:Label text="Instrument" name="lbl_instrument"/>
+            <ui:Button text="fire" name="btn_fire"/>
+        </ui:VisualElement>
+        <ui:Image name="img_musician" style="background-color: rgb(79, 181, 197); width: 100px; height: 100px;"/>
     </ui:VisualElement>
 </ui:UXML>

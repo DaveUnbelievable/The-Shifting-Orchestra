@@ -7,6 +7,8 @@ public class EvaluationUI : MonoBehaviour
 {
     [SerializeField]
     private VisualTreeAsset performanceRequirementEvaluationAsset;
+    [SerializeField]
+    private VisualTreeAsset currenciesAsset;
     private Label lbl_performance;
     private ListView liv_requirement_performance;
     private Label lbl_gained_money;
@@ -53,6 +55,11 @@ public class EvaluationUI : MonoBehaviour
         lbl_performance.text = $"performance: {performance.OverallPerformance.PercentageValue}/100%";
         lbl_gained_money.text = $"gained money: {performance.MoneyReward}/{performance.PerformedGigOffer.MoneyReward}€";
         lbl_gained_reputation.text = $"gained reputation: {performance.RepuationReward}/{performance.PerformedGigOffer.ReputationReward}";
+        // hide next gig button if run is finished
+        if (RunManager.Instance.RunFinished)
+        {
+            btn_next_gig.style.display = DisplayStyle.None;
+        }
     }
 
     private void SetupRequirementList(ListView listView, List<GigRequirementResult> requirementScores)
@@ -81,5 +88,6 @@ public class EvaluationUI : MonoBehaviour
     private void Finish(ClickEvent evt)
     {
         // back to main menu
+        RunManager.Instance.CurrentRunState = Enums.RunState.END;
     }
 }

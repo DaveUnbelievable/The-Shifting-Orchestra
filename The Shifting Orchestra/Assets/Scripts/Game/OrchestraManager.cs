@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OrchestraManager : MonoBehaviour
@@ -17,45 +18,45 @@ public class OrchestraManager : MonoBehaviour
     }
     #endregion
 
-    // are there active/inactive instrument groups? currently all would be active
-    public List<InstrumentGroup> Orchestra;
     public Enums.AudioClipKey Key;
     public Enums.AudioClipSpeed Tempo;
 
-    public Dictionary<Enums.InstrumentType, GameObject> InstrumentGroupObjects;
-    
-    // TODO: save musicians better
-    // TODO: hire/fire musician
+    // TODO: possibility to not use an instrument group in a gig
+    public Dictionary<Enums.InstrumentType, InstrumentGroup> InstrumentGroups;
 
     public void CreateStartingOrchestra()
     {
-        Orchestra = new List<InstrumentGroup>();
-        InstrumentGroupObjects = new Dictionary<Enums.InstrumentType, GameObject>();
+        InstrumentGroups = new Dictionary<Enums.InstrumentType, InstrumentGroup>();
         foreach (StartingInstrumentGroup startingGroup in GameDatabase.Instance.StartingInstrumentGroups)
         {
-            // create gameobject for instrument group
-            GameObject instrumentGroupObject = new GameObject
-            {
-                name = startingGroup.InstrumentType.ToString()
-            };
-            instrumentGroupObject.transform.parent = transform;
-            // add gameobject to list
-            InstrumentGroupObjects.Add(startingGroup.InstrumentType, instrumentGroupObject);
-            // create instrument group
-            InstrumentGroup instrumentGroup = instrumentGroupObject.AddComponent<InstrumentGroup>();
-            instrumentGroup.InstrumentType = startingGroup.InstrumentType;
-            instrumentGroup.MusicalRole = startingGroup.MusicalRole;
-            instrumentGroup.Volume = startingGroup.Volume;
+            InstrumentGroup instrumentGroup = CreateInstrumentGroup(startingGroup.InstrumentType, startingGroup.MusicalRole, startingGroup.Volume);
+            // add instrument group to list
+            InstrumentGroups.Add(startingGroup.InstrumentType, instrumentGroup);
             // create musicians for the instrument group
             for (int i = 0; i < startingGroup.Amount; i++)
             {
                 instrumentGroup.Musicians.Add(MusicianGenerator.Instance.GenerateRandomMusician(startingGroup.InstrumentType));
             }
-            // add to orchestra
-            Orchestra.Add(instrumentGroup);
         }
         // show orchestra in layout
         OrchestraLayout.Instance.ShowOrchestra();
+    }
+
+    public InstrumentGroup CreateInstrumentGroup(Enums.InstrumentType instrumentType, Enums.MusicalRole role, float volume)
+    {
+        // create gameobject for instrument group
+        GameObject instrumentGroupObject = new GameObject
+        {
+            name = instrumentType.ToString()
+        };
+        instrumentGroupObject.transform.parent = transform;
+        // create instrument group
+        InstrumentGroup instrumentGroup = instrumentGroupObject.AddComponent<InstrumentGroup>();
+        instrumentGroup.InstrumentType = instrumentType;
+        instrumentGroup.MusicalRole = role;
+        instrumentGroup.Volume = volume;
+        // return group
+        return instrumentGroup;
     }
 
     public void ChangeMusicalRoleAssignment(InstrumentGroup instrumentGroup, Enums.MusicalRole role)
@@ -70,17 +71,40 @@ public class OrchestraManager : MonoBehaviour
         instrumentGroup.Volume = newVolume;
     }
 
-    // TODO:
-    // recruit musician
-    // fire musician
+    public void HireMusician(Musician musician)
+    {
+        // create instrument group if there is none for this instrument type
+        if (!InstrumentGroups.ContainsKey(musician.InstrumentType))
+        {
+            InstrumentGroups.Add(musician.InstrumentType, CreateInstrumentGroup(musician.InstrumentType, Enums.MusicalRole.MELODY, GameDatabase.Instance.VolumeBase));
+        }
+        // add musician to instrument group
+        InstrumentGroups[musician.InstrumentType].Musicians.Add(musician);
+        // show orchestra in layout
+        OrchestraLayout.Instance.ShowOrchestra();
+    }
+
+    public void FireMusician(Musician musician)
+    {
+        if (InstrumentGroups.ContainsKey(musician.InstrumentType))
+        {
+            if (InstrumentGroups[musician.InstrumentType].Musicians.Contains(musician))
+            {
+                // remove musician
+                InstrumentGroups[musician.InstrumentType].Musicians.Remove(musician);
+                // show orchestra in layout
+                OrchestraLayout.Instance.ShowOrchestra();
+            }
+        }
+    }
 
     public InstrumentGroup GetInstrumentGroup(Enums.InstrumentType instrumentType)
     {
-        foreach (InstrumentGroup instrumentGroup in Orchestra)
+        foreach (KeyValuePair<Enums.InstrumentType, InstrumentGroup> instrumentGroup in InstrumentGroups)
         {
-            if (instrumentGroup.InstrumentType == instrumentType)
+            if (instrumentGroup.Key == instrumentType)
             {
-                return instrumentGroup;
+                return instrumentGroup.Value;
             }
         }
         return null;

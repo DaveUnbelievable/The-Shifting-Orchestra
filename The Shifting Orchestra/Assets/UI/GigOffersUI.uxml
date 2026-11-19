@@ -1,4 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Currencies" src="project://database/Assets/UI/UIElements/Currencies.uxml?fileID=9197481963319205126&amp;guid=9207fb8d74263ac4cbe2c4ad18175cb3&amp;type=3#Currencies"/>
     <ui:Template name="GigOfferCard" src="project://database/Assets/UI/UIElements/GigOfferCard.uxml?fileID=9197481963319205126&amp;guid=6310fb3f91465c440982c01dc9c70e50&amp;type=3#GigOfferCard"/>
     <ui:VisualElement name="" style="flex-grow: 1; align-items: stretch; align-self: auto; align-content: auto; justify-content: center;">
         <ui:Label text="gig offers" name="lbl_gig_offers" enable-rich-text="true"/>
@@ -8,5 +9,6 @@
             <ui:Instance template="GigOfferCard" name=""/>
         </ui:VisualElement>
         <ui:Button text="Reroll" name="btn_reroll_gig_offers"/>
+        <ui:Instance template="Currencies" name="cur_currencies"/>
     </ui:VisualElement>
 </ui:UXML>

@@ -50,6 +50,7 @@ public static class Enums
         EVALUATION,
         GIG_OFFERS,
         PREPARATION,
+        END,
     }
 
     public enum GigRequirementType {
@@ -85,5 +86,6 @@ public static class Enums
         EVALUATION,
         GIG_OFFERS,
         PREPARATION,
+        END,
     }
 }

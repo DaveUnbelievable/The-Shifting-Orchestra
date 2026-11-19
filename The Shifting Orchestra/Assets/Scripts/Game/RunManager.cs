@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using NaughtyAttributes;
-using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 public class RunManager : MonoBehaviour
@@ -35,8 +33,7 @@ public class RunManager : MonoBehaviour
         }
     }
     
-    public int CurrentMoney { get; private set; }
-    public int CurrentReputation { get; private set; }
+    public RunData CurrentRunData;
 
     [HideInInspector]
     public List<GigOffer> GigOffers {get; private set;}
@@ -46,32 +43,36 @@ public class RunManager : MonoBehaviour
     public Performance GigPerformance {get; private set;}
     [HideInInspector]
     public List<Musician> MusiciansForHire {get; private set;}
-
+    [HideInInspector]
+    public bool RunFinished;
+    [HideInInspector]
+    public bool RunWon;
     private int _currentGigIndex;
-    private bool _runFinished;
 
 
     public Action<Enums.RunState> StateChanged;
+    public Action RunStarted;
+    public Action RunEnded;
 
-
-    [Button("Start Run")]
     public void StartRun() {
         // initialize
         _gigManager = new GigManager();
-        // _orchestraManager = new OrchestraManager();
         _performanceManager = new PerformanceManager();
         // set base values
         _currentGigIndex = 0;
-        _runFinished = false;
-        CurrentMoney = GameDatabase.Instance.MoneyBase;
-        CurrentReputation = GameDatabase.Instance.ReputationBase;
-        // _orchestraManager.CreateStartingOrchestra();
+        RunFinished = false;
+        // CurrentMoney = GameDatabase.Instance.MoneyBase;
+        // CurrentReputation = GameDatabase.Instance.ReputationBase;
+
+        CurrentRunData.CurrentMoney = GameDatabase.Instance.MoneyBase;
+        CurrentRunData.CurrentReputation = GameDatabase.Instance.ReputationBase;
+
         OrchestraLayout.Instance.GenerateLayout();
         OrchestraManager.Instance.CreateStartingOrchestra();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
-        // temporarily set directly to preparation
-        // CurrentRunState = Enums.RunState.PREPARATION;
+
+        RunStarted?.Invoke();
     }
 
     /// <summary>
@@ -80,11 +81,6 @@ public class RunManager : MonoBehaviour
     /// <param name="newRunState">run state to begin</param>
     /// <summary>
     private void BeginRunState(Enums.RunState newRunState) {
-        // return if run is finished
-        if (_runFinished)
-        {
-            return;
-        }
         // actions to perform when beginning a run state
         switch (newRunState) {
             case Enums.RunState.GIG_OFFERS:
@@ -108,6 +104,24 @@ public class RunManager : MonoBehaviour
                 // evaluate performance
                 GigPerformance = _performanceManager.EvaluatePerformance(OrchestraManager.Instance, ChosenGigOffer);
 
+                // add rewards to players money and reputation
+                AddMoney(GigPerformance.MoneyReward);
+                AddReputation(GigPerformance.RepuationReward);
+
+                // check if player lost
+                if (CurrentRunData.CurrentReputation <= 0)
+                {
+                    FinishRun(false);
+                }
+                // check if the run is finished (if the player has played all gigs)
+                if (_currentGigIndex >= GameDatabase.Instance.GigsPerRun)
+                {
+                    FinishRun(true);
+                }
+
+                break;
+            case Enums.RunState.END:
+
                 break;
         }
     }
@@ -118,11 +132,6 @@ public class RunManager : MonoBehaviour
     /// <param name="finishedRunState">run state to finish</param>
     /// <summary>
     private void FinishRunState(Enums.RunState finishedRunState) {
-        // return if run is finished
-        if (_runFinished)
-        {
-            return;
-        }
         // actions to perform when finishing a run state
         switch (finishedRunState) {
             case Enums.RunState.GIG_OFFERS:
@@ -138,29 +147,17 @@ public class RunManager : MonoBehaviour
                 break;
             case Enums.RunState.EVALUATION:
 
-                // add rewards to players money and reputation
-                AddMoney(GigPerformance.MoneyReward);
-                AddReputation(GigPerformance.RepuationReward);
-
-                // check if player lost
-                if (CurrentReputation <= 0)
-                {
-                    EndRun(false);
-                }
-                // check if the run is finished (if the player has played all gigs)
-                if (_currentGigIndex >= GameDatabase.Instance.GigsPerRun)
-                {
-                    EndRun(true);
-                }
+                break;
+            case Enums.RunState.END:
 
                 break;
         }
     }
 
-    private void EndRun(bool won)
+    private void FinishRun(bool won)
     {
-        _runFinished = true;
-        Debug.Log("Run finished! Final money: " + CurrentMoney + ", final reputation: " + CurrentReputation + ", won: " + won);
+        RunFinished = true;
+        RunWon = won;
     }
 
     public void ChooseGigOffer(GigOffer gigOffer)
@@ -175,7 +172,7 @@ public class RunManager : MonoBehaviour
     {
         if (reroll)
         {
-            if (CurrentMoney > GameDatabase.Instance.GigOfferRerollBaseCost)
+            if (CurrentRunData.CurrentMoney > GameDatabase.Instance.GigOfferRerollBaseCost)
             {
                 AddMoney(-GameDatabase.Instance.GigOfferRerollBaseCost);
             } else
@@ -206,18 +203,18 @@ public class RunManager : MonoBehaviour
 
     private void AddMoney(int addValue)
     {
-        CurrentMoney = Math.Clamp(CurrentMoney + addValue, 0, int.MaxValue);
+        CurrentRunData.CurrentMoney = Math.Clamp(CurrentRunData.CurrentMoney + addValue, 0, int.MaxValue);
     }
 
     private void AddReputation(int addValue)
     {
-        CurrentReputation = Math.Clamp(CurrentReputation + addValue, 0, int.MaxValue);
+        CurrentRunData.CurrentReputation = Math.Clamp(CurrentRunData.CurrentReputation + addValue, 0, int.MaxValue);
     }
 
     public void HireMusician(Musician musician)
     {
-        // TODO: add to orchestra
-
+        // add to orchestra
+        OrchestraManager.Instance.HireMusician(musician);
         // remove from hire list
         MusiciansForHire.Remove(musician);
         // add new musician with the same instrument type
@@ -226,7 +223,30 @@ public class RunManager : MonoBehaviour
 
     public void FireMusician(Musician musician)
     {
-        
+        // remove from orchestra
+        OrchestraManager.Instance.FireMusician(musician);
+    }
+
+    public void EndRun()
+    {
+        // set standard
+        int moneyHighscore = 0;
+        int reputationHighscore = 0;
+        // search for highscore
+        if (PlayerPrefs.HasKey(GameDatabase.Instance.prefsMoneyHighscore) && PlayerPrefs.HasKey(GameDatabase.Instance.prefsReputationHighscore))
+        {
+            moneyHighscore = PlayerPrefs.GetInt(GameDatabase.Instance.prefsMoneyHighscore);
+            reputationHighscore = PlayerPrefs.GetInt(GameDatabase.Instance.prefsReputationHighscore);
+        }
+        // compare
+        if (CurrentRunData.CurrentMoney + CurrentRunData.CurrentReputation > moneyHighscore + reputationHighscore)
+        {
+            // save new highscore
+            PlayerPrefs.SetInt(GameDatabase.Instance.prefsMoneyHighscore, CurrentRunData.CurrentMoney);
+            PlayerPrefs.SetInt(GameDatabase.Instance.prefsReputationHighscore, CurrentRunData.CurrentReputation);
+        }
+        // really end the run and go back to the main menu
+        RunEnded?.Invoke();
     }
 
 }

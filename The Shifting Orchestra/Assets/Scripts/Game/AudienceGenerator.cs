@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 
 public class AudienceGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject ViewerPrefab;
     [SerializeField] private int viewersPerRow = 10;
-    [SerializeField] private bool overwriteReputation = false;
-    [SerializeField] private int overwriteReputationValue = 10;
     [SerializeField] private float rowDistance = 0.75f;
     [SerializeField] private float viewerDistance = 0.5f;
 
@@ -27,7 +24,6 @@ public class AudienceGenerator : MonoBehaviour
         };
     }
 
-    [Button("GenerateAudience")]
     public void GenerateAudience()
     {
         // delete current rows
@@ -36,11 +32,7 @@ public class AudienceGenerator : MonoBehaviour
             Destroy(row);
         }
         // generate with current reputation in mind?
-        int currentReputation = RunManager.Instance.CurrentReputation;
-        if (overwriteReputation)
-        {
-            currentReputation = overwriteReputationValue;
-        }
+        int currentReputation = RunManager.Instance.CurrentRunData.CurrentReputation;
         // amount of viewers
         int amountOfViewers = Math.Max(5, currentReputation * 3);
         int amountOfRows = Mathf.CeilToInt((float)amountOfViewers / (float)viewersPerRow);

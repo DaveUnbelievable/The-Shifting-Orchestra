@@ -10,6 +10,12 @@ public class PreparationUI : MonoBehaviour
     private VisualTreeAsset musicianOverviewAsset;
     [SerializeField]
     private VisualTreeAsset musicianCardAsset;
+    [SerializeField]
+    private VisualTreeAsset currenciesAsset;
+
+    private Label lbl_gig_requirements;
+    private Label lbl_gig_money_reward;
+    private Label lbl_gig_reputation_reward;
 
     private DropdownField drp_key_change;
     private DropdownField drp_tempo_change;
@@ -26,6 +32,12 @@ public class PreparationUI : MonoBehaviour
     private void Start()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        // gig requirements
+        lbl_gig_requirements = root.Q<Label>("lbl_gig_requirements");
+        // gig money reward
+        lbl_gig_money_reward = root.Q<Label>("lbl_gig_money_reward");
+        // gig reputation reward
+        lbl_gig_reputation_reward = root.Q<Label>("lbl_gig_reputation_reward");
         // key
         drp_key_change = root.Q<DropdownField>("drp_key_change");
         // tempo
@@ -57,6 +69,7 @@ public class PreparationUI : MonoBehaviour
             if (state == Enums.RunState.PREPARATION)
             {
                 ShowMusiciansForHire();
+                ShowChosenGig();
             }
         };
     }
@@ -101,10 +114,9 @@ public class PreparationUI : MonoBehaviour
 
     private void InstrumentGroupChanged(Enums.InstrumentType instrumentType)
     {
-        if (OrchestraManager.Instance.InstrumentGroupObjects.ContainsKey(instrumentType))
+        if (OrchestraManager.Instance.InstrumentGroups.ContainsKey(instrumentType))
         {
-            GameObject instrumentGroupObject = OrchestraManager.Instance.InstrumentGroupObjects[instrumentType];
-            InstrumentGroup instrumentGroup = instrumentGroupObject.GetComponent<InstrumentGroup>();
+            InstrumentGroup instrumentGroup = OrchestraManager.Instance.InstrumentGroups[instrumentType];
             if (instrumentGroup != null)
             {
                 currentSelectedInstrumentGroup = instrumentGroup;
@@ -171,6 +183,22 @@ public class PreparationUI : MonoBehaviour
             vel_musician_market.Add(card);
             card.ShowMusician(musician);
         }
+    }
+
+    public void ShowChosenGig()
+    {
+        GigOffer gigOffer = RunManager.Instance.ChosenGigOffer;
+        // show requirements
+        string allRequirements = "Requirements:\n";
+        foreach (GigRequirement requirement in gigOffer.Requirements)
+        {
+            allRequirements += $"{requirement.GetRequirementText()}\n";
+        }
+        lbl_gig_requirements.text = allRequirements;
+        // show money
+        lbl_gig_money_reward.text = $"Money: {gigOffer.MoneyReward} €";
+        // show reputation
+        lbl_gig_reputation_reward.text = $"Reputation: {gigOffer.ReputationReward}";
     }
 
     private void PerformGig(ClickEvent evt)

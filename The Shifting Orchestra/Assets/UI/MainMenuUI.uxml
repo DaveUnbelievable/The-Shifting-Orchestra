@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="vel_main_menu_outer" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(34, 34, 34, 0.922);">
+        <ui:VisualElement name="vel_main_menu_inner" style="flex-grow: 1; align-items: center; justify-content: center;">
+            <ui:Label text="The Shifting Orchestra" name="lbl_game_name" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px; font-size: 80px; color: rgb(219, 219, 219);"/>
+            <ui:Button text="Start Run" name="btn_start_run" style="font-size: 40px; padding-right: 20px; padding-left: 20px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;"/>
+            <ui:VisualElement name="vel_highscore_outer" style="flex-grow: 0; flex-direction: row; align-items: center; justify-content: flex-start;">
+                <ui:Label text="Highscore:" name="lbl_highscore" style="color: rgb(219, 219, 219);"/>
+                <ui:VisualElement name="vel_highscore_inner" style="flex-grow: 1;">
+                    <ui:Label text="highscore money" name="lbl_highscore_money" style="color: rgb(219, 219, 219);"/>
+                    <ui:Label text="highscore reputation" name="lbl_highscore_reputation" style="color: rgb(219, 219, 219);"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="Close" name="btn_end_game" style="align-self: flex-end;"/>
+    </ui:VisualElement>
+</ui:UXML>
