@@ -27,4 +27,9 @@ public static class EnumValues
         {Enums.GigRequirementImportance.IMPORTANT, 0.7f},
         {Enums.GigRequirementImportance.VERY_IMPORTANT, 1f},
     };
+
+    public static Dictionary<Enums.OrchestraUpgrade, string> OrchestraUpgradeHeadlines = new Dictionary<Enums.OrchestraUpgrade, string>
+    {
+        {Enums.OrchestraUpgrade.SIZE, "Orchestra size"},
+    };
 }

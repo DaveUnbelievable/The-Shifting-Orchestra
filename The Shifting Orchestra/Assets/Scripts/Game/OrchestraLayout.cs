@@ -62,8 +62,13 @@ public class OrchestraLayout : MonoBehaviour
         }
     }
 
-    public void ShowOrchestra()
+    public void ShowOrchestra(bool regenerateLayout = false)
     {
+        // regenerate layout if wanted
+        if (regenerateLayout)
+        {
+            GenerateLayout();
+        }
         // clear all seats
         foreach (GameObject orchestraPositionObject in orchestraPositionObjects)
         {

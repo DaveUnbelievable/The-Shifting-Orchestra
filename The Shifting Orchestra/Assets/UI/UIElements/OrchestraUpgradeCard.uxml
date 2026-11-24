@@ -1,0 +1,25 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="ve_orchestra_upgrade_card" data-source-type="OrchestraUpgrade, Assembly-CSharp" style="flex-grow: 1;">
+        <ui:Label text="Upgrade Headline" name="lbl_upgrade_headline">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="UpgradeHeadline" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Image name="img_upgrade_image">
+            <Bindings>
+                <ui:DataBinding property="source" data-source-path="UpgradeImage" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Image>
+        <ui:Label text="Upgrade Text" name="lbl_upgrade_text">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="UpgradeText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Button text="Upgrade" name="btn_buy_upgrade" enabled="true">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="UpgradeButtonText" binding-mode="ToTarget"/>
+                <ui:DataBinding property="enabledSelf" data-source-path="PlayerHasEnoughMoneyToBuyUpgrade" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

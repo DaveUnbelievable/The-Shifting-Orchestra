@@ -37,7 +37,7 @@ public class GigRequirement
         RequirementType = Enums.GigRequirementType.INSTRUMENTS;
         Importance = importance;
         // get random instrument type and musical role
-        Enums.InstrumentType instrumentType = (Enums.InstrumentType)UnityEngine.Random.Range(0, unusedInstrumentTypes.ToArray().Length);
+        Enums.InstrumentType instrumentType = unusedInstrumentTypes[UnityEngine.Random.Range(0, unusedInstrumentTypes.Count)];
         int preferredProminence = UnityEngine.Random.Range(0, 101);
         // create a tuple of the instrument type and musical role as requirement
         PreferredInstrumentProminence = new KeyValuePair<Enums.InstrumentType, int>(instrumentType, preferredProminence);

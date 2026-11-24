@@ -201,6 +201,11 @@ public class RunManager : MonoBehaviour
         }
     }
 
+    public bool PlayerHasEnoughMoney(int minValue)
+    {
+        return CurrentRunData.CurrentMoney >= minValue;
+    }
+
     private void AddMoney(int addValue)
     {
         CurrentRunData.CurrentMoney = Math.Clamp(CurrentRunData.CurrentMoney + addValue, 0, int.MaxValue);
@@ -225,6 +230,30 @@ public class RunManager : MonoBehaviour
     {
         // remove from orchestra
         OrchestraManager.Instance.FireMusician(musician);
+    }
+
+    public void BuyUpgrade(OrchestraUpgrade upgrade)
+    {
+        // check if player has enough money
+        if(PlayerHasEnoughMoney(upgrade.DynamicUpgradeCost))
+        {
+            // deduct cost from players money
+            AddMoney(-upgrade.DynamicUpgradeCost);
+            // increase multiplier
+            upgrade.upgradeMultiplier += 0.1f;
+            // add upgrade
+            switch (upgrade.Upgrade)
+            {
+                case Enums.OrchestraUpgrade.SIZE:
+                    // add seats to orchestra layout
+                    OrchestraLayout.Instance.PositionsSeats += (int)upgrade.UpgradeValue;
+                    // show orchestra with regenerated layout
+                    OrchestraLayout.Instance.ShowOrchestra(true);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void EndRun()

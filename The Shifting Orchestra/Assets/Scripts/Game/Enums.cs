@@ -80,6 +80,12 @@ public static class Enums
         // SOLO,
     }
 
+    public enum OrchestraSeatLayout
+    {
+        SQUARE,
+        WIDE_RECTANGLE,
+    }
+
     public enum UserInterface
     {
         GIG,
@@ -87,5 +93,10 @@ public static class Enums
         GIG_OFFERS,
         PREPARATION,
         END,
+    }
+
+    public enum OrchestraUpgrade
+    {
+        SIZE, // more musicians possible
     }
 }

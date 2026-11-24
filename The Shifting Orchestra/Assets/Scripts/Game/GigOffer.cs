@@ -11,10 +11,11 @@ public class GigOffer
     public GigOffer()
     {
         // create list of requirements for the gig offer
-        Requirements = new List<GigRequirement>();
-
-        // add orchestra size requirement
-        Requirements.Add(new GigRequirement(Enums.GigRequirementType.ORCHESTRA_SIZE, Enums.GigRequirementImportance.VERY_IMPORTANT));
+        Requirements = new List<GigRequirement>
+        {
+            // add orchestra size requirement
+            new GigRequirement(Enums.GigRequirementType.ORCHESTRA_SIZE, Enums.GigRequirementImportance.VERY_IMPORTANT)
+        };
 
         // 50% chance of even having a tempo/volume requirement -> only one of them can be requirement at a time, not both
         if (UnityEngine.Random.value < 0.5f)
@@ -39,6 +40,7 @@ public class GigOffer
         {
             unusedInstrumentTypes.Add(instrumentType);
         }
+        instrumentRequirementAmount = Mathf.Min(instrumentRequirementAmount, unusedInstrumentTypes.Count);
         // create requirements
         for (int i = 0; i < instrumentRequirementAmount; i++)
         {

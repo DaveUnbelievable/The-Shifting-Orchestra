@@ -11,7 +11,9 @@ public class PreparationUI : MonoBehaviour
     [SerializeField]
     private VisualTreeAsset musicianCardAsset;
     [SerializeField]
-    private VisualTreeAsset currenciesAsset;
+    private VisualTreeAsset upgradeAsset;
+    [SerializeField]
+    private List<OrchestraUpgrade> possibleUpgrades;
 
     private Label lbl_gig_requirements;
     private Label lbl_gig_money_reward;
@@ -70,6 +72,7 @@ public class PreparationUI : MonoBehaviour
             {
                 ShowMusiciansForHire();
                 ShowChosenGig();
+                ShowUpgrades();
             }
         };
     }
@@ -205,5 +208,34 @@ public class PreparationUI : MonoBehaviour
     {
         // set gig as current run state
         RunManager.Instance.CurrentRunState = Enums.RunState.GIG;
+    }
+
+    private void ShowUpgrades()
+    {
+        // delete previous upgrades
+        vel_upgrades.Clear();
+        // create new upgrade cards
+        foreach (OrchestraUpgrade upgrade in possibleUpgrades)
+        {
+            
+            vel_upgrades.Add(CreateUpgradeCard(upgrade));
+        }
+
+        // TODO: Upgrade Button Callback, Upgrade Cost, Check if enough money, ...
+    }
+
+    private VisualElement CreateUpgradeCard(OrchestraUpgrade upgrade)
+    {
+        TemplateContainer cardInstance = upgradeAsset.Instantiate();
+        cardInstance.dataSource = upgrade;
+
+        Button btn_buy_upgrade = cardInstance.Q<Button>("btn_buy_upgrade");
+        btn_buy_upgrade.clicked += () =>
+        {
+            RunManager.Instance.BuyUpgrade(upgrade);
+        };
+
+        return cardInstance;
+
     }
 }
