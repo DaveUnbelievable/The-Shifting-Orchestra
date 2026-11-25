@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GigOffer
 {
@@ -18,11 +19,11 @@ public class GigOffer
         };
 
         // 50% chance of even having a tempo/volume requirement -> only one of them can be requirement at a time, not both
-        if (UnityEngine.Random.value < 0.5f)
+        if (Random.value < 0.5f)
         {
             Enums.GigRequirementImportance importance = GetRandomImportance();
             // add tempo requirement
-            if (UnityEngine.Random.value < 0.5f)
+            if (Random.value < 0.5f)
             {
                 Requirements.Add(new GigRequirement(Enums.GigRequirementType.TEMPO, importance));
             }
@@ -33,7 +34,7 @@ public class GigOffer
             }
         }
         // amount of instrument requirements
-        int instrumentRequirementAmount = UnityEngine.Random.Range(GameDatabase.Instance.GigMinInstrumentRequirementAmount, GameDatabase.Instance.GigMaxInstrumentRequirementAmount + 1);
+        int instrumentRequirementAmount = Random.Range(GameDatabase.Instance.GigMinInstrumentRequirementAmount, GameDatabase.Instance.GigMaxInstrumentRequirementAmount + 1);
         // list of unused instrument types
         List<Enums.InstrumentType> unusedInstrumentTypes = new List<Enums.InstrumentType>();
         foreach (Enums.InstrumentType instrumentType in Enum.GetValues(typeof(Enums.InstrumentType)))
@@ -58,13 +59,13 @@ public class GigOffer
         // create money reward, reputation reward, and minimum orchestra size for the gig offer according to current reputation of the player
         int currentReputation = RunManager.Instance.CurrentRunData.CurrentReputation;
         // TODO: adjust values to be balanced
-        MoneyReward = UnityEngine.Random.Range(10 * currentReputation, 20 * currentReputation + 1);
-        ReputationReward = UnityEngine.Random.Range(1 * currentReputation,  5 * currentReputation + 1);
+        MoneyReward = Random.Range(10 * currentReputation, 20 * currentReputation + 1);
+        ReputationReward = Random.Range(1 * currentReputation,  5 * currentReputation + 1);
     }
 
     private Enums.GigRequirementImportance GetRandomImportance()
     {
-        float randomValue = Mathf.Round(UnityEngine.Random.Range(0f, 1f) * 10) / 10; // -> should be only values with one digit after the comma
+        float randomValue = Mathf.Round(Random.Range(0f, 1f) * 10) / 10; // -> should be only values with one digit after the comma
         Enums.GigRequirementImportance importance = Enums.GigRequirementImportance.NICE_TO_HAVE;
         foreach (KeyValuePair<Enums.GigRequirementImportance, float> gigRequirementImportanceValue in EnumValues.GigRequirementImportanceValues)
         {

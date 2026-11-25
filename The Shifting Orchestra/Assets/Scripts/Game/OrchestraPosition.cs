@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class OrchestraPosition : MonoBehaviour
 {
     private List<GameObject> generatedSeats;
     public OrchestraPositionDefinition OrchestraPositionDefinition;
 
-    public void GenerateSeats(OrchestraPositionDefinition positionDefinition, int amountSeats, float seatDistance, GameObject seatPrefab)
+    public int generatedRows = 0;
+
+    public void GenerateSeats(OrchestraPositionDefinition positionDefinition, int amountSeats, float seatDistanceHorizontal, float seatDistanceVertical, GameObject seatPrefab)
     {
         // save definition
         OrchestraPositionDefinition = positionDefinition;
@@ -19,67 +22,84 @@ public class OrchestraPosition : MonoBehaviour
                 Destroy(seat);
             }
         }
-        int rows = 0;
-        int columns = 0;
-        if (amountSeats > 0)
-        {
-            switch (positionDefinition.SeatLayout)
-            {
-                case Enums.OrchestraSeatLayout.SQUARE:
-                    columns = Mathf.CeilToInt(Mathf.Sqrt(amountSeats));
-                    rows = Mathf.CeilToInt((float)amountSeats / columns);
-                    break;
-                case Enums.OrchestraSeatLayout.WIDE_RECTANGLE:
-                    rows = Mathf.Max(1, Mathf.CeilToInt(Mathf.Sqrt(amountSeats) / 2)); // TODO: try with 3? or 4?
-                    columns = Mathf.CeilToInt((float)amountSeats / rows);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(positionDefinition.SeatLayout), positionDefinition.SeatLayout, "Unsupported orchestra seat layout.");
-            }
-        }
-        // calculate anchor offset
-        Vector2 anchorOffset = Vector2.zero;
-        switch(positionDefinition.PositionType)
-        {
-            case Enums.OrchestraPositionType.FRONT_LEFT:
-                anchorOffset.x = columns / 2 * seatDistance;
-                break;
-            case Enums.OrchestraPositionType.FRONT_RIGHT:
-                anchorOffset.x = -(columns / 2 * seatDistance);
-                break;
-        }
+        int columns = Mathf.CeilToInt(Mathf.Sqrt(amountSeats));
+        int rows = Mathf.CeilToInt((float)amountSeats / columns);
+        // save amount of generated rows
+        generatedRows = rows;
         // new list for generated seats
         this.generatedSeats = new List<GameObject>();
         int generatedSeats = 0;
         // generate rows
         for (int r = 0; r < rows; r++)
         {
-            // calculate y position for each seat in row
-            float posY = r * seatDistance;
             // get how many seats fit in this row (either remaining seats or full amount of columns)
             int seatsInThisRow = Math.Min(amountSeats - generatedSeats, columns);
-            float offset = seatDistance * (seatsInThisRow - 1) / 2;
+            // create row
+            GameObject row = new GameObject();
+            row.name = $"row {r}";
+            SortingGroup rowSortingGroup = row.AddComponent<SortingGroup>();
+            rowSortingGroup.sortingOrder = rows - r;
+            row.transform.parent = transform;
+            // calculate x position for row
+            float rowPosX = 0;
+            if (seatsInThisRow != columns || positionDefinition.PositionType == Enums.OrchestraPositionType.BACK_FULL)
+            {
+                rowPosX = -((columns - seatsInThisRow) * seatDistanceHorizontal) / 2;
+                if (
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.FRONT_RIGHT ||
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.MIDDLE_RIGHT ||
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.BACK_RIGHT
+                )
+                {
+                    rowPosX *= -1;
+                }
+            }
+            if (positionDefinition.PositionType == Enums.OrchestraPositionType.BACK_FULL)
+            {
+                rowPosX = (seatsInThisRow - 1) * seatDistanceHorizontal / 2;
+            }
+            // calculate y position for row
+            row.transform.localPosition = new Vector3(rowPosX, r * seatDistanceVertical, 0);
             // generate seats
             for (int s = 0; s < seatsInThisRow; s++)
             {
                 // calculate x position for seat
-                float posX = s * seatDistance - offset;
+                float seatPosX = -(s * seatDistanceHorizontal);
+                if (
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.FRONT_RIGHT ||
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.MIDDLE_RIGHT ||
+                    positionDefinition.PositionType == Enums.OrchestraPositionType.BACK_RIGHT
+                )
+                {
+                    seatPosX *= -1;
+                }
                 // instantiate seat prefab
-                GameObject seat = Instantiate(seatPrefab, transform);
+                GameObject seat = Instantiate(seatPrefab, row.transform);
+                seat.name = $"seat {r} - {s}";
+                // rotate if right side, TODO: can i just use the global x position and if that is > 0 turn it arround?
+                switch (positionDefinition.PositionType)
+                {
+                    case Enums.OrchestraPositionType.FRONT_RIGHT:
+                    case Enums.OrchestraPositionType.MIDDLE_RIGHT:
+                    case Enums.OrchestraPositionType.BACK_RIGHT:
+                        seat.transform.localScale = new Vector3(-1, 1, 1);
+                        break;
+                    case Enums.OrchestraPositionType.BACK_FULL:
+                        // TODO: doesnt work with the row game object... -> get position in seating group?
+                        if (seatPosX > 0)
+                        {
+                            seat.transform.localScale = new Vector3(-1, 1, 1);
+                        }
+                        break;
+                }
                 // position seat prefab
-                seat.transform.localPosition = new Vector3(posX, posY, 0);
+                seat.transform.localPosition = new Vector3(seatPosX, 0, 0);
                 // save seat in list
                 this.generatedSeats.Add(seat);
             }
             // add generated seats to counter
             generatedSeats += seatsInThisRow;
         }
-        // calculate the offset of the instrument group dynamically
-    }
-
-    private Vector2 CalculateDynamicOffset()
-    {
-        return Vector2.zero;
     }
 
     public bool SeatInstrumentGroup(InstrumentGroup instrumentGroup, GameObject conductor)

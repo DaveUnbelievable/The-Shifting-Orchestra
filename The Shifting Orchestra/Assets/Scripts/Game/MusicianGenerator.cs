@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicianGenerator : MonoBehaviour
@@ -16,17 +17,23 @@ public class MusicianGenerator : MonoBehaviour
     }
     #endregion
 
+    public List<string> MaleFirstNames;
+    public List<string> FemaleFirstNames;
+    public List<string> LastNames;
+
     public GameObject musicianPrefab;
     public GameObject instrumentPrefab;
 
     public Musician GenerateRandomMusician(Enums.InstrumentType instrumentType)
     {
-        Musician musician = new Musician
+        // generate gender and choose name accordingly
+        Enums.MusicianGender gender = Enums.MusicianGender.MALE;
+        if (Random.Range(0f, 1f) <= 0.5f)
         {
-            InstrumentType = instrumentType,
-            Name = GenerateRandomName(),
-        };
-        return musician;
+            gender = Enums.MusicianGender.FEMALE;
+        }
+        // complete musician
+        return new Musician(instrumentType, gender);
     }
 
     public GameObject GenerateMusicianVisuals(Musician musician)
@@ -36,22 +43,12 @@ public class MusicianGenerator : MonoBehaviour
         GameObject musicianBody = Instantiate(musicianPrefab);
         musicianBody.transform.parent = musicianVisual.transform;
         musicianBody.transform.localPosition = Vector3.zero;
+        MusicianVisual musicianBodyVisual = musicianBody.GetComponent<MusicianVisual>();
+        musicianBodyVisual.SetMusician(musician);
         // instantiate instrument prefab
         GameObject musicianInstrument = Instantiate(instrumentPrefab);
         musicianInstrument.transform.parent = musicianVisual.transform;
         musicianInstrument.transform.localPosition = Vector3.zero;
         return musicianVisual;
-    }
-
-    private string GenerateRandomName()
-    {
-        // temp random generation TODO: implement proper name generation
-        string[] names = { "Alice", "Bob", "Charlie" };
-        int randomIndex = Random.Range(0, names.Length);
-        string firstname = names[randomIndex];
-        string[] lastnames = { "Smith", "Johnson", "Williams" };
-        int randomIndex2 = Random.Range(0, lastnames.Length);
-        string lastname = lastnames[randomIndex2];
-        return firstname + " " + lastname;
     }
 }

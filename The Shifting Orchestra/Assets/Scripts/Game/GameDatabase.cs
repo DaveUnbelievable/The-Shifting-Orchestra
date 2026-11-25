@@ -54,24 +54,15 @@ public class GameDatabase : MonoBehaviour
     public float VolumeMin = 20;
     public float VolumeMax = 100;
     // skin colors
-    public List<Color> SkinColors = new List<Color>() {
-        new Color(1f, 0.8f, 0.6f), // light
-        new Color(0.8f, 0.6f, 0.4f), // medium
-        new Color(0.6f, 0.4f, 0.2f), // dark
-    };
-    // clothing colors
-    public List<Color> ClothingColors = new List<Color>() {
-        new Color(0.8f, 0.2f, 0.2f), // red
-        new Color(0.2f, 0.8f, 0.2f), // green
-        new Color(0.2f, 0.2f, 0.8f), // blue
-        new Color(0.8f, 0.8f, 0.2f), // yellow
-        new Color(0.8f, 0.2f, 0.8f), // purple
-    };
+    public List<Color> SkinColors;
     // hair colors
-    public List<Color> HairColors = new List<Color>() {
-        new Color(0.2f, 0.2f, 0.2f), // black
-        new Color(0.6f, 0.4f, 0.2f), // brown
-        new Color(0.8f, 0.8f, 0.2f), // blonde
-        new Color(1f, 1f, 1f), // white
-    };
+    public List<Color> HairColors;
+    // clothing colors
+    public List<Color> ClothingColors;
+    // shoe colors
+    public List<Color> ShoeColors;
+    // musician first and last names
+    public List<string> MaleFirstNames;
+    public List<string> FemaleFirstNames;
+    public List<string> LastNames;
 }

@@ -61,18 +61,16 @@ public class RunManager : MonoBehaviour
         // set base values
         _currentGigIndex = 0;
         RunFinished = false;
-        // CurrentMoney = GameDatabase.Instance.MoneyBase;
-        // CurrentReputation = GameDatabase.Instance.ReputationBase;
-
+        OrchestraLayout.Instance.PositionsSeats = 5;
         CurrentRunData.CurrentMoney = GameDatabase.Instance.MoneyBase;
         CurrentRunData.CurrentReputation = GameDatabase.Instance.ReputationBase;
-
+        // generate starting orchestra
         OrchestraLayout.Instance.GenerateLayout();
         OrchestraManager.Instance.CreateStartingOrchestra();
+        // run started
+        RunStarted?.Invoke();
         // set initial run state
         CurrentRunState = Enums.RunState.GIG_OFFERS;
-
-        RunStarted?.Invoke();
     }
 
     /// <summary>

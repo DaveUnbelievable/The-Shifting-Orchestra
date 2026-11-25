@@ -17,7 +17,6 @@ public static class Enums
         BASS,
         ACCENTS_FILLS,
         RHYTHM,
-        // SOLO,
     }
 
     public enum AudioClipSpeed
@@ -70,20 +69,14 @@ public static class Enums
 
     public enum OrchestraPositionType
     {
-        FRONT_CENTER,
+        NONE,
         FRONT_LEFT,
-        FRONT_RIGHT,
-        BACK_CENTER,
+        MIDDLE_LEFT,
         BACK_LEFT,
+        FRONT_RIGHT,
+        MIDDLE_RIGHT,
         BACK_RIGHT,
         BACK_FULL,
-        // SOLO,
-    }
-
-    public enum OrchestraSeatLayout
-    {
-        SQUARE,
-        WIDE_RECTANGLE,
     }
 
     public enum UserInterface
@@ -98,5 +91,19 @@ public static class Enums
     public enum OrchestraUpgrade
     {
         SIZE, // more musicians possible
+    }
+
+    public enum MusicianGender
+    {
+        MALE,
+        FEMALE,
+    }
+
+    public enum MusicianPart
+    {
+        SKIN,
+        HAIR,
+        CLOTHING,
+        SHOE,
     }
 }

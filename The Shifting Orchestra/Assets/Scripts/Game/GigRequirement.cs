@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,16 +17,16 @@ public class GigRequirement
         switch (requirementType) {
             case Enums.GigRequirementType.TEMPO:
                 // Random between 70 and 130
-                PreferredTempo = UnityEngine.Random.Range(GameDatabase.Instance.GigPreferredTempoMin, GameDatabase.Instance.GigPreferredTempoMax);
+                PreferredTempo = Random.Range(GameDatabase.Instance.GigPreferredTempoMin, GameDatabase.Instance.GigPreferredTempoMax);
                 break;
             case Enums.GigRequirementType.VOLUME:
                 // Random between 50 and 100
-                PreferredVolume = UnityEngine.Random.Range(GameDatabase.Instance.GigPreferredVolumeMin, GameDatabase.Instance.GigPreferredVolumeMax);
+                PreferredVolume = Random.Range(GameDatabase.Instance.GigPreferredVolumeMin, GameDatabase.Instance.GigPreferredVolumeMax);
                 break;
             case Enums.GigRequirementType.ORCHESTRA_SIZE:
                 // Random between 
                 int reputationDifference = 5;
-                MinOrchestraSize = Mathf.Max(1, UnityEngine.Random.Range(RunManager.Instance.CurrentRunData.CurrentReputation - reputationDifference, RunManager.Instance.CurrentRunData.CurrentReputation + reputationDifference));
+                MinOrchestraSize = Mathf.Max(1, Random.Range(RunManager.Instance.CurrentRunData.CurrentReputation - reputationDifference, RunManager.Instance.CurrentRunData.CurrentReputation + reputationDifference));
                 break;
         }
     }
@@ -37,8 +36,8 @@ public class GigRequirement
         RequirementType = Enums.GigRequirementType.INSTRUMENTS;
         Importance = importance;
         // get random instrument type and musical role
-        Enums.InstrumentType instrumentType = unusedInstrumentTypes[UnityEngine.Random.Range(0, unusedInstrumentTypes.Count)];
-        int preferredProminence = UnityEngine.Random.Range(0, 101);
+        Enums.InstrumentType instrumentType = unusedInstrumentTypes[Random.Range(0, unusedInstrumentTypes.Count)];
+        int preferredProminence = Random.Range(0, 101);
         // create a tuple of the instrument type and musical role as requirement
         PreferredInstrumentProminence = new KeyValuePair<Enums.InstrumentType, int>(instrumentType, preferredProminence);
     }
