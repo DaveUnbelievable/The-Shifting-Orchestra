@@ -30,13 +30,11 @@ public static class Enums
 
     public enum AudioClipKey
     {
-        // G_MAJOR,
         A_MAJOR,
         B_MAJOR,
         C_MAJOR,
         D_MAJOR,
         E_MAJOR,
-        // F_MAJOR,
     }
 
     public enum MusicPiece

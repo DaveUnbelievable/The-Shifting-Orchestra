@@ -22,7 +22,6 @@ public class MusicianGenerator : MonoBehaviour
     public List<string> LastNames;
 
     public GameObject musicianPrefab;
-    public GameObject instrumentPrefab;
 
     public Musician GenerateRandomMusician(Enums.InstrumentType instrumentType)
     {
@@ -45,10 +44,6 @@ public class MusicianGenerator : MonoBehaviour
         musicianBody.transform.localPosition = Vector3.zero;
         MusicianVisual musicianBodyVisual = musicianBody.GetComponent<MusicianVisual>();
         musicianBodyVisual.SetMusician(musician);
-        // instantiate instrument prefab
-        GameObject musicianInstrument = Instantiate(instrumentPrefab);
-        musicianInstrument.transform.parent = musicianVisual.transform;
-        musicianInstrument.transform.localPosition = Vector3.zero;
         return musicianVisual;
     }
 }
