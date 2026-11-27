@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GigRequirement
 {
@@ -24,9 +26,11 @@ public class GigRequirement
                 PreferredVolume = Random.Range(GameDatabase.Instance.GigPreferredVolumeMin, GameDatabase.Instance.GigPreferredVolumeMax);
                 break;
             case Enums.GigRequirementType.ORCHESTRA_SIZE:
-                // Random between 
-                int reputationDifference = 5;
-                MinOrchestraSize = Mathf.Max(1, Random.Range(RunManager.Instance.CurrentRunData.CurrentReputation - reputationDifference, RunManager.Instance.CurrentRunData.CurrentReputation + reputationDifference));
+                int currentReputation = RunManager.Instance.CurrentRunData.CurrentReputation;
+                // min orchestra size is 1/3 of reputation
+                MinOrchestraSize = Mathf.RoundToInt((float)currentReputation / 3f);
+                // random difference between minus 1/5 reputationa nd plus 1/5 reputation
+                MinOrchestraSize += Mathf.RoundToInt(Random.Range(-(float)currentReputation / 5f, (float)currentReputation / 5f));
                 break;
         }
     }

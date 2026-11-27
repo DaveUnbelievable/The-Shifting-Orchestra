@@ -5,6 +5,6 @@
             <ui:Label text="Name" name="lbl_name"/>
             <ui:Label text="Instrument" name="lbl_instrument"/>
         </ui:VisualElement>
-        <ui:Button text="hire" name="btn_hire"/>
+        <ui:Button text="hire" name="btn_hire" enabled="true"/>
     </ui:VisualElement>
 </ui:UXML>

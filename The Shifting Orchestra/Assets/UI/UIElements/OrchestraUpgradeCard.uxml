@@ -13,6 +13,13 @@
         <ui:Label text="Upgrade Text" name="lbl_upgrade_text">
             <Bindings>
                 <ui:DataBinding property="text" data-source-path="UpgradeText" binding-mode="ToTarget"/>
+                <ui:DataBinding property="style.display" data-source-path="DisplayNormalText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Upgrade Max Text" name="lbl_upgrade_max_text" enabled="true">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="MaxUpgradeText" binding-mode="ToTarget"/>
+                <ui:DataBinding property="style.display" data-source-path="DisplayMaxText" binding-mode="ToTarget"/>
             </Bindings>
         </ui:Label>
         <ui:Button text="Upgrade" name="btn_buy_upgrade" enabled="true">
@@ -21,5 +28,10 @@
                 <ui:DataBinding property="enabledSelf" data-source-path="PlayerHasEnoughMoneyToBuyUpgrade" binding-mode="ToTarget"/>
             </Bindings>
         </ui:Button>
+        <ui:Label text="Upgrades Left Text" name="lbl_upgrades_left_text" enabled="true">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="UpgradesLeftText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
     </ui:VisualElement>
 </ui:UXML>

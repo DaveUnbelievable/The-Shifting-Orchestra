@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class OrchestraManager : MonoBehaviour
@@ -59,11 +58,17 @@ public class OrchestraManager : MonoBehaviour
         return instrumentGroup;
     }
 
-    public void ChangeMusicalRoleAssignment(InstrumentGroup instrumentGroup, Enums.MusicalRole role)
+    public bool ChangeMusicalRoleAssignment(InstrumentGroup instrumentGroup, Enums.MusicalRole role)
     {
-        // TODO: check if there are enough seats for the instrument group in the musical role
+        if (!OrchestraLayout.Instance.CanSeatInstrumentGroupInRole(instrumentGroup, role))
+        {
+            Debug.LogWarning($"Cannot assign {instrumentGroup.InstrumentType} to {role}: there are not enough seats for all instrument groups assigned to this role.");
+            return false;
+        }
+
         instrumentGroup.MusicalRole = role;
         OrchestraLayout.Instance.ShowOrchestra();
+        return true;
     }
 
     public void SetVolume(InstrumentGroup instrumentGroup, float newVolume)

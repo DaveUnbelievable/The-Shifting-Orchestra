@@ -456,6 +456,8 @@ MonoBehaviour:
   CurrentRunData: {fileID: 11400000, guid: cdba6fc350d7efb4d9f6142670149aca, type: 2}
   RunFinished: 0
   RunWon: 0
+  Upgrades:
+  - {fileID: 11400000, guid: f0dc6c1688f6723498901cd5aecd655a, type: 2}
 --- !u!4 &491460956
 Transform:
   m_ObjectHideFlags: 0
@@ -1638,7 +1640,8 @@ MonoBehaviour:
   prefsReputationHighscore: reputation_highscore
   GigsPerRun: 7
   MoneyBase: 100
-  GigOfferRerollBaseCost: 5
+  GigOfferRerollBaseCost: 10
+  HireMusicianBaseCost: 25
   StartingInstrumentGroups:
   - InstrumentType: 0
     MusicalRole: 0
@@ -1668,7 +1671,7 @@ MonoBehaviour:
     MusicalRole: 4
     Amount: 1
     Volume: 70
-  ReputationBase: 10
+  ReputationBase: 30
   ReputationMax: 100
   GigOfferAmount: 3
   GigMinInstrumentRequirementAmount: 1

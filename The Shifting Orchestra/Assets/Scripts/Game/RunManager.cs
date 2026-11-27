@@ -49,10 +49,13 @@ public class RunManager : MonoBehaviour
     public bool RunWon;
     private int _currentGigIndex;
 
+    public List<OrchestraUpgrade> Upgrades = new List<OrchestraUpgrade>();
+
 
     public Action<Enums.RunState> StateChanged;
     public Action RunStarted;
     public Action RunEnded;
+    public Action MoneyChanged;
 
     public void StartRun() {
         // initialize
@@ -64,6 +67,11 @@ public class RunManager : MonoBehaviour
         OrchestraLayout.Instance.PositionsSeats = 5;
         CurrentRunData.CurrentMoney = GameDatabase.Instance.MoneyBase;
         CurrentRunData.CurrentReputation = GameDatabase.Instance.ReputationBase;
+        // reset upgrades
+        foreach (OrchestraUpgrade upgrade in Upgrades)
+        {
+            upgrade.Reset();
+        }
         // generate starting orchestra
         OrchestraLayout.Instance.GenerateLayout();
         OrchestraManager.Instance.CreateStartingOrchestra();
@@ -170,7 +178,7 @@ public class RunManager : MonoBehaviour
     {
         if (reroll)
         {
-            if (CurrentRunData.CurrentMoney > GameDatabase.Instance.GigOfferRerollBaseCost)
+            if (PlayerHasEnoughMoney(GameDatabase.Instance.GigOfferRerollBaseCost))
             {
                 AddMoney(-GameDatabase.Instance.GigOfferRerollBaseCost);
             } else
@@ -207,21 +215,45 @@ public class RunManager : MonoBehaviour
     private void AddMoney(int addValue)
     {
         CurrentRunData.CurrentMoney = Math.Clamp(CurrentRunData.CurrentMoney + addValue, 0, int.MaxValue);
+        MoneyChanged?.Invoke();
     }
 
     private void AddReputation(int addValue)
     {
-        CurrentRunData.CurrentReputation = Math.Clamp(CurrentRunData.CurrentReputation + addValue, 0, int.MaxValue);
+        CurrentRunData.CurrentReputation = Math.Clamp(CurrentRunData.CurrentReputation + addValue, 0, GameDatabase.Instance.ReputationMax);
     }
 
-    public void HireMusician(Musician musician)
+    public bool HireMusician(Musician musician)
     {
-        // add to orchestra
-        OrchestraManager.Instance.HireMusician(musician);
-        // remove from hire list
-        MusiciansForHire.Remove(musician);
-        // add new musician with the same instrument type
-        GenerateMusiciansForHire(musician.InstrumentType);
+        // check if player has enough money
+        if (PlayerHasEnoughMoney(GameDatabase.Instance.HireMusicianBaseCost))
+        {
+            // check if there is an instrument group of this type
+            if (OrchestraManager.Instance.InstrumentGroups.ContainsKey(musician.InstrumentType)) {
+                // check if instrument group is full
+                if (OrchestraManager.Instance.InstrumentGroups[musician.InstrumentType].Musicians.Count >= OrchestraLayout.Instance.PositionsSeats)
+                {
+                    // group is full
+                    return false;
+                }
+            } else
+            {
+                // create instrument group if it hasnt been created yet
+                InstrumentGroup instrumentGroup = OrchestraManager.Instance.CreateInstrumentGroup(musician.InstrumentType, Enums.MusicalRole.MELODY, GameDatabase.Instance.VolumeBase);
+                OrchestraManager.Instance.InstrumentGroups.Add(musician.InstrumentType, instrumentGroup);
+            }
+            // deduct money
+            AddMoney(-GameDatabase.Instance.HireMusicianBaseCost);
+            // add to orchestra
+            OrchestraManager.Instance.HireMusician(musician);
+            // remove from hire list
+            MusiciansForHire.Remove(musician);
+            // add new musician with the same instrument type
+            GenerateMusiciansForHire(musician.InstrumentType);
+            // successfully hired
+            return true;
+        }
+        return false;
     }
 
     public void FireMusician(Musician musician)
@@ -232,24 +264,29 @@ public class RunManager : MonoBehaviour
 
     public void BuyUpgrade(OrchestraUpgrade upgrade)
     {
-        // check if player has enough money
-        if(PlayerHasEnoughMoney(upgrade.DynamicUpgradeCost))
+        if (upgrade.AmountUpgradesLeft > 0)
         {
-            // deduct cost from players money
-            AddMoney(-upgrade.DynamicUpgradeCost);
-            // increase multiplier
-            upgrade.upgradeMultiplier += 0.1f;
-            // add upgrade
-            switch (upgrade.Upgrade)
+            // check if player has enough money
+            if(PlayerHasEnoughMoney(upgrade.DynamicUpgradeCost))
             {
-                case Enums.OrchestraUpgrade.SIZE:
-                    // add seats to orchestra layout
-                    OrchestraLayout.Instance.PositionsSeats += (int)upgrade.UpgradeValue;
-                    // show orchestra with regenerated layout
-                    OrchestraLayout.Instance.ShowOrchestra(true);
-                    break;
-                default:
-                    break;
+                // deduct cost from players money
+                AddMoney(-upgrade.DynamicUpgradeCost);
+                // increase multiplier
+                upgrade.upgradeMultiplier += 0.1f;
+                // add upgrade
+                switch (upgrade.Upgrade)
+                {
+                    case Enums.OrchestraUpgrade.SIZE:
+                        // add seats to orchestra layout
+                        OrchestraLayout.Instance.PositionsSeats += (int)upgrade.UpgradeValue;
+                        // show orchestra with regenerated layout
+                        OrchestraLayout.Instance.ShowOrchestra(true);
+                        break;
+                    default:
+                        break;
+                }
+                // one less upgrade
+                upgrade.AmountUpgradesLeft--;
             }
         }
     }

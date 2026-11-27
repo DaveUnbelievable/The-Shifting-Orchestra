@@ -27,6 +27,11 @@ public class GigOffersUI : MonoBehaviour
                 ShowGigOffers();
             }
         };
+
+        RunManager.Instance.MoneyChanged += () =>
+        {
+            ToggleRerollButton();
+        };
     }
 
     private void RerollGigOffers(ClickEvent evt)
@@ -35,7 +40,6 @@ public class GigOffersUI : MonoBehaviour
         {
             ShowGigOffers();
         }
-        // TODO: check if player has enough money to reroll, if not disable button
     }
 
     private void ShowGigOffers()
@@ -50,6 +54,16 @@ public class GigOffersUI : MonoBehaviour
             GigOfferCard card = new GigOfferCard(gigOfferAsset);
             vel_gig_offers.Add(card);
             card.ShowGigOffer(gigOffer);
+        }
+    }
+
+    private void ToggleRerollButton()
+    {
+        btn_reroll_gig_offers.SetEnabled(true);
+        // check if player has enough money to reroll, if not disable button
+        if (!RunManager.Instance.PlayerHasEnoughMoney(GameDatabase.Instance.GigOfferRerollBaseCost))
+        {
+            btn_reroll_gig_offers.SetEnabled(false);
         }
     }
 }

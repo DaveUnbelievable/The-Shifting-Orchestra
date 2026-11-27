@@ -149,7 +149,13 @@ public class PreparationUI : MonoBehaviour
 
     private void MusicalRoleChanged(Enums.MusicalRole role)
     {
-        OrchestraManager.Instance.ChangeMusicalRoleAssignment(currentSelectedInstrumentGroup, role);
+        if (!OrchestraManager.Instance.ChangeMusicalRoleAssignment(currentSelectedInstrumentGroup, role))
+        {
+            // reset to previous if it isnt possible to place instrument group in the select one
+            drp_musical_role.SetValueWithoutNotify(
+                EnumDisplayNames.MusicalRoleDisplayNames[currentSelectedInstrumentGroup.MusicalRole]
+            );
+        }
     }
 
     private void VolumeChanged(float volume)

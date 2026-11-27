@@ -143,4 +143,42 @@ public class OrchestraLayout : MonoBehaviour
             }
         }
     }
+
+    public bool CanSeatInstrumentGroupInRole(InstrumentGroup instrumentGroup, Enums.MusicalRole role)
+    {
+        List<int> remainingSeatsByPosition = new List<int>();
+        foreach (OrchestraPositionDefinition positionDefinition in PositionDefinitions)
+        {
+            if (positionDefinition.MusicalRole == role)
+            {
+                remainingSeatsByPosition.Add(PositionsSeats);
+            }
+        }
+
+        bool instrumentGroupFound = false;
+        foreach (InstrumentGroup group in OrchestraManager.Instance.InstrumentGroups.Values)
+        {
+            bool isCandidateGroup = group == instrumentGroup;
+            if (isCandidateGroup)
+            {
+                instrumentGroupFound = true;
+            }
+
+            Enums.MusicalRole groupRole = isCandidateGroup ? role : group.MusicalRole;
+            if (groupRole != role)
+            {
+                continue;
+            }
+
+            int positionIndex = remainingSeatsByPosition.FindIndex(seats => seats >= group.Musicians.Count);
+            if (positionIndex < 0)
+            {
+                return false;
+            }
+
+            remainingSeatsByPosition[positionIndex] -= group.Musicians.Count;
+        }
+
+        return instrumentGroupFound;
+    }
 }

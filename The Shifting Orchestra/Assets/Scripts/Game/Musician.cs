@@ -18,20 +18,20 @@ public class Musician
         // set instrument type and gender
         InstrumentType = instrumentType;
         Gender = gender;
+        Name = GenerateRandomName();
         // get random colors for skin, hair, clothing and shoes
         SkinColor = GameDatabase.Instance.SkinColors[Random.Range(0, GameDatabase.Instance.SkinColors.Count)];
         HairColor = GameDatabase.Instance.HairColors[Random.Range(0, GameDatabase.Instance.HairColors.Count)];
         ClothingColor = GameDatabase.Instance.ClothingColors[Random.Range(0, GameDatabase.Instance.ClothingColors.Count)];
         ShoeColor = GameDatabase.Instance.ShoeColors[Random.Range(0, GameDatabase.Instance.ShoeColors.Count)];
-        // TODO: random Body Parts -> Generator
     }
 
-    private string GenerateRandomName(Enums.MusicianGender gender)
+    private string GenerateRandomName()
     {
         // random last name
         string lastname = GameDatabase.Instance.LastNames[Random.Range(0, GameDatabase.Instance.LastNames.Count)];
         // random first name
-        if (gender == Enums.MusicianGender.MALE)
+        if (Gender == Enums.MusicianGender.MALE)
         {
             // male
             string firstname = GameDatabase.Instance.MaleFirstNames[Random.Range(0, GameDatabase.Instance.MaleFirstNames.Count)];

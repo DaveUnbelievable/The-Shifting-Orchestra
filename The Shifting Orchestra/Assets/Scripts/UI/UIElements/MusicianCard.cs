@@ -24,23 +24,39 @@ public class MusicianCard : VisualElement
         lbl_instrument = this.Q<Label>("lbl_instrument");
         // hire button
         btn_hire = this.Q<Button>("btn_hire");
+        btn_hire.text = $"Hire {GameDatabase.Instance.HireMusicianBaseCost}€";
         btn_hire.RegisterCallback<ClickEvent>(HireMusician);
+
+        RunManager.Instance.MoneyChanged += () =>
+        {
+            ToggleHireButton();
+        };
     }
 
     public void ShowMusician(Musician musician)
     {
         this.musician = musician;
-
         // set name
         lbl_name.text = musician.Name;
         // set instrument
         lbl_instrument.text = musician.InstrumentType.ToString();
-        // TODO: set image
     }
 
     private void HireMusician(ClickEvent evt)
     {
-        RunManager.Instance.HireMusician(musician);
-        parentUI.ShowMusiciansForHire();
+        if (RunManager.Instance.HireMusician(musician))
+        {
+            parentUI.ShowMusiciansForHire();
+        }
+    }
+
+    private void ToggleHireButton()
+    {
+        btn_hire.SetEnabled(true);
+        // check if player has enough money to hire, if not disable button
+        if (!RunManager.Instance.PlayerHasEnoughMoney(GameDatabase.Instance.HireMusicianBaseCost))
+        {
+            btn_hire.SetEnabled(false);
+        }
     }
 }

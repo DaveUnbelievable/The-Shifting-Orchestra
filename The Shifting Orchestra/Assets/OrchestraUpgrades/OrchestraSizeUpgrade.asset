@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OrchestraUpgrade
   Upgrade: 0
   UpgradeValue: 1
-  BaseUpgradeCost: 5
-  UpgradeText: Increase the amount of seats per sitting group by 1.
+  BaseUpgradeCost: 10
+  AmountUpgrades: 15
+  AmountUpgradesLeft: 15
+  UpgradeText: Increase the amount of seats per seating group by 1.
+  MaxUpgradeText: Maximum orchestra size reached.
   UpgradeImage: {fileID: 0}
-  upgradeMultiplier: 1
+  upgradeMultiplier: 2.4999998

@@ -26,6 +26,8 @@ public class GameDatabase : MonoBehaviour
     public int MoneyBase = 100;
     // base cost of gig offer reroll
     public int GigOfferRerollBaseCost = 5;
+    // base cost to hire a musician
+    public int HireMusicianBaseCost = 70;
     // starting orchestra
     public List<StartingInstrumentGroup> StartingInstrumentGroups = new List<StartingInstrumentGroup>() {
         new StartingInstrumentGroup { InstrumentType = Enums.InstrumentType.STRINGS, MusicalRole = Enums.MusicalRole.MELODY, Amount = 2, Volume = 70 },
